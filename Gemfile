@@ -32,8 +32,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Rails bootstrap
+# http://www.rubydoc.info/gems/bootstrap-sass/3.3.6
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# User autentication
+# https://github.com/plataformatec/devise
 gem 'devise'
 
 group :development, :test do
