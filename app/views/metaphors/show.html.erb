@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @metaphor.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @metaphor.slug %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @metaphor.description %>
+</p>
+
+<%= link_to 'Edit', edit_metaphor_path(@metaphor) %> |
+<%= link_to 'Back', metaphors_path %>
