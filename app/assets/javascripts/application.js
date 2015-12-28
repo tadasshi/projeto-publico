@@ -17,3 +17,5 @@
 //  require turbolinks
 //= require_self
 //= require_tree .
+
+app = angular.module('masteringpnl', []);
