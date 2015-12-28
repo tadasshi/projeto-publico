@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bibliography.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @bibliography.slug %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bibliography.description %>
+</p>
+
+<p>
+  <strong>Amazon afiliate link:</strong>
+  <%= @bibliography.amazon_afiliate_link %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @bibliography.image %>
+</p>
+
+<%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
+<%= link_to 'Back', bibliographies_path %>
