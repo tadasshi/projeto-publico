@@ -1,7 +1,8 @@
-class Metaphor < ActiveRecord::Base
+class Ebook < ActiveRecord::Base
 
   # Make url friendly using title
   def to_param
     "#{id} #{title}".parameterize
   end
+
 end

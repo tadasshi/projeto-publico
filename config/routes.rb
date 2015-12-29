@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :ebooks
   resources :bibliographies
   resources :metaphors
   devise_for :users
