@@ -36,4 +36,9 @@
 ## http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
 ## Integrar autenticaçao com midias sociais
 
+## Add profissionais
+## Add instituições
+## Add artigos
+## Add videos
+
 # Deploy
