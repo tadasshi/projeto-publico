@@ -1,1 +1,1 @@
-json.extract! @metaphor, :id, :title, :slug, :description, :created_at, :updated_at
+json.extract! @metaphor, :id, :title, :description, :created_at, :updated_at

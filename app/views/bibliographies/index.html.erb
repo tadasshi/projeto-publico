@@ -6,10 +6,9 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Slug</th>
       <th>Description</th>
-      <th>Amazon afiliate link</th>
       <th>Image</th>
+      <th>Amazon afiliate link</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +17,9 @@
     <% @bibliographies.each do |bibliography| %>
       <tr>
         <td><%= bibliography.title %></td>
-        <td><%= bibliography.slug %></td>
         <td><%= bibliography.description %></td>
-        <td><%= bibliography.amazon_afiliate_link %></td>
         <td><%= bibliography.image %></td>
+        <td><%= bibliography.amazon_afiliate_link %></td>
         <td><%= link_to 'Show', bibliography %></td>
         <td><%= link_to 'Edit', edit_bibliography_path(bibliography) %></td>
         <td><%= link_to 'Destroy', bibliography, method: :delete, data: { confirm: 'Are you sure?' } %></td>

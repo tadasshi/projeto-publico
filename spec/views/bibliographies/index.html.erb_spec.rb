@@ -1,32 +1,28 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "bibliographies/index" do
+RSpec.describe "bibliographies/index", type: :view do
   before(:each) do
     assign(:bibliographies, [
-      stub_model(Bibliography,
+      Bibliography.create!(
         :title => "Title",
-        :slug => "Slug",
         :description => "MyText",
-        :amazon_afiliate_link => "Amazon Afiliate Link",
-        :image => "Image"
+        :image => "Image",
+        :amazon_afiliate_link => "Amazon Afiliate Link"
       ),
-      stub_model(Bibliography,
+      Bibliography.create!(
         :title => "Title",
-        :slug => "Slug",
         :description => "MyText",
-        :amazon_afiliate_link => "Amazon Afiliate Link",
-        :image => "Image"
+        :image => "Image",
+        :amazon_afiliate_link => "Amazon Afiliate Link"
       )
     ])
   end
 
   it "renders a list of bibliographies" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "Slug".to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "Amazon Afiliate Link".to_s, :count => 2
     assert_select "tr>td", :text => "Image".to_s, :count => 2
+    assert_select "tr>td", :text => "Amazon Afiliate Link".to_s, :count => 2
   end
 end

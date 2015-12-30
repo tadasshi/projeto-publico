@@ -17,7 +17,7 @@
 
 <p>
   <strong>Value:</strong>
-  <%= number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$") %>
+  <%= @ebook.value %>
 </p>
 
 <%= link_to 'Edit', edit_ebook_path(@ebook) %> |

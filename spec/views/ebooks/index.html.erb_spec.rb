@@ -1,15 +1,15 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "ebooks/index" do
+RSpec.describe "ebooks/index", type: :view do
   before(:each) do
     assign(:ebooks, [
-      stub_model(Ebook,
+      Ebook.create!(
         :title => "Title",
         :description => "MyText",
         :image => "Image",
         :value => "9.99"
       ),
-      stub_model(Ebook,
+      Ebook.create!(
         :title => "Title",
         :description => "MyText",
         :image => "Image",
@@ -20,7 +20,6 @@ describe "ebooks/index" do
 
   it "renders a list of ebooks" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
     assert_select "tr>td", :text => "Image".to_s, :count => 2

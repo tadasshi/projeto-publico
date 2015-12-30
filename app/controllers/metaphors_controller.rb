@@ -69,6 +69,6 @@ class MetaphorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def metaphor_params
-      params.require(:metaphor).permit(:title, :slug, :description)
+      params.require(:metaphor).permit(:title, :description)
     end
 end

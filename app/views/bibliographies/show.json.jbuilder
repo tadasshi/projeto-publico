@@ -1,1 +1,1 @@
-json.extract! @bibliography, :id, :title, :slug, :description, :amazon_afiliate_link, :image, :created_at, :updated_at
+json.extract! @bibliography, :id, :title, :description, :image, :amazon_afiliate_link, :created_at, :updated_at

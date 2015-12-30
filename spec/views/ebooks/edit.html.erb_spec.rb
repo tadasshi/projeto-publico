@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "ebooks/edit" do
+RSpec.describe "ebooks/edit", type: :view do
   before(:each) do
-    @ebook = assign(:ebook, stub_model(Ebook,
+    @ebook = assign(:ebook, Ebook.create!(
       :title => "MyString",
       :description => "MyText",
       :image => "MyString",
@@ -13,11 +13,14 @@ describe "ebooks/edit" do
   it "renders the edit ebook form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", ebook_path(@ebook), "post" do
+
       assert_select "input#ebook_title[name=?]", "ebook[title]"
+
       assert_select "textarea#ebook_description[name=?]", "ebook[description]"
+
       assert_select "input#ebook_image[name=?]", "ebook[image]"
+
       assert_select "input#ebook_value[name=?]", "ebook[value]"
     end
   end

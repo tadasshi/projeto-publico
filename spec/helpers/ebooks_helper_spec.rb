@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 # Specs in this file have access to a helper object that includes
 # the EbooksHelper. For example:
@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe EbooksHelper do
+RSpec.describe EbooksHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

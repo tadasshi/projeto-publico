@@ -1,34 +1,38 @@
-require "spec_helper"
+require "rails_helper"
 
-describe BibliographiesController do
+RSpec.describe BibliographiesController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
-      get("/bibliographies").should route_to("bibliographies#index")
+      expect(:get => "/bibliographies").to route_to("bibliographies#index")
     end
 
     it "routes to #new" do
-      get("/bibliographies/new").should route_to("bibliographies#new")
+      expect(:get => "/bibliographies/new").to route_to("bibliographies#new")
     end
 
     it "routes to #show" do
-      get("/bibliographies/1").should route_to("bibliographies#show", :id => "1")
+      expect(:get => "/bibliographies/1").to route_to("bibliographies#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/bibliographies/1/edit").should route_to("bibliographies#edit", :id => "1")
+      expect(:get => "/bibliographies/1/edit").to route_to("bibliographies#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/bibliographies").should route_to("bibliographies#create")
+      expect(:post => "/bibliographies").to route_to("bibliographies#create")
     end
 
-    it "routes to #update" do
-      put("/bibliographies/1").should route_to("bibliographies#update", :id => "1")
+    it "routes to #update via PUT" do
+      expect(:put => "/bibliographies/1").to route_to("bibliographies#update", :id => "1")
+    end
+
+    it "routes to #update via PATCH" do
+      expect(:patch => "/bibliographies/1").to route_to("bibliographies#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/bibliographies/1").should route_to("bibliographies#destroy", :id => "1")
+      expect(:delete => "/bibliographies/1").to route_to("bibliographies#destroy", :id => "1")
     end
 
   end

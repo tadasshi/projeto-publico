@@ -69,6 +69,6 @@ class BibliographiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bibliography_params
-      params.require(:bibliography).permit(:title, :slug, :description, :amazon_afiliate_link, :image)
+      params.require(:bibliography).permit(:title, :description, :image, :amazon_afiliate_link)
     end
 end

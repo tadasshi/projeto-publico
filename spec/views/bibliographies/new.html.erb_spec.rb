@@ -1,26 +1,27 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "bibliographies/new" do
+RSpec.describe "bibliographies/new", type: :view do
   before(:each) do
-    assign(:bibliography, stub_model(Bibliography,
+    assign(:bibliography, Bibliography.new(
       :title => "MyString",
-      :slug => "MyString",
       :description => "MyText",
-      :amazon_afiliate_link => "MyString",
-      :image => "MyString"
-    ).as_new_record)
+      :image => "MyString",
+      :amazon_afiliate_link => "MyString"
+    ))
   end
 
   it "renders new bibliography form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", bibliographies_path, "post" do
+
       assert_select "input#bibliography_title[name=?]", "bibliography[title]"
-      assert_select "input#bibliography_slug[name=?]", "bibliography[slug]"
+
       assert_select "textarea#bibliography_description[name=?]", "bibliography[description]"
-      assert_select "input#bibliography_amazon_afiliate_link[name=?]", "bibliography[amazon_afiliate_link]"
+
       assert_select "input#bibliography_image[name=?]", "bibliography[image]"
+
+      assert_select "input#bibliography_amazon_afiliate_link[name=?]", "bibliography[amazon_afiliate_link]"
     end
   end
 end
