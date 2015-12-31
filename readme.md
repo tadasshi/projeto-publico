@@ -1,5 +1,13 @@
 # Deploy
 
+## http://lugolabs.com/articles/80-build-a-rss-feed-in-ruby-on-rails
+## Implementar RSS Feed 
+
+## Implementar Busca
+
+## http://www.inboundio.com/blog/seo-for-ruby-on-rails-complete-guide/
+## Implementar SEO
+
 ## https://github.com/rspec/rspec-rails
 ## Implementar testes
 
@@ -26,12 +34,8 @@
 ## Add artigos
 ## Add videos
 
-### https://github.com/carrierwaveuploader/carrierwave
-### Implementar thumbnail para ebooks
-### Implementar thumbnail para metaforas
-### Implementar thumbnail para bibliografias
-
-### Implementar link para amazon em ebooks
+### https://github.com/amatsuda/kaminari
+### Implementar paginador
 
 ### http://www.rubydoc.info/gems/foreigner/1.7.4
 ### http://www.rubydoc.info/gems/acts_as_commentable/4.0.2
@@ -39,7 +43,10 @@
 ### Implementar comentarios para metaforas
 ### Implementar comentarios para bibliografias
 
-### https://github.com/amatsuda/kaminari
-### Implementar paginador
+### Implementar link para amazon em ebooks
 
+### https://github.com/carrierwaveuploader/carrierwave
+### Implementar thumbnail para ebooks
+### Implementar thumbnail para metaforas
+### Implementar thumbnail para bibliografias
 
