@@ -33,6 +33,9 @@
 ## Add instituições
 ## Add artigos
 ## Add videos
+## Add eventos
+## Add notícias
+## Add biografias
 
 ### https://github.com/amatsuda/kaminari
 ### Implementar paginador
@@ -50,3 +53,8 @@
 ### Implementar thumbnail para metaforas
 ### Implementar thumbnail para bibliografias
 
+### Link para relatar bug
+
+### Adicionar campos Ano, autor, páginas e espeçura no módulo de bibliografias.
+
+### Adiconar formulário newsletter
