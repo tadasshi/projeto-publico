@@ -1,5 +1,11 @@
 # Deploy
 
+## https://github.com/carrierwaveuploader/carrierwave
+## Implementar thumbnail para ebooks
+## Implementar thumbnail para metaforas
+## Implementar thumbnail para bibliografias
+
+
 ## http://lugolabs.com/articles/80-build-a-rss-feed-in-ruby-on-rails
 ## Implementar RSS Feed 
 
@@ -47,11 +53,6 @@
 ### Implementar comentarios para bibliografias
 
 ### Implementar link para amazon em ebooks
-
-### https://github.com/carrierwaveuploader/carrierwave
-### Implementar thumbnail para ebooks
-### Implementar thumbnail para metaforas
-### Implementar thumbnail para bibliografias
 
 ### Link para relatar bug
 
