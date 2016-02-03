@@ -1,0 +1,2 @@
+COPY bibliographies(title, amazon_afiliate_link, image, description, created_at) FROM '/home/tadasshi/www/masteringpnl/mastering-pnl/db/import/bibliographies.csv' CSV HEADER;
+COPY metaphors(title, description, created_at) FROM '/home/tadasshi/www/masteringpnl/mastering-pnl/db/import/metaphors.csv' CSV HEADER;

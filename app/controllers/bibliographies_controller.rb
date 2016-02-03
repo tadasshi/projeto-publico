@@ -4,7 +4,7 @@ class BibliographiesController < ApplicationController
   # GET /bibliographies
   # GET /bibliographies.json
   def index
-    @bibliographies = Bibliography.all
+    @bibliographies = Bibliography.all.page params[:page]
   end
 
   # GET /bibliographies/1

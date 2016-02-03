@@ -1,2 +1,53 @@
-<h1>Home#contact</h1>
-<p>Find me in app/views/home/contact.html.erb</p>
+<h1>Contato</h1>
+
+<p>
+  Se você tiver perguntas de negócios ou outras questões, por favor preencha o seguinte formulário para entrar em
+  contato conosco. Obrigado.
+</p>
+
+<div class="row">
+  <div class="col-lg-5">
+    <form id="contact-form" action="/site/contact" method="post" role="form">
+      <input type="hidden" name="_csrf" value="dXB1ZE9udXYtAAAHH14WQzJCLQhiCz4XRx4CMnYpEhpMNAM2DR45MQ==">
+      <div class="form-group field-contactform-name required">
+        <label class="control-label" for="contactform-name">Nome</label>
+        <input type="text" id="contactform-name" class="form-control" name="ContactForm[name]">
+
+        <p class="help-block help-block-error"></p>
+      </div>
+      <div class="form-group field-contactform-email required">
+        <label class="control-label" for="contactform-email">Email</label>
+        <input type="text" id="contactform-email" class="form-control" name="ContactForm[email]">
+
+        <p class="help-block help-block-error"></p>
+      </div>
+      <div class="form-group field-contactform-subject required">
+        <label class="control-label" for="contactform-subject">Assunto</label>
+        <input type="text" id="contactform-subject" class="form-control" name="ContactForm[subject]">
+
+        <p class="help-block help-block-error"></p>
+      </div>
+      <div class="form-group field-contactform-body required">
+        <label class="control-label" for="contactform-body">Mensagem</label>
+        <textarea id="contactform-body" class="form-control" name="ContactForm[body]" rows="6"></textarea>
+
+        <p class="help-block help-block-error"></p>
+      </div>
+      <div class="form-group field-contactform-verifycode">
+        <label class="control-label" for="contactform-verifycode">Código de Verificação</label>
+        <div class="row">
+          <div class="col-lg-3"><img id="contactform-verifycode-image" src="/site/captcha?v=56aaafa0b3efe" alt=""></div>
+          <div class="col-lg-6">
+            <input type="text" id="contactform-verifycode" class="form-control" name="ContactForm[verifyCode]"></div>
+        </div>
+
+        <p class="help-block help-block-error"></p>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default flat-button remove-border blue-button white-font-color" name="contact-button">Enviar
+          Contato
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

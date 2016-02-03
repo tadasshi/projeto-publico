@@ -1,24 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="bibliografia-record-view" itemscope="http://schema.org/Product">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bibliography.title %>
-</p>
+  <div class="col-md-4">
+    <img itemprop='image' class='img-responsive img-thumbnail' alt='<%= @bibliography.title %>' title='<%= @bibliography.title %>' src='<%= @bibliography.image %>'/>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @bibliography.description %>
-</p>
+  <div class="col-md-8">
 
-<p>
-  <strong>Image:</strong>
-  <%= @bibliography.image %>
-</p>
+    <h1 itemprop="name"><%= @bibliography.title %></h1>
 
-<p>
-  <strong>Amazon afiliate link:</strong>
-  <%= @bibliography.amazon_afiliate_link %>
-</p>
+    <p itemprop="description">
+      <%= @bibliography.description %>
+    </p>
 
-<%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
-<%= link_to 'Back', bibliographies_path %>
+    <% if @bibliography.amazon_afiliate_link %>
+        <div class="pull-right">
+          <small>Compre aqui.</small>
+          <br/>
+          <a href="<%= @bibliography.amazon_afiliate_link %>" target="_blank">
+            <img src="assets/amazon-button.png" alt="<%= @bibliography.title %>" title="<%= @bibliography.title %>"/>
+          </a>
+          <img src="http://ir-na.amazon-adsystem.com/e/ir?t=mapn-20&l=as2&o=1&a=8532304710" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"/>
+        </div>
+    <% end %>
+  </div>
+
+  <%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
+  <%= link_to 'Back', bibliographies_path %>
+
+</div>

@@ -4,7 +4,7 @@ class MetaphorsController < ApplicationController
   # GET /metaphors
   # GET /metaphors.json
   def index
-    @metaphors = Metaphor.all
+    @metaphors = Metaphor.all.page params[:page]
   end
 
   # GET /metaphors/1

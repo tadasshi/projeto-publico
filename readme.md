@@ -43,9 +43,6 @@
 ## Add notícias
 ## Add biografias
 
-### https://github.com/amatsuda/kaminari
-### Implementar paginador
-
 ### http://www.rubydoc.info/gems/foreigner/1.7.4
 ### http://www.rubydoc.info/gems/acts_as_commentable/4.0.2
 ### Implementar comentarios para ebooks

@@ -4,7 +4,7 @@ class CreateMetaphors < ActiveRecord::Migration
       t.string :title
       t.text :description
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end

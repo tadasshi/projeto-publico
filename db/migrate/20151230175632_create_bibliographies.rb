@@ -6,7 +6,7 @@ class CreateBibliographies < ActiveRecord::Migration
       t.string :image
       t.string :amazon_afiliate_link
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end
