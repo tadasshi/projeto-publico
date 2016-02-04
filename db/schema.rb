@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204171541) do
+ActiveRecord::Schema.define(version: 20160204184508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20160204171541) do
     t.string   "amazon_afiliate_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "year"
+    t.string   "author"
+    t.string   "pages"
+    t.string   "thickness"
   end
 
   create_table "ebooks", force: :cascade do |t|

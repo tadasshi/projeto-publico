@@ -1,6 +1,7 @@
 class BibliographiesController < ApplicationController
   before_action :set_bibliography, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
+  caches_page :index
 
   # GET /bibliographies
   # GET /bibliographies.json
@@ -74,6 +75,6 @@ class BibliographiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bibliography_params
-      params.require(:bibliography).permit(:title, :description, :image, :amazon_afiliate_link)
+      params.require(:bibliography).permit(:title, :description, :image, :amazon_afiliate_link, :year, :author, :pages, :thickness)
     end
 end

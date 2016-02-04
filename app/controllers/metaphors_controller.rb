@@ -1,6 +1,7 @@
 class MetaphorsController < ApplicationController
   before_action :set_metaphor, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
+  caches_page :index
 
   # GET /metaphors
   # GET /metaphors.json

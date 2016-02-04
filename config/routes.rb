@@ -15,9 +15,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'home/contact'
-
-  get 'home/about_us'
+  get 'contato' => 'home#contact'
+  get 'sobre-nos' => 'home#about_us'
 
   get 'feed.rss', :controller => 'feed', :action => 'rss', :format => 'rss', as: 'feed'
 

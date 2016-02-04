@@ -1,7 +1,15 @@
 # Deploy
 
 ## http://www.inboundio.com/blog/seo-for-ruby-on-rails-complete-guide/
-## Implementar SEO
+## SEO START
+## Implementar 301 Redirect from non www to www
+## Implementar Add noindex  
+## Implementar Meta Tags
+## Implementar Sitemap XML
+## Implementar Breadcrumbs
+## SEO END
+
+## Implementar link para amazon em ebooks
 
 ## https://github.com/rspec/rspec-rails
 ## Implementar testes
@@ -16,9 +24,9 @@
 ## http://www.rubydoc.info/gems/active_paypal_adaptive_payment/0.3.16
 ## Implementar venda atraves do paypal
 
-## https://github.com/intridea/omniauth
-## http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
-## Integrar autenticaçao com midias sociais
+### https://github.com/intridea/omniauth
+### http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
+### Integrar autenticaçao com midias sociais
 
 ## Add profissionais
 ## Add instituições
@@ -34,10 +42,9 @@
 ### Implementar comentarios para metaforas
 ### Implementar comentarios para bibliografias
 
-### Implementar link para amazon em ebooks
-
 ### Link para relatar bug
 
-### Adicionar campos Ano, autor, páginas e espeçura no módulo de bibliografias.
-
 ### Adiconar formulário newsletter
+
+### Implementar GeoTargeting
+### Implementar i18n
