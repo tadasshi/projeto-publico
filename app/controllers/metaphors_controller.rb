@@ -1,10 +1,15 @@
 class MetaphorsController < ApplicationController
   before_action :set_metaphor, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /metaphors
   # GET /metaphors.json
   def index
-    @metaphors = Metaphor.all.page params[:page]
+    if params[:search]
+      @metaphors = Metaphor.search(params[:search]).order("created_at DESC").page params[:page]
+    else
+      @metaphors = Metaphor.order("created_at DESC").page params[:page]
+    end
   end
 
   # GET /metaphors/1

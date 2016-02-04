@@ -2,6 +2,23 @@
 
 <h1>Listing Ebooks</h1>
 
+<%= form_tag(ebooks_path, method: 'get', class: 'navbar-form navbar-right', role: 'search', id: 'nav-search') do %>
+    <div class="form-group">
+      <div class="input-group">
+        <%= text_field_tag :search, params[:search], class: 'form-control no-radius no-border', placeholder: 'busco por...' %>
+        <span class="input-group-btn">
+            <button class="btn btn-default no-radius no-border" type="submit">
+              <i class="glyphicon glyphicon-search" style="font-size: 17px" aria-hidden="true"></i>
+            </button>
+          </span>
+      </div><!-- /input-group -->
+    </div>
+<% end %>
+
+<% if user_signed_in? %>
+    <%= link_to 'New Ebook', new_ebook_path %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -15,19 +32,17 @@
 
   <tbody>
     <% @ebooks.each do |ebook| %>
-      <tr>
-        <td><%= ebook.title %></td>
-        <td><%= ebook.description %></td>
-        <td><%= ebook.image %></td>
-        <td><%= ebook.value %></td>
-        <td><%= link_to 'Show', ebook %></td>
-        <td><%= link_to 'Edit', edit_ebook_path(ebook) %></td>
-        <td><%= link_to 'Destroy', ebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= ebook.title %></td>
+          <td><%= ebook.description %></td>
+          <td><%= ebook.image %></td>
+          <td><%= ebook.value %></td>
+          <td><%= link_to 'Show', ebook %></td>
+          <td><%= link_to 'Edit', edit_ebook_path(ebook) %></td>
+          <td><%= link_to 'Destroy', ebook, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Ebook', new_ebook_path %>

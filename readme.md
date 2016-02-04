@@ -1,16 +1,5 @@
 # Deploy
 
-## https://github.com/carrierwaveuploader/carrierwave
-## Implementar thumbnail para ebooks
-## Implementar thumbnail para metaforas
-## Implementar thumbnail para bibliografias
-
-
-## http://lugolabs.com/articles/80-build-a-rss-feed-in-ruby-on-rails
-## Implementar RSS Feed 
-
-## Implementar Busca
-
 ## http://www.inboundio.com/blog/seo-for-ruby-on-rails-complete-guide/
 ## Implementar SEO
 
@@ -22,10 +11,6 @@
 ## Implementar home
 
 ## Implementar Layout
-
-## https://github.com/CanCanCommunity/cancancan
-## Implementar Autenticaçao
-## Implementar painel
 
 ## http://www.rubydoc.info/gems/paypal-express/0.8.1
 ## http://www.rubydoc.info/gems/active_paypal_adaptive_payment/0.3.16

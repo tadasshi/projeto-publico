@@ -1,33 +1,37 @@
-<%= form_for(@bibliography) do |f| %>
-  <% if @bibliography.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bibliography.errors.count, "error") %> prohibited this bibliography from being saved:</h2>
+<%= form_for(@bibliography, :html => {:multipart => true}) do |f| %>
+    <% if @bibliography.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@bibliography.errors.count, "error") %> prohibited this bibliography from being saved:</h2>
 
-      <ul>
-      <% @bibliography.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @bibliography.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <%= image_tag @bibliography.image_url(:thumb), class: 'img-responsive', alt: @bibliography.title if @bibliography.image? %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :amazon_afiliate_link %><br>
-    <%= f.text_field :amazon_afiliate_link %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    </div>
+    <div class="field">
+      <%= f.label :amazon_afiliate_link %><br>
+      <%= f.text_field :amazon_afiliate_link %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

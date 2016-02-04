@@ -25,6 +25,12 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# sudo apt-get install libmagick++-dev
+gem 'rmagick', '~> 2.15.4'
+
+# carrierwave
+gem 'carrierwave', '~> 0.10.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,10 +1,15 @@
 class BibliographiesController < ApplicationController
   before_action :set_bibliography, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /bibliographies
   # GET /bibliographies.json
   def index
-    @bibliographies = Bibliography.all.page params[:page]
+    if params[:search]
+      @bibliographies = Bibliography.search(params[:search]).order("created_at DESC").page params[:page]
+    else
+      @bibliographies = Bibliography.order("created_at DESC").page params[:page]
+    end
   end
 
   # GET /bibliographies/1

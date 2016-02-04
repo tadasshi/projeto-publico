@@ -1,27 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <p id="notice"><%= notice %></p>
 
-<h1>Lista de Bibliografias</h1>
+  <h1>Lista de Bibliografias</h1>
 
-<div class="list-view">
-  <% @bibliographies.each do |bibliography| %>
-      <div>
-        <div class="col-sm-3">
-          <div class="bibliografia-item">
-            <div class="img-thumbnail">
-              <%= link_to 'Show', bibliography %>
-              <img class='img-responsive' alt='<%= bibliography.title %>' title='<%= bibliography.title %>' src='<%= bibliography.image %>'/>
+  <%= form_tag(bibliographies_path, method: 'get', class: 'navbar-form navbar-right', role: 'search', id: 'nav-search') do %>
+      <div class="form-group">
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], class: 'form-control no-radius no-border', placeholder: 'busco por...' %>
+          <span class="input-group-btn">
+            <button class="btn btn-default no-radius no-border" type="submit">
+              <i class="glyphicon glyphicon-search" style="font-size: 17px" aria-hidden="true"></i>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+      </div>
+  <% end %>
 
-              <td><%= link_to 'Edit', edit_bibliography_path(bibliography) %></td>
-              <td><%= link_to 'Destroy', bibliography, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+  <% if user_signed_in? %>
+      <%= link_to 'New Bibliography', new_bibliography_path %>
+  <% end %>
 
+  <div class="list-view">
+    <% @bibliographies.each do |bibliography| %>
+        <div>
+          <div class="col-sm-3">
+            <div class="bibliografia-item">
+              <div class="img-thumbnail">
+                <%= link_to 'Show', bibliography %>
+                <%= image_tag bibliography.image_url(:thumb), class: 'img-responsive', alt:bibliography.title if bibliography.image? %>
+                <td><%= link_to 'Edit', edit_bibliography_path(bibliography) %></td>
+                <td><%= link_to 'Destroy', bibliography, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <%= paginate @bibliographies %>
+  <br>
+
 </div>
-
-<%= paginate @bibliographies %>
-<br>
-
-<%= link_to 'New Bibliography', new_bibliography_path %>

@@ -11,36 +11,33 @@
 
   <head>
 
+    <title>Masteringpnl</title>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/icon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/icon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/icon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/icon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/icon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/icon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/icon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/icon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/icon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
-    <link rel="manifest" href="assets/icon/manifest.json">
+    <%= favicon_link_tag 'icon/apple-icon-57x57.png', rel: 'apple-touch-icon', sizes: '57x57' %>
+    <%= favicon_link_tag 'icon/apple-icon-60x60.png', rel: 'apple-touch-icon', sizes: '60x60' %>
+    <%= favicon_link_tag 'icon/apple-icon-72x72.png', rel: 'apple-touch-icon', sizes: '72x72' %>
+    <%= favicon_link_tag 'icon/apple-icon-114x114.png', rel: 'apple-touch-icon', sizes: '114x114' %>
+    <%= favicon_link_tag 'icon/apple-icon-120x120.png', rel: 'apple-touch-icon', sizes: '120x120' %>
+    <%= favicon_link_tag 'icon/apple-icon-144x144.png', rel: 'apple-touch-icon', sizes: '144x144' %>
+    <%= favicon_link_tag 'icon/apple-icon-152x152.png', rel: 'apple-touch-icon', sizes: '152x152' %>
+    <%= favicon_link_tag 'icon/apple-icon-180x180.png', rel: 'apple-touch-icon', sizes: '180x180' %>
+    <%= favicon_link_tag 'icon/android-icon-192x192.png', rel: 'icon', sizes: '192x192', type: 'image/png' %>
+    <%= favicon_link_tag 'icon/favicon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' %>
+    <%= favicon_link_tag 'icon/favicon-96x96.png', rel: 'icon', sizes: '96x96', type: 'image/png' %>
+    <%= favicon_link_tag 'icon/favicon-16x16.png', rel: 'icon', sizes: '16x16', type: 'image/png' %>
+    <%= favicon_link_tag 'icon/manifest.json', rel: 'manifest' %>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <meta name="robots" content="index,follow"/>
     <link rel="canonical" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
     <link rel="publisher" href="http://google.com/+Masteringpnl_channel"/>
-
-    <title>Masteringpnl</title>
-
-    <meta name="description" content="">
-
+    <%= auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'}) %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
 
@@ -49,7 +46,7 @@
   <body itemscope itemtype="http://schema.org/WebPage">
 
     <nav id="header-white" class="navbar-inverse navbar-fixed-top navbar">
-      <div class="container-fluid">
+      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -58,31 +55,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<%= root_path%>">
+          <a class="navbar-brand" href="<%= root_path %>">
             <%= image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;') %>
           </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-          <ul class="nav navbar-nav navbar-left">
-            <% if user_signed_in? %>
-                <li>Oi, <%= current_user.email %>.</li>
-                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-            <% else %>
-                <li><%= link_to 'Log in', new_session_path(resource_name) %></li>
-                <li><%= link_to 'Sign up', new_registration_path(resource_name) %></li>
-                <li><%= link_to 'Forgot your password?', new_password_path(resource_name) %></li>
-            <% end %>
-          </ul>
-
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
 
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Metaforas', metaphors_path %></li>
@@ -106,25 +85,41 @@
 
         <div class="col-md-4">
           <h3 style="margin-top: 0">Site</h3>
-          <a href="/home/index" class="blue-font-color">Página Inicial</a> <br>
-          <a href="/home/about_us" class="blue-font-color">Sobre</a> <br>
-          <a href="/home/contact" class="blue-font-color">Contato</a> <br>
+          <%= link_to 'Página Inicial', root_path, class: 'blue-font-color' %> <br>
+          <%= link_to 'Sobre', home_about_us_path, class: 'blue-font-color' %> <br>
+          <%= link_to 'Contato', home_contact_path, class: 'blue-font-color' %> <br>
         </div>
 
         <div class="col-md-4">
           <h3 style="margin-top: 0">Conteúdos</h3>
-          <a href="/bibliographies" class="blue-font-color">Bibliografia</a><br>
+          <%= link_to 'Metaforas', metaphors_path, class: 'blue-font-color' %> <br>
+          <%= link_to 'Bibliografias', bibliographies_path, class: 'blue-font-color' %> <br>
+          <%= link_to 'Ebooks', ebooks_path, class: 'blue-font-color' %> <br>
         </div>
 
         <div class="col-md-4">
           <p class="footer-social-network">
-            <a href="https://www.facebook.com/masteringpnl" target="_blank"><img src="assets/icon/social/128-facebook.png" alt="facebook"/></a>
-            <a href=""><img src="assets/icon/social/128-blogger.png" alt="blogger"/></a>
-            <a rel="publisher" href="http://google.com/+Masteringpnl_channel" target="_blank"><img src="assets/icon/social/128-googleplus.png" alt="googleplus"/></a>
-            <a href=""><img src="assets/icon/social/128-instagram.png" alt="instagram"/></a>
-            <a href=""><img src="assets/icon/social/128-rss.png" alt="rss"/></a>
-            <a href="https://twitter.com/masteringpnl" target="_blank"><img src="assets/icon/social/128-twitter.png" alt="twitter"/></a>
-            <a href="http://youtube.com/c/Masteringpnl_channel" target="_blank"><img src="assets/icon/social/128-youtube-2.png" alt="youtube"/></a>
+            <a href="https://www.facebook.com/masteringpnl" target="_blank">
+              <%= image_tag('icon/social/128-facebook.png', :alt => 'facebook') %>
+            </a>
+            <a href="">
+              <%= image_tag('icon/social/128-blogger.png', :alt => 'blogger') %>
+            </a>
+            <a rel="publisher" href="http://google.com/+Masteringpnl_channel" target="_blank">
+              <%= image_tag('icon/social/128-googleplus.png', :alt => 'googleplus') %>
+            </a>
+            <a href="">
+              <%= image_tag('icon/social/128-instagram.png', :alt => 'instagram') %>
+            </a>
+            <a href="">
+              <%= image_tag('icon/social/128-rss.png', :alt => 'rss') %>
+            </a>
+            <a href="https://twitter.com/masteringpnl" target="_blank">
+              <%= image_tag('icon/social/128-twitter.png', :alt => 'twitter') %>
+            </a>
+            <a href="http://youtube.com/c/Masteringpnl_channel" target="_blank">
+              <%= image_tag('icon/social/128-youtube-2.png', :alt => 'youtube') %>
+            </a>
           </p>
         </div>
 
@@ -134,7 +129,7 @@
         <div class="container">
 
           <div class="col-md-4">
-            <small class="pull-left">&copy; Copyright <?= date('Y') ?> - Todos direitos reservados</small>
+            <small class="pull-left">&copy; Copyright <%= Time.now.year %> - Todos direitos reservados</small>
           </div>
 
           <div class="col-md-4"></div>

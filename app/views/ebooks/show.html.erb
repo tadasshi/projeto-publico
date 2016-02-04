@@ -20,5 +20,8 @@
   <%= @ebook.value %>
 </p>
 
-<%= link_to 'Edit', edit_ebook_path(@ebook) %> |
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_ebook_path(@ebook) %> |
+<% end %>
+
 <%= link_to 'Back', ebooks_path %>

@@ -1,10 +1,15 @@
 class EbooksController < ApplicationController
   before_action :set_ebook, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /ebooks
   # GET /ebooks.json
   def index
-    @ebooks = Ebook.all
+    if params[:search]
+      @ebooks = Ebook.search(params[:search]).order("created_at DESC").page params[:page]
+    else
+      @ebooks = Ebook.order("created_at DESC").page params[:page]
+    end
   end
 
   # GET /ebooks/1

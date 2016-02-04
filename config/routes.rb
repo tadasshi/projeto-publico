@@ -3,13 +3,23 @@ Rails.application.routes.draw do
   resources :ebooks
   resources :bibliographies
   resources :metaphors
-  devise_for :users
+
+  devise_for :users, path_names: {
+      sign_up: ''
+  }
+
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
 
   root 'home#index'
 
   get 'home/contact'
 
   get 'home/about_us'
+
+  get 'feed.rss', :controller => 'feed', :action => 'rss', :format => 'rss', as: 'feed'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
