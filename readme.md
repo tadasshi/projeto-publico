@@ -2,7 +2,6 @@
 
 ## http://www.inboundio.com/blog/seo-for-ruby-on-rails-complete-guide/
 ## SEO START
-## Implementar 301 Redirect from non www to www
 ## Implementar Add noindex  
 ## Implementar Meta Tags
 ## Implementar Sitemap XML
