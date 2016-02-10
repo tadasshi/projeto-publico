@@ -23,10 +23,6 @@
 ## http://www.rubydoc.info/gems/active_paypal_adaptive_payment/0.3.16
 ## Implementar venda atraves do paypal
 
-### https://github.com/intridea/omniauth
-### http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
-### Integrar autenticaçao com midias sociais
-
 ## Add profissionais
 ## Add instituições
 ## Add artigos
@@ -34,6 +30,10 @@
 ## Add eventos
 ## Add notícias
 ## Add biografias
+
+### https://github.com/intridea/omniauth
+### http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
+### Integrar autenticaçao com midias sociais
 
 ### http://www.rubydoc.info/gems/foreigner/1.7.4
 ### http://www.rubydoc.info/gems/acts_as_commentable/4.0.2
