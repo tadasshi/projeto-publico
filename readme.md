@@ -9,10 +9,13 @@
 ## Implementar Breadcrumbs
 ## SEO END
 
+## Implementar link para amazon em ebooks
+
 ## https://github.com/rspec/rspec-rails
 ## Implementar testes
 
 ## Implementar contato
+## Implementar sobre nos
 ## Implementar home
 
 ## Implementar Layout
@@ -45,5 +48,3 @@
 
 ### Implementar GeoTargeting
 ### Implementar i18n
-
-### Implementar link para amazon em ebooks
