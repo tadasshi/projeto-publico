@@ -55,6 +55,9 @@ gem 'devise'
 # https://github.com/amatsuda/kaminari
 gem 'kaminari', '~> 0.16.3'
 
+# Mail Form
+gem 'mail_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
