@@ -1,7 +1,7 @@
 class MetaphorsController < ApplicationController
   before_action :set_metaphor, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
-  caches_page :index
+  #caches_page :index
 
   # GET /metaphors
   # GET /metaphors.json
@@ -11,20 +11,31 @@ class MetaphorsController < ApplicationController
     else
       @metaphors = Metaphor.order("created_at DESC").page params[:page]
     end
+
+    prepare_meta_tags title: 'Metáforas'
+    prepare_meta_tags noindex: true
+
   end
 
   # GET /metaphors/1
   # GET /metaphors/1.json
   def show
+    prepare_meta_tags(title: @metaphor.title,
+                      description: @metaphor.description,
+                      keywords: '',
+                      image: @metaphor.image_url,
+                      twitter: {card: ''})
   end
 
   # GET /metaphors/new
   def new
     @metaphor = Metaphor.new
+    prepare_meta_tags noindex: true
   end
 
   # GET /metaphors/1/edit
   def edit
+    prepare_meta_tags noindex: true
   end
 
   # POST /metaphors

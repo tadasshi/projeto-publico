@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sitemaps/index'
+
   resources :ebooks
   resources :bibliographies
   resources :metaphors
@@ -15,11 +17,18 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'facebook', to: redirect('https://www.facebook.com/masteringpnl')
+  get 'googleplus', to: redirect('http://google.com/+Masteringpnl_channel')
+  get 'twitter', to: redirect('https://twitter.com/masteringpnl')
+  get 'youtube', to: redirect('http://youtube.com/c/Masteringpnl_channel')
+  get 'thiagotadashi', to: redirect('http://thiagotadashi.com')
+  get 'feed_path', to: redirect('/feed.rss')
+
   get 'contato' => 'home#contact'
   get 'sobre-nos' => 'home#about_us'
 
   get 'feed.rss', :controller => 'feed', :action => 'rss', :format => 'rss', as: 'feed'
-
+  get 'sitemap.xml' => 'sitemaps#index', :format => 'xml', :as => :sitemap
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

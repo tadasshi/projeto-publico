@@ -1,44 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <% breadcrumb :metaphors, @metaphors %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
-<h1>Listing Metaphors</h1>
+  <p id="notice"><%= notice %></p>
 
-<%= form_tag(metaphors_path, method: 'get', class: 'navbar-form navbar-right', role: 'search', id: 'nav-search') do %>
-    <div class="form-group">
-      <div class="input-group">
-        <%= text_field_tag :search, params[:search], class: 'form-control no-radius no-border', placeholder: 'busco por...' %>
-        <span class="input-group-btn">
+  <h2>Listing Metaphors</h2>
+
+  <div class="row">
+    <%= form_tag(metaphors_path, method: 'get', class: 'navbar-form navbar-right', role: 'search', id: 'nav-search') do %>
+        <div class="form-group">
+          <div class="input-group">
+            <%= text_field_tag :search, params[:search], class: 'form-control no-radius no-border', placeholder: 'busco por...' %>
+            <span class="input-group-btn">
             <button class="btn btn-default no-radius no-border" type="submit">
-              <i class="glyphicon glyphicon-search" style="font-size: 17px" aria-hidden="true"></i>
+              <i class="glyphicon glyphicon-search" style="font-size: 15px" aria-hidden="true"></i>
             </button>
           </span>
-      </div><!-- /input-group -->
-    </div>
-<% end %>
-
-<% if user_signed_in? %>
-    <%= link_to 'New Metaphor', new_metaphor_path %>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @metaphors.each do |metaphor| %>
-      <tr>
-        <td><%= metaphor.title %></td>
-        <td><%= metaphor.description %></td>
-        <td><%= link_to 'Show', metaphor %></td>
-        <td><%= link_to 'Edit', edit_metaphor_path(metaphor) %></td>
-        <td><%= link_to 'Destroy', metaphor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          </div><!-- /input-group -->
+        </div>
     <% end %>
-  </tbody>
-</table>
-<%= paginate @metaphors %>
-<br>
+  </div>
+
+  <% if user_signed_in? %>
+      <%= link_to 'New Metaphor', new_metaphor_path %>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @metaphors.each do |metaphor| %>
+          <tr>
+            <td><%= metaphor.title %></td>
+            <td><%= metaphor.description %></td>
+            <td><%= link_to 'Show', metaphor %></td>
+
+            <% if user_signed_in? %>
+                <td><%= link_to 'Edit', edit_metaphor_path(metaphor) %></td>
+                <td><%= link_to 'Destroy', metaphor, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <%= paginate @metaphors %>
+  </div>
+</div>

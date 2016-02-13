@@ -1,35 +1,28 @@
-# Deploy
+Hoje
+=============================
 
-## http://www.inboundio.com/blog/seo-for-ruby-on-rails-complete-guide/
-## SEO START
-## Implementar Add noindex  
-## Implementar Meta Tags
-## Implementar Sitemap XML
-## Implementar Breadcrumbs
-## SEO END
-
-## Implementar link para amazon em ebooks
-
-## https://github.com/rspec/rspec-rails
-## Implementar testes
-
-## Implementar contato
-## Implementar sobre nos
-## Implementar home
-
-## Implementar Layout
+## Implementar Layout (falta finalizar layout)
 
 ## http://www.rubydoc.info/gems/paypal-express/0.8.1
 ## http://www.rubydoc.info/gems/active_paypal_adaptive_payment/0.3.16
 ## Implementar venda atraves do paypal
 
-## Add profissionais
-## Add instituições
-## Add artigos
-## Add videos
-## Add eventos
-## Add notícias
-## Add biografias
+## Implementar home (falta imagem de capa)
+
+## Deploy
+
+## Implementar contato (falta mandar email)
+
+Amanham
+================================
+
+### Add profissionais
+### Add instituições
+### Add artigos
+### Add videos
+### Add eventos
+### Add notícias
+### Add biografias
 
 ### https://github.com/intridea/omniauth
 ### http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
@@ -47,3 +40,8 @@
 
 ### Implementar GeoTargeting
 ### Implementar i18n
+
+### Implementar link para amazon em ebooks
+
+### https://github.com/rspec/rspec-rails
+### Implementar testes

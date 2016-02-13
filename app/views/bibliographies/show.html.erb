@@ -1,4 +1,8 @@
-<div class="bibliografia-record-view" itemscope="http://schema.org/Product">
+<div class="container" itemscope="http://schema.org/Product">
+
+  <% breadcrumb :bibliography, @bibliography %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
+
   <p id="notice"><%= notice %></p>
 
   <div class="col-md-4">

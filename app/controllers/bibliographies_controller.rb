@@ -1,30 +1,42 @@
 class BibliographiesController < ApplicationController
   before_action :set_bibliography, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
-  caches_page :index
+  #caches_page :index
 
   # GET /bibliographies
   # GET /bibliographies.json
   def index
+
     if params[:search]
       @bibliographies = Bibliography.search(params[:search]).order("created_at DESC").page params[:page]
     else
       @bibliographies = Bibliography.order("created_at DESC").page params[:page]
     end
+
+    prepare_meta_tags title: 'Bibliografias'
+
   end
 
   # GET /bibliographies/1
   # GET /bibliographies/1.json
   def show
+    prepare_meta_tags(title: @bibliography.title,
+                      description: @bibliography.description,
+                      keywords: '',
+                      image: @bibliography.image_url,
+                      twitter: {card: ''})
+
   end
 
   # GET /bibliographies/new
   def new
     @bibliography = Bibliography.new
+    prepare_meta_tags noindex: true
   end
 
   # GET /bibliographies/1/edit
   def edit
+    prepare_meta_tags noindex: true
   end
 
   # POST /bibliographies
@@ -68,13 +80,13 @@ class BibliographiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bibliography
-      @bibliography = Bibliography.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bibliography
+    @bibliography = Bibliography.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def bibliography_params
-      params.require(:bibliography).permit(:title, :description, :image, :amazon_afiliate_link, :year, :author, :pages, :thickness)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def bibliography_params
+    params.require(:bibliography).permit(:title, :description, :image, :amazon_afiliate_link, :year, :author, :pages, :thickness)
+  end
 end

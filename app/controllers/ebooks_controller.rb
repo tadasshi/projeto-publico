@@ -1,7 +1,7 @@
 class EbooksController < ApplicationController
   before_action :set_ebook, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
-  caches_page :index, :show
+  #caches_page :index, :show
 
   # GET /ebooks
   # GET /ebooks.json
@@ -11,20 +11,30 @@ class EbooksController < ApplicationController
     else
       @ebooks = Ebook.order("created_at DESC").page params[:page]
     end
+
+    prepare_meta_tags title: 'Ebooks'
+
   end
 
   # GET /ebooks/1
   # GET /ebooks/1.json
   def show
+    prepare_meta_tags(title: @ebook.title,
+                      description: @ebook.description,
+                      keywords: '',
+                      image: @ebook.image_url,
+                      twitter: {card: ''})
   end
 
   # GET /ebooks/new
   def new
     @ebook = Ebook.new
+    prepare_meta_tags noindex: true
   end
 
   # GET /ebooks/1/edit
   def edit
+    prepare_meta_tags noindex: true
   end
 
   # POST /ebooks

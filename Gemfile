@@ -55,6 +55,13 @@ gem 'devise'
 # https://github.com/amatsuda/kaminari
 gem 'kaminari', '~> 0.16.3'
 
+# kpumuk/meta-tags
+# https://github.com/kpumuk/meta-tags
+gem 'meta-tags'
+
+# xml-sitemap
+gem 'gretel'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

@@ -1,27 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <% breadcrumb :ebook, @ebook %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @ebook.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @ebook.description %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @ebook.title %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @ebook.image %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @ebook.description %>
+  </p>
 
-<p>
-  <strong>Value:</strong>
-  <%= @ebook.value %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <%= @ebook.image %>
+  </p>
 
-<% if user_signed_in? %>
-    <%= link_to 'Edit', edit_ebook_path(@ebook) %> |
-<% end %>
+  <p>
+    <strong>Value:</strong>
+    <%= @ebook.value %>
+  </p>
 
-<%= link_to 'Back', ebooks_path %>
+  <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_ebook_path(@ebook) %> |
+  <% end %>
+
+  <%= link_to 'Back', ebooks_path %>
+</div>

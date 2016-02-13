@@ -11,9 +11,8 @@
 
   <head>
 
-    <title>Masteringpnl</title>
     <meta name="robots" content="index,follow"/>
-    <meta name="description" content="">
+    <%= display_meta_tags %>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,9 +54,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<%= root_path %>">
-            <%= image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;') %>
-          </a>
+          <%= link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;'), root_path, class: 'navbar-brand' %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,9 +69,11 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <section class="container" ng-app="masteringpnl">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <section ng-app="masteringpnl">
+      <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
 
       <%= yield %>
 
@@ -99,27 +98,13 @@
 
         <div class="col-md-4">
           <p class="footer-social-network">
-            <a href="https://www.facebook.com/masteringpnl" target="_blank">
-              <%= image_tag('icon/social/128-facebook.png', :alt => 'facebook') %>
-            </a>
-            <a href="">
-              <%= image_tag('icon/social/128-blogger.png', :alt => 'blogger') %>
-            </a>
-            <a rel="publisher" href="http://google.com/+Masteringpnl_channel" target="_blank">
-              <%= image_tag('icon/social/128-googleplus.png', :alt => 'googleplus') %>
-            </a>
-            <a href="">
-              <%= image_tag('icon/social/128-instagram.png', :alt => 'instagram') %>
-            </a>
-            <a href="">
-              <%= image_tag('icon/social/128-rss.png', :alt => 'rss') %>
-            </a>
-            <a href="https://twitter.com/masteringpnl" target="_blank">
-              <%= image_tag('icon/social/128-twitter.png', :alt => 'twitter') %>
-            </a>
-            <a href="http://youtube.com/c/Masteringpnl_channel" target="_blank">
-              <%= image_tag('icon/social/128-youtube-2.png', :alt => 'youtube') %>
-            </a>
+            <%= link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank' %>
+            <%= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank' %>
+            <%= link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher' %>
+            <%= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank' %>
+            <%= link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank' %>
+            <%= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank' %>
+            <%= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank' %>
           </p>
         </div>
 
@@ -136,7 +121,8 @@
 
           <div class="col-md-4">
             <small class="pull-right">Desenvolvidor por
-              <a class="white-font-color" href="http://thiagotadashi.com" target="_blank">Thiago Tadashi</a></small>
+              <%= link_to 'Thiago Tadashi', thiagotadashi_path, class: 'white-font-color', target: '_blank' %>
+            </small>
           </div>
 
         </div>

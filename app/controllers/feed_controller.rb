@@ -1,5 +1,4 @@
 class FeedController < ApplicationController
-  caches_page :rss
   layout false
 
   def rss

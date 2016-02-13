@@ -1,22 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <% breadcrumb :metaphor, @metaphor %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @metaphor.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @metaphor.description %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @metaphor.title %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @ebook.image %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @metaphor.description %>
+  </p>
 
-<% if user_signed_in? %>
-    <%= link_to 'Edit', edit_metaphor_path(@metaphor) %> |
-<% end %>
+  <p>
+    <strong>Image:</strong>
+    <%= @metaphor.image %>
+  </p>
 
-<%= link_to 'Back', metaphors_path %>
+  <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_metaphor_path(@metaphor) %> |
+  <% end %>
+
+  <%= link_to 'Back', metaphors_path %>
+</div>
