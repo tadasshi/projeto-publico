@@ -13,7 +13,6 @@ class MetaphorsController < ApplicationController
     end
 
     prepare_meta_tags title: 'Metáforas'
-    prepare_meta_tags noindex: true
 
   end
 
@@ -86,6 +85,6 @@ class MetaphorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def metaphor_params
-      params.require(:metaphor).permit(:title, :description)
+      params.require(:metaphor).permit(:title, :description, :image)
     end
 end

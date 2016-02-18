@@ -4,25 +4,25 @@
 
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @ebook.title %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @ebook.description %>
-  </p>
+  <div class="col-md-4">
+    <img itemprop='image' class='img-responsive img-thumbnail' alt='<%= @ebook.title %>' title='<%= @ebook.title %>' src='<%= @ebook.image %>'/>
+  </div>
 
-  <p>
-    <strong>Image:</strong>
-    <%= @ebook.image %>
-  </p>
+  <div class="col-md-8">
 
-  <p>
-    <strong>Value:</strong>
-    <%= @ebook.value %>
-  </p>
+    <h1 itemprop="name"><%= @ebook.title %></h1>
+
+    <p itemprop="description">
+      <%= simple_format @ebook.description %>
+    </p>
+
+    <p>
+      <strong>Value:</strong>
+      <%= @ebook.value %>
+    </p>
+
+  </div>
 
   <% if user_signed_in? %>
       <%= link_to 'Edit', edit_ebook_path(@ebook) %> |

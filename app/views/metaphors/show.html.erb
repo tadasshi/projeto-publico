@@ -4,20 +4,18 @@
 
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @metaphor.title %>
-  </p>
+  <div class="col-md-4">
+    <img itemprop='image' class='img-responsive img-thumbnail' alt='<%= @metaphor.title %>' title='<%= @metaphor.title %>' src='<%= @metaphor.image %>'/>
+  </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @metaphor.description %>
-  </p>
+  <div class="col-md-8">
 
-  <p>
-    <strong>Image:</strong>
-    <%= @metaphor.image %>
-  </p>
+    <h1 itemprop="name"><%= @metaphor.title %></h1>
+
+    <p itemprop="description">
+      <%= simple_format @metaphor.description %>
+    </p>
+  </div>
 
   <% if user_signed_in? %>
       <%= link_to 'Edit', edit_metaphor_path(@metaphor) %> |

@@ -1,11 +1,8 @@
 Hoje
 =============================
 
-## Implementar Layout (falta finalizar layout)
-
-## http://www.rubydoc.info/gems/paypal-express/0.8.1
-## http://www.rubydoc.info/gems/active_paypal_adaptive_payment/0.3.16
-## Implementar venda atraves do paypal
+## https://masteringpnl.fetchapp.com/admin/products/new
+## paginas de compra
 
 ## Implementar home (falta imagem de capa)
 

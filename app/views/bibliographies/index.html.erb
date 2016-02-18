@@ -1,6 +1,8 @@
 <div class="container">
+
   <% breadcrumb :bibliographies, @bibliographies %>
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
+
   <p id="notice"><%= notice %></p>
 
   <h2>Lista de Bibliografias</h2>
@@ -29,8 +31,7 @@
         <div>
           <div class="col-sm-3">
             <div class="img-thumbnail">
-              <%= link_to 'Show', bibliography %>
-              <%= image_tag bibliography.image_url(:thumb), class: 'img-responsive', alt: bibliography.title if bibliography.image? %>
+              <%= link_to image_tag(bibliography.image_url(:thumb), class: 'img-responsive', alt: bibliography.title), bibliography %>
 
               <% if user_signed_in? %>
                   <td><%= link_to 'Edit', edit_bibliography_path(bibliography) %></td>

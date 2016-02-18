@@ -26,34 +26,22 @@
       <%= link_to 'New Ebook', new_ebook_path %>
   <% end %>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Image</th>
-        <th>Value</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <div>
+    <% @ebooks.each do |ebook| %>
+        <div>
+          <div class="col-sm-3">
+            <div class="img-thumbnail">
+              <%= link_to image_tag(ebook.image_url(:thumb), class: 'img-responsive', alt: ebook.title), ebook %>
 
-    <tbody>
-      <% @ebooks.each do |ebook| %>
-          <tr>
-            <td><%= ebook.title %></td>
-            <td><%= ebook.description %></td>
-            <td><%= ebook.image %></td>
-            <td><%= ebook.value %></td>
-            <td><%= link_to 'Show', ebook %></td>
-
-            <% if user_signed_in? %>
-                <td><%= link_to 'Edit', edit_ebook_path(ebook) %></td>
-                <td><%= link_to 'Destroy', ebook, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-            <% end %>
-          </tr>
-      <% end %>
-    </tbody>
-  </table>
+              <% if user_signed_in? %>
+                  <td><%= link_to 'Edit', edit_ebook_path(ebook) %></td>
+                  <td><%= link_to 'Destroy', ebook, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 
   <div class="row">
     <%= paginate @ebooks %>
