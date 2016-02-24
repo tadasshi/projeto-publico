@@ -1,13 +1,22 @@
 <div class="site-index">
 
-  <div class="jumbotron">
-    <%= image_tag('logo.png', :alt => 'Logo', :style => 'height: 150px;') %>
-    <p class="lead">Seja bem vindo!</p>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag('banner-1.jpg', :alt => 'Banner', class: 'img-responsive') %>
+      </div>
+      <div class="item">
+        <%= image_tag('banner-2.jpg', :alt => 'Banner', class: 'img-responsive') %>
+      </div>
+      <div class="item">
+        <%= image_tag('banner-3.jpg', :alt => 'Banner', class: 'img-responsive') %>
+      </div>
+    </div>
   </div>
 
   <div class="body-content">
 
-    <div class="row main-menu">
+    <div class="clearfix main-menu">
       <div class="col-lg-4">
         <div class="col-lg-12 text-center">
           <h2>Bibliografias</h2>

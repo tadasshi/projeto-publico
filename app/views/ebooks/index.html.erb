@@ -7,7 +7,11 @@
 
   <h2>Listing Ebooks</h2>
 
-  <div class="row">
+  <div class="nav">
+    <% if user_signed_in? %>
+        <%= link_to 'New Ebook', new_ebook_path, class: 'btn flat-button remove-border blue-button white-font-color' %>
+    <% end %>
+
     <%= form_tag(ebooks_path, method: 'get', class: 'navbar-form navbar-right', role: 'search', id: 'nav-search') do %>
         <div class="form-group">
           <div class="input-group">
@@ -22,11 +26,7 @@
     <% end %>
   </div>
 
-  <% if user_signed_in? %>
-      <%= link_to 'New Ebook', new_ebook_path %>
-  <% end %>
-
-  <div>
+  <div class="clearfix">
     <% @ebooks.each do |ebook| %>
         <div>
           <div class="col-sm-3">
@@ -43,7 +43,7 @@
     <% end %>
   </div>
 
-  <div class="row">
+  <div class="pagination">
     <%= paginate @ebooks %>
   </div>
 </div>

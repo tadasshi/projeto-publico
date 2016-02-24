@@ -38,12 +38,11 @@
           <img src="http://ir-na.amazon-adsystem.com/e/ir?t=mapn-20&l=as2&o=1&a=8532304710" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"/>
         </div>
     <% end %>
+
+    <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
+    <% end %>
+
+    <%= link_to 'Back', bibliographies_path %>
   </div>
-
-  <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
-  <% end %>
-
-  <%= link_to 'Back', bibliographies_path %>
-
 </div>

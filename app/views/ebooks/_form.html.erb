@@ -12,27 +12,35 @@
         </div>
     <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: 'form-control' %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label :image %><br>
-      <%= f.file_field :image %>
-    </div>
-    <div>
-      <%= image_tag @ebook.image_url(:thumb), class: 'img-responsive', alt: @ebook.title if @ebook.image? %>
+      <%= f.text_area :description, class: 'form-control' %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :value %><br>
-      <%= f.text_field :value %>
+      <%= f.text_field :value, class: 'form-control' %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+
+    <div class="form-group">
+      <%= f.label :url %><br>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %> <br>
+      <div>
+        <%= image_tag @ebook.image_url(:thumb), class: 'img-responsive', alt: @ebook.title if @ebook.image? %>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <br>
+      <%= f.submit 'Cadastrar', class: 'btn flat-button remove-border blue-button white-font-color' %>
     </div>
 <% end %>

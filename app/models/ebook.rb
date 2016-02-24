@@ -1,5 +1,6 @@
 class Ebook < ActiveRecord::Base
   validates :title, presence: true
+  validates :url, presence: true
   validates :value, numericality: {greater_than: 0}
   mount_uploader :image, AvatarUploader
 

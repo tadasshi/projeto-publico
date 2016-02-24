@@ -11,43 +11,48 @@
         </div>
     <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: 'form-control' %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :description %><br>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, class: 'form-control' %>
     </div>
-    <div class="field">
-      <%= f.label :image %><br>
-      <%= f.file_field :image %>
+
+    <div class="form-group">
+      <%= f.label :year %><br>
+      <%= f.text_field :year, class: 'form-control' %>
     </div>
+    <div class="form-group">
+      <%= f.label :author %><br>
+      <%= f.text_field :author, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :pages %><br>
+      <%= f.text_field :pages, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :thickness %><br>
+      <%= f.text_field :thickness, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :amazon_afiliate_link %><br>
+      <%= f.text_field :amazon_afiliate_link, class: 'form-control' %>
+    </div>
+
     <div>
-      <%= image_tag @bibliography.image_url(:thumb), class: 'img-responsive', alt: @bibliography.title if @bibliography.image? %>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %> <br>
+
+      <div>
+        <%= image_tag @bibliography.image_url(:thumb), class: 'img-responsive', alt: @bibliography.title if @bibliography.image? %>
+      </div>
 
     </div>
-    <div class="field">
-      <%= f.label :year %><br>
-      <%= f.text_field :year %>
-    </div>
-    <div class="field">
-      <%= f.label :author %><br>
-      <%= f.text_field :author %>
-    </div>
-    <div class="field">
-      <%= f.label :pages %><br>
-      <%= f.text_field :pages %>
-    </div>
-    <div class="field">
-      <%= f.label :thickness %><br>
-      <%= f.text_field :thickness %>
-    </div>
-    <div class="field">
-      <%= f.label :amazon_afiliate_link %><br>
-      <%= f.text_field :amazon_afiliate_link %>
-    </div>
+
     <div class="actions">
-      <%= f.submit %>
+      <br>
+      <%= f.submit 'Cadastrar', class: 'btn flat-button remove-border blue-button white-font-color' %>
     </div>
 <% end %>

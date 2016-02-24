@@ -4,8 +4,6 @@ Hoje
 ## https://masteringpnl.fetchapp.com/admin/products/new
 ## paginas de compra
 
-## Implementar home (falta imagem de capa)
-
 ## Deploy
 
 ## Implementar contato (falta mandar email)

@@ -59,7 +59,7 @@ gem 'kaminari', '~> 0.16.3'
 # https://github.com/kpumuk/meta-tags
 gem 'meta-tags'
 
-# xml-sitemap
+# breadcrumb
 gem 'gretel'
 
 group :development, :test do

@@ -15,11 +15,12 @@
     <p itemprop="description">
       <%= simple_format @metaphor.description %>
     </p>
+
+    <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_metaphor_path(@metaphor) %> |
+    <% end %>
+
+    <%= link_to 'Back', metaphors_path %>
+
   </div>
-
-  <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_metaphor_path(@metaphor) %> |
-  <% end %>
-
-  <%= link_to 'Back', metaphors_path %>
 </div>
