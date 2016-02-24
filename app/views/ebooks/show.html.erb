@@ -19,11 +19,12 @@
 
     <p>
       <strong>Value:</strong>
-      <%= @ebook.value %>
+
+      <%= number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$") %>
     </p>
 
     <% if @ebook.url %>
-        <%= link_to 'Comprar', @ebook.url, class: 'btn btn-default' %>
+        <%= link_to 'Comprar', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color' %>
     <% end %>
 
     <% if user_signed_in? %>
