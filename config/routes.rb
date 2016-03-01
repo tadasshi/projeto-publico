@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'sitemaps/index'
 
   resources :ebooks
   resources :bibliographies
   resources :metaphors
 
-  devise_for :users, path_names: {
-      sign_up: ''
-  }
-
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
   end
+
+  devise_for :users, controllers: { sessions: "user/sessions" }
+
+  devise_for :admins, controllers: { sessions: "admin/sessions" }
 
   root 'home#index'
 

@@ -59,8 +59,11 @@ gem 'kaminari', '~> 0.16.3'
 # https://github.com/kpumuk/meta-tags
 gem 'meta-tags'
 
-# breadcrumb
+# https://github.com/lassebunk/gretel
 gem 'gretel'
+
+# https://github.com/sferik/rails_admin/wiki/Devise
+gem 'rails_admin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
