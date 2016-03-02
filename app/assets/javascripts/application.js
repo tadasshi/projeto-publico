@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//  require semantic-ui/dropdown
 //  require turbolinks
 //= require_self
 //= require_tree .

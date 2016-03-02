@@ -6,10 +6,10 @@
         <%= image_tag('banner-1.jpg', :alt => 'Banner', class: 'img-responsive') %>
       </div>
       <div class="item">
-        <%= image_tag('banner-2.jpg', :alt => 'Banner', class: 'img-responsive') %>
+        <%= image_tag('banner-3.jpg', :alt => 'Banner', class: 'img-responsive') %>
       </div>
       <div class="item">
-        <%= image_tag('banner-3.jpg', :alt => 'Banner', class: 'img-responsive') %>
+        <%= image_tag('banner-2.jpg', :alt => 'Banner', class: 'img-responsive') %>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
     <div class="clearfix main-menu">
       <div class="col-lg-4">
         <div class="col-lg-12 text-center">
-          <h2>Bibliografias</h2>
+          <h3>Bibliografias</h3>
 
           <p>Confira nossa lista de sujestões.</p>
           <%= link_to 'veja mais', bibliographies_path, class: 'btn btn-default flat-button remove-border blue-button white-font-color' %>
@@ -27,7 +27,7 @@
       </div>
       <div class="col-lg-4">
         <div class="col-lg-12 text-center">
-          <h2>Ebooks</h2>
+          <h3>Ebooks</h3>
 
           <p>Nossos Ebooks</p>
           <%= link_to 'veja mais', ebooks_path, class: 'btn btn-default flat-button remove-border blue-button white-font-color' %>
@@ -35,13 +35,56 @@
       </div>
       <div class="col-lg-4">
         <div class="col-lg-12 text-center">
-          <h2>Metaforas</h2>
+          <h3>Metaforas</h3>
 
           <p>Um arsenal de metaforas</p>
           <%= link_to 'veja mais', metaphors_path, class: 'btn btn-default flat-button remove-border blue-button white-font-color' %>
         </div>
       </div>
     </div>
+    <div>
+      <div class="container text-center">
+        <br>
+        <h3>Mastering PNL</h3>
+        <br>
+        <p>A Mastering PNL é um grupo composto por pessoas com o firme propósito de ser o melhor em desenvolver, adaptar e difundir as ferramentas da PNL aliado com a psicologia, na intenção de levar a todas as pessoas independente de sua classe social, gênero e cultura a qualidade e bem estar
+          psicológico,
+          físico e social em seu dia a dia. </p>
+        <p>Mantendo sempre nossos valores como base. Focando na busca de resultados satisfatórios e mudanças duradouras.</p>
+        <br>
+      </div>
 
+    </div>
+
+    <div class="clearfix main-menu">
+
+
+      <div class="col-lg-5 center-block float-none">
+
+        <h3 class="text-center">Contato</h3>
+
+        <%= form_for(@contact, url: enviar_path, :html => {:class => 'ui form', :id => ''}, :method => 'post') do |f| %>
+
+            <div class="field">
+              <%= f.label :name %>
+              <%= f.text_field :name, placeholder: 'Seu nome' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :email %>
+              <%= f.email_field :email, placeholder: 'Seu email' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :message %>
+              <%= f.text_area :message, placeholder: 'Seu email' %>
+            </div>
+
+            <div class="form-group text-center">
+              <%= f.submit "Enviar Contato", class: 'btn flat-button remove-border blue-button white-font-color' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

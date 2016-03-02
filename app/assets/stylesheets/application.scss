@@ -11,8 +11,11 @@
  * file per style scope.
  *
  */
+@import "semantic-ui/collections/form";
+@import "semantic-ui/modules/checkbox";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
 
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
@@ -117,6 +120,8 @@ body {
   /*background-image : url("/img/paper_fibers.png");*/
   color: #555555;
   background-color: #F2F2F2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .wrap {
@@ -328,6 +333,10 @@ a.desc:after {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.float-none{
+  float: none;
+}
 
 /*
  * Hide visually and from screen readers:

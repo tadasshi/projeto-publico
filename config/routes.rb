@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
   get 'sitemaps/index'
 
@@ -9,13 +9,29 @@ Rails.application.routes.draw do
   resources :metaphors
 
   devise_scope :user do
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
+    get '/login' => 'user/sessions#new'
+    get '/logout' => 'user/sessions#destroy'
   end
 
-  devise_for :users, controllers: { sessions: "user/sessions" }
+  devise_for :users, controllers: {
+      confirmations: "user/confirmations",
+      omniauth: "user/omniauth",
+      passwords: "user/passwords",
+      registrations: "user/registrations",
+      sessions: "user/sessions",
+      unlocks: "user/unlocks",
+  }
 
-  devise_for :admins, controllers: { sessions: "admin/sessions" }
+  devise_for :admins, controllers: {
+      confirmations: "admin/confirmations",
+      omniauth: "admin/omniauth",
+      passwords: "admin/passwords",
+      registrations: "admin/registrations",
+      sessions: "admin/sessions",
+      unlocks: "user/unlocks",
+  }, path_names: {
+      sign_up: ''
+  }
 
   root 'home#index'
 
@@ -28,7 +44,7 @@ Rails.application.routes.draw do
 
   get 'contato' => 'home#contact'
   get 'sobre-nos' => 'home#about_us'
-  post 'enviar' => 'home#deliver'
+  post 'enviar' => 'home#send_email'
 
   get 'feed.rss', :controller => 'feed', :action => 'rss', :format => 'rss', as: 'feed'
   get 'sitemap.xml' => 'sitemaps#index', :format => 'xml', :as => :sitemap
