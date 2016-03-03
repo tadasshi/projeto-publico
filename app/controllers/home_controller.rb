@@ -6,6 +6,8 @@ class HomeController < ApplicationController
 
   def contact
     prepare_meta_tags title: 'Contato'
+    @contact = Contact.new
+
   end
 
   def send_email

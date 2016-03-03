@@ -1,27 +1,21 @@
 <div class="container">
 
-  <% breadcrumb :bibliographies, @bibliographies %>
-  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
-
   <p id="notice"><%= notice %></p>
 
   <h2>Lista de Bibliografias</h2>
+
+  <% breadcrumb :bibliographies, @bibliographies %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
   <div class="nav">
     <% if user_signed_in? %>
         <%= link_to 'New Bibliography', new_bibliography_path, class: 'btn flat-button remove-border blue-button white-font-color' %>
     <% end %>
 
-    <%= form_tag(bibliographies_path, method: 'get', class: 'navbar-form navbar-right', role: 'search', id: 'nav-search') do %>
-        <div class="form-group">
-          <div class="input-group">
-            <%= text_field_tag :search, params[:search], class: 'form-control no-radius no-border', placeholder: 'busco por...' %>
-            <span class="input-group-btn">
-            <button class="btn btn-default no-radius no-border" type="submit">
-              <i class="glyphicon glyphicon-search" style="font-size: 15px" aria-hidden="true"></i>
-            </button>
-          </span>
-          </div><!-- /input-group -->
+    <%= form_tag(bibliographies_path, method: 'get', class: 'navbar-form navbar-right form ui', role: 'search', id: 'nav-search') do %>
+        <div class="ui icon input">
+          <%= text_field_tag :search, params[:search], placeholder: 'busco por...' %>
+          <i class="search icon"></i>
         </div>
     <% end %>
   </div>

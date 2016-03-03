@@ -43,33 +43,33 @@
   </head>
 
   <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="header">
+      <nav class="navbar-inverse navbar-fixed-top navbar">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%= link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;'), root_path, class: 'navbar-brand' %>
+          </div>
 
-    <nav id="header-white" class="navbar-inverse navbar-fixed-top navbar">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;'), root_path, class: 'navbar-brand' %>
-        </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Metaforas', metaphors_path %></li>
-            <li><%= link_to 'Bibliografias', bibliographies_path %></li>
-            <li><%= link_to 'Ebooks', ebooks_path %></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <section ng-app="masteringpnl"  style="padding-top: 50px">
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Metaforas', metaphors_path %></li>
+              <li><%= link_to 'Bibliografias', bibliographies_path %></li>
+              <li><%= link_to 'Ebooks', ebooks_path %></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <section ng-app="masteringpnl" style="padding-top: 50px">
 
       <%= yield %>
 
@@ -79,20 +79,21 @@
       <div class="container" style="margin-bottom: 20px">
 
         <div class="col-md-4">
-          <h3 style="margin-top: 0">Site</h3>
-          <%= link_to 'Página Inicial', root_path, class: 'blue-font-color' %> <br>
-          <%= link_to 'Sobre', sobre_nos_path, class: 'blue-font-color' %> <br>
-          <%= link_to 'Contato', contato_path, class: 'blue-font-color' %> <br>
+          <h3>Site</h3>
+          <%= link_to 'Página Inicial', root_path %> <br>
+          <%= link_to 'Sobre', sobre_nos_path %> <br>
+          <%= link_to 'Contato', contato_path %> <br>
         </div>
 
         <div class="col-md-4">
-          <h3 style="margin-top: 0">Conteúdos</h3>
-          <%= link_to 'Metaforas', metaphors_path, class: 'blue-font-color' %> <br>
-          <%= link_to 'Bibliografias', bibliographies_path, class: 'blue-font-color' %> <br>
-          <%= link_to 'Ebooks', ebooks_path, class: 'blue-font-color' %> <br>
+          <h3>Conteúdos</h3>
+          <%= link_to 'Metaforas', metaphors_path %> <br>
+          <%= link_to 'Bibliografias', bibliographies_path %> <br>
+          <%= link_to 'Ebooks', ebooks_path %> <br>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 text-right">
+          <h3 class="">Midias Sociais</h3>
           <p class="footer-social-network">
             <%= link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank' %>
             <%#= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank' %>
@@ -106,7 +107,7 @@
 
       </div>
 
-      <div class="white-font-color" style="background-color: rgb(119, 119, 119);padding: 8px 0px;">
+      <div style="padding: 8px 0px;">
         <div class="container">
 
           <div class="col-md-4">
@@ -116,8 +117,9 @@
           <div class="col-md-4"></div>
 
           <div class="col-md-4">
-            <small class="pull-right">Desenvolvidor por
-              <%= link_to 'Thiago Tadashi', thiagotadashi_path, class: 'white-font-color', target: '_blank' %>
+            <small class="pull-right">
+              Desenvolvidor por
+              <%= link_to 'Thiago Tadashi', thiagotadashi_path, target: '_blank' %>
             </small>
           </div>
 
