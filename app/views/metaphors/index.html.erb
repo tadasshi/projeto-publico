@@ -8,11 +8,7 @@
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
   <div class="nav">
-    <% if user_signed_in? %>
-        <%= link_to 'New Metaphor', new_metaphor_path, class: 'btn flat-button remove-border blue-button white-font-color' %>
-    <% end %>
-
-    <%= form_tag(metaphors_path, method: 'get', class: 'navbar-form navbar-right form ui', role: 'search', id: 'nav-search') do %>
+    <%= form_tag(metaphors_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>
         <div class="ui icon input">
           <%= text_field_tag :search, params[:search], placeholder: 'busco por...' %>
           <i class="search icon"></i>
@@ -32,10 +28,6 @@
       <% @metaphors.each do |metaphor| %>
           <tr>
             <td><%= link_to metaphor.title, metaphor %></td>
-            <% if user_signed_in? %>
-                <td><%= link_to 'Edit', edit_metaphor_path(metaphor) %></td>
-                <td><%= link_to 'Destroy', metaphor, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-            <% end %>
           </tr>
       <% end %>
     </tbody>

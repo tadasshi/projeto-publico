@@ -8,11 +8,7 @@
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
   <div class="nav">
-    <% if user_signed_in? %>
-        <%= link_to 'New Bibliography', new_bibliography_path, class: 'btn flat-button remove-border blue-button white-font-color' %>
-    <% end %>
-
-    <%= form_tag(bibliographies_path, method: 'get', class: 'navbar-form navbar-right form ui', role: 'search', id: 'nav-search') do %>
+    <%= form_tag(bibliographies_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>
         <div class="ui icon input">
           <%= text_field_tag :search, params[:search], placeholder: 'busco por...' %>
           <i class="search icon"></i>
@@ -21,20 +17,35 @@
   </div>
 
   <div class="clearfix">
-    <% @bibliographies.each do |bibliography| %>
-        <div>
-          <div class="col-sm-3">
-            <div class="img-thumbnail">
-              <%= link_to image_tag(bibliography.image_url(:thumb), class: 'img-responsive', alt: bibliography.title), bibliography %>
-
-              <% if user_signed_in? %>
-                  <td><%= link_to 'Edit', edit_bibliography_path(bibliography) %></td>
-                  <td><%= link_to 'Destroy', bibliography, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-              <% end %>
+    <div class="ui divided items">
+      <% @bibliographies.each do |bibliography| %>
+          <div class="item">
+            <div class="image">
+              <%= image_tag(bibliography.image ? bibliography.image_url(:thumb) : 'empty-image.png', class: 'img-responsive', alt: bibliography.title) %>
+            </div>
+            <div class="content">
+              <a class="header"><%= bibliography.title %></a>
+              <div class="meta">
+                <span class="cinema"><%= bibliography.author %></span>
+              </div>
+              <div class="description">
+                <p>
+                  <%= simple_format truncate(bibliography.description, :length => 200) %>
+                </p>
+              </div>
+              <div class="extra">
+                <%= link_to bibliography, class: 'btn flat-button remove-border blue-button white-font-color' do %>
+                    ver mais
+                    <i class="right chevron icon"></i>
+                <% end %>
+                <!--<div class="ui label">Limited</div>-->
+                <!--<div class="ui label"><i class="globe icon"></i> Additional Languages</div>-->
+              </div>
             </div>
           </div>
-        </div>
-    <% end %>
+
+      <% end %>
+    </div>
   </div>
 
   <div class="pagination">

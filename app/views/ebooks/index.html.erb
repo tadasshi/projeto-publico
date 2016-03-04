@@ -8,11 +8,7 @@
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
   <div class="nav">
-    <% if user_signed_in? %>
-        <%= link_to 'New Ebook', new_ebook_path, class: 'btn flat-button remove-border blue-button white-font-color' %>
-    <% end %>
-
-    <%= form_tag(ebooks_path, method: 'get', class: 'navbar-form navbar-right form ui', role: 'search', id: 'nav-search') do %>
+    <%= form_tag(ebooks_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>
         <div class="ui icon input">
           <%= text_field_tag :search, params[:search], placeholder: 'busco por...' %>
           <i class="search icon"></i>
@@ -22,20 +18,6 @@
 
   <div class="clearfix row">
     <% @ebooks.each do |ebook| %>
-        <!--<div>-->
-        <!--<div class="col-sm-3">-->
-        <!--<div class="img-thumbnail">-->
-        <!--<%= link_to image_tag(ebook.image_url(:thumb), class: 'img-responsive', alt: ebook.title), ebook %>-->
-
-        <!--
-        <% if user_signed_in? %>-->
-            <!--<td><%= link_to 'Edit', edit_ebook_path(ebook) %></td>-->
-            <!--<td><%= link_to 'Destroy', ebook, method: :delete, data: {confirm: 'Are you sure?'} %></td>-->
-            <!--
-        <% end %>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
 
         <div class="col-md-3">
           <div class="ui card">
