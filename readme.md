@@ -41,6 +41,12 @@ Amanham
 ### https://github.com/rspec/rspec-rails
 ### Implementar testes
 
+sudo
 pasphrase = masteringpnl
 The key fingerprint is:
 43:a6:f8:3f:09:d7:6d:3a:d2:00:8d:28:92:1a:e2:66
+
+deploy
+pasphrase = masteringpnl
+The key fingerprint is:
+44:01:ee:e8:ad:93:fa:6a:94:c7:d5:9b:94:02:53:14
