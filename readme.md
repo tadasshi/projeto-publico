@@ -33,10 +33,14 @@ Amanham
 
 ### Adiconar formulário newsletter
 
-### Implementar GeoTargeting
+### Implementar GeoTargetings
 ### Implementar i18n
 
 ### Implementar link para amazon em ebooks
 
 ### https://github.com/rspec/rspec-rails
 ### Implementar testes
+
+pasphrase = masteringpnl
+The key fingerprint is:
+43:a6:f8:3f:09:d7:6d:3a:d2:00:8d:28:92:1a:e2:66

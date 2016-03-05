@@ -34,12 +34,6 @@ gem 'carrierwave', '~> 0.10.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Rails bootstrap
 # http://www.rubydoc.info/gems/bootstrap-sass/3.3.6
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -71,6 +65,7 @@ gem 'rails_admin'
 # https://github.com/plataformatec/mail_form
 gem 'mail_form'
 
+# http://puma.io/
 gem 'puma'
 
 group :development, :test do
@@ -97,6 +92,7 @@ group :development do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
+  gem 'capistrano-passenger',   require: false
 end
 
 group :production do
