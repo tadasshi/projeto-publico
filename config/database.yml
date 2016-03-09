@@ -22,5 +22,5 @@ test:
 production:
   <<: *default
   database: masteringpnl_production
-  username: rails
-  password: <%= ENV['MASTERINGPNL_DATABASE_PASSWORD'] %>
+#  username: rails
+#  password: <%= ENV['MASTERINGPNL_DATABASE_PASSWORD'] %>
