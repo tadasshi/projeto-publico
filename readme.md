@@ -71,3 +71,6 @@ Amanham
 # Devise secret Key
 # http://stackoverflow.com/questions/18080910/devise-secret-key-was-not-set
 # config/initializers/devise.rb
+
+# Setup Capistrano on LOCAL
+# https://gist.github.com/stevenyap/9130882
