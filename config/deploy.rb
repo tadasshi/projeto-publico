@@ -49,7 +49,7 @@
 
 
 # Change these
-server '104.131.98.52', port: 22, roles: [:web, :app, :db], primary: true
+server '162.243.27.174', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@bitbucket.org:tadasshi/mastering-pnl.git'
 set :application,     'masteringpnl'
