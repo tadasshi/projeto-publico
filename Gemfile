@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# ruby version
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -93,8 +95,4 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-passenger',   require: false
-end
-
-group :production do
-  gem 'unicorn'
 end

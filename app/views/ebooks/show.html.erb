@@ -13,7 +13,7 @@
 
     <div class="col-md-8">
 
-      <a itemprop="url" href="http://masteringpnl.com/ebooks/1-emagrecer-com-pnl-tecnica-de-emagrecimento-atraves-da-mudanca-de-percepcao-dos-alimentos-utilizando-pnl">
+      <a itemprop="url" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
         <div itemprop="name">
           <h1><%= @ebook.title %></h1>
         </div>
