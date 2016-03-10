@@ -25,7 +25,7 @@
               <%= image_tag ebook.image_url(:thumb), class: 'img-responsive', alt: ebook.title %>
             </div>
             <div class="content">
-              <a class="header text-center"><%= ebook.title %></a>
+              <%= link_to ebook.title, ebook, class: 'header text-center' %>
               <div class="meta text-center">
                 <span class="date">Wilson Y. K. Neves</span>
               </div>

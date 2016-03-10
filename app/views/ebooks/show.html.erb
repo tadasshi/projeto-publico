@@ -5,26 +5,62 @@
   <% breadcrumb :ebook, @ebook %>
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
-  <div class="col-md-4">
-    <img itemprop='image' class='img-responsive img-thumbnail' alt='<%= @ebook.title %>' title='<%= @ebook.title %>' src='<%= @ebook.image %>'/>
-  </div>
+  <div itemscope itemtype="http://schema.org/Book">
 
-  <div class="col-md-8">
+    <div class="col-md-4" itemprop='image' itemtype="https://schema.org/ImageObject">
+      <img itemprop="contentUrl" class='img-responsive img-thumbnail' alt='<%= @ebook.title %>' title='<%= @ebook.title %>' src='<%= @ebook.image %>'/>
+    </div>
 
-    <h1 itemprop="name"><%= @ebook.title %></h1>
-    <small class="date">Wilson Y. K. Neves</small>
+    <div class="col-md-8">
 
-    <p itemprop="description">
-      <%= simple_format @ebook.description %>
-    </p>
+      <a itemprop="url" href="http://masteringpnl.com/ebooks/1-emagrecer-com-pnl-tecnica-de-emagrecimento-atraves-da-mudanca-de-percepcao-dos-alimentos-utilizando-pnl">
+        <div itemprop="name">
+          <h1><%= @ebook.title %></h1>
+        </div>
+      </a>
 
-    <h3 class="text-right">
-      <%= number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$") %>
-    </h3>
-    <br>
-    <% if @ebook.url %>
-        <%= link_to 'Comprar', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color pull-right' %>
-    <% end %>
+      <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+        Escrito por: <span itemprop="name">Wilson Y. K. Neves</span>
+      </div>
+      <br>
+      <div itemprop="description">
+        <%= simple_format @ebook.description %>
+      </div>
+      <br>
+      <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        Publicado por: <span itemprop="name">MasteringPNL</span>
+      </div>
+      <div>
+        <meta itemprop="numberOfPages" content="27">
+        Número de Páginas: <%= @ebook.pages %> páginas
+      </div>
+      <div>
+        <meta itemprop="inLanguage" content="pt-BR">
+        Lingua: Português brasileiro
+      </div>
+      <div>
+        <meta itemprop="datePublished" content="2015-05-23">
+        Data de publicação: 05/23/2015
+      </div>
+      <div>Edition: <span itemprop="bookEdition"><%= @ebook.edition %></span></div>
+      <div>Disponível em
+        <link itemprop="bookFormat" href="http://schema.org/Ebook">
+        Ebook
+      </div>
 
+      <div itemprop="offers" itemtype="http://schema.org/Offer">
+        <meta itemprop="price" content="<%= @ebook.value %>">
+        <meta itemprop="priceCurrency" content="BRL">
+        <link itemprop="availability" href="http://schema.org/InStock">
+        <h3 class="text-right">
+          <%= number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$") %>
+        </h3>
+        <br>
+        <% if @ebook.url %>
+            <%= link_to 'Comprar', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color pull-right' %>
+        <% end %>
+
+      </div>
+    </div>
   </div>
 </div>
