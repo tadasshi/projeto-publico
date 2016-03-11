@@ -93,3 +93,7 @@ group :development do
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-passenger',   require: false
 end
+
+group :production do
+  gem 'unicorn'
+end
