@@ -77,7 +77,7 @@ set :passenger_restart_with_touch, true
 
 ## Defaults:
 # set :scm,           :git
-set :branch, :'f1bfbce9b30ea3781ad725cc1a0f9496d693497a'
+# set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
