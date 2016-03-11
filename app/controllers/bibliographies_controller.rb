@@ -20,7 +20,7 @@ class BibliographiesController < ApplicationController
   # GET /bibliographies/1
   # GET /bibliographies/1.json
   def show
-    prepare_meta_tags(title: @bibliography.title,
+    prepare_meta_tags(title: 'Bibliografias - ' + @bibliography.title,
                       description: @bibliography.description,
                       keywords: '',
                       image: @bibliography.image_url,

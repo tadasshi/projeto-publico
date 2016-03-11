@@ -24,7 +24,8 @@
               <%= image_tag(bibliography.image ? bibliography.image_url(:thumb) : 'empty-image.png', class: 'img-responsive', alt: bibliography.title) %>
             </div>
             <div class="content">
-              <a class="header"><%= bibliography.title %></a>
+              <%= link_to bibliography.title, bibliography, class: 'header' %>
+
               <div class="meta">
                 <span class="cinema"><%= bibliography.author %></span>
               </div>

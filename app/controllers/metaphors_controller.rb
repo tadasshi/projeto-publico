@@ -19,7 +19,7 @@ class MetaphorsController < ApplicationController
   # GET /metaphors/1
   # GET /metaphors/1.json
   def show
-    prepare_meta_tags(title: @metaphor.title,
+    prepare_meta_tags(title: 'Metáforas - ' + @metaphor.title,
                       description: @metaphor.description,
                       keywords: '',
                       image: @metaphor.image_url,

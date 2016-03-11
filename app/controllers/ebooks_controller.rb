@@ -1,4 +1,4 @@
-class EbooksController < ApplicationController
+class EbooksController < ApplicationContro#4D5FA9ller
   before_action :set_ebook, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, :except => [:show, :index]
   #caches_page :index, :show
@@ -19,7 +19,7 @@ class EbooksController < ApplicationController
   # GET /ebooks/1
   # GET /ebooks/1.json
   def show
-    prepare_meta_tags(title: @ebook.title,
+    prepare_meta_tags(title: 'Ebooks - ' + @ebook.title,
                       description: @ebook.description,
                       keywords: '',
                       image: @ebook.image_url,
