@@ -43,12 +43,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      # address: 'smtp.sendgrid.net',
-      address: 'smtp.gmail.com',
+      address: 'smtp.sendgrid.net',
       port: 587,
       domain: 'http://masteringpnl.com/',
-      user_name: 'tadashi@corp.kionux.com.br',
-      password: 'lambecu',
+      user_name: 'tadasshi',
+      password: 'Tadasshi*147',
       authentication: 'plain',
       enable_starttls_auto: true
   }
