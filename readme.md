@@ -21,22 +21,13 @@ MasteringPnl
 
 ## 3.0
 
-* https://github.com/intridea/omniauth
-* http://code.tutsplus.com/tutorials/how-to-use-omniauth-to-authenticate-your-users--net-22094
-* Integrar autenticaçao com midias sociais
-
-* https://github.com/rspec/rspec-rails
-* Implementar testes
-
+* [Integrar autenticaçao com midias sociais](https://github.com/intridea/omniauth)
+* [Implementar testes](https://github.com/rspec/rspec-rails)
 * Implementar i18n
 * Implementar GeoTargetings
-
-* http://www.rubydoc.info/gems/foreigner/1.7.4
-* http://www.rubydoc.info/gems/acts_as_commentable/4.0.2
-* Implementar comentarios para ebooks
-* Implementar comentarios para metaforas
-* Implementar comentarios para bibliografias
-
+* [Implementar comentarios para ebooks/](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
+* [Implementar comentarios para metaforas](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
+* [Implementar comentarios para bibliografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
 * Link para relatar bug
 
 ## Links úteis para o deploy
