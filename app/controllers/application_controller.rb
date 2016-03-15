@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, if: "request.get?"
 
   def prepare_meta_tags(options={})
-    site_name = 'Masteringpnl'
+    site_name = 'MasteringPNL'
     title = [controller_name, action_name].join(" ")
     description = 'Grupo com o propósito de desenvolver, adaptar e difundir as ferramentas da PNL aliado com a psicologia, para todos que desejam bem estar psicológico.'
     image = options[:image] || 'your-default-image-url'
@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
         title: title,
         image: image,
         description: description,
-        keywords: %w[web software development mobile app],
+        keywords: %w[pnl psicologia],
         twitter: {
             site_name: site_name,
-            site: '@thecookieshq',
+            site: '@masteringpnl',
             card: 'summary',
             description: description,
             image: image

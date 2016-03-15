@@ -30,6 +30,21 @@ MasteringPnl
 * [Implementar comentarios para bibliografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
 * Link para relatar bug
 
+## 4.0
+
+* Automatizar posts, no twitter, facebook e google+ 
+* [Repost Google+](https://github.com/google/google-api-ruby-client)
+* [Repost twitter](https://github.com/sferik/twitter)
+* [Repost facebook](https://github.com/arsduo/koala)
+* [Repost facebook - alternativa](https://github.com/nov/fb_graph2)
+
+* [links de compartilhar](https://github.com/hermango/shareable)
+* [network](https://rubygems.org/gems/social_stream)
+
+## 5.0
+
+* [Profiling](http://blog.scoutapp.com/articles/2015/09/16/profiling-rails-with-stackprof) 
+
 ## Links úteis para o deploy
 
 * [Deploying a Rails App on Ubuntu 14.04 with Capistrano, Nginx, and Puma](https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma)
