@@ -5,17 +5,29 @@
   <% breadcrumb :metaphor, @metaphor %>
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
 
-  <div class="col-md-4">
-    <img itemprop='image' class='img-responsive img-thumbnail' alt='<%= @metaphor.title %>' title='<%= @metaphor.title %>' src='<%= @metaphor.image %>'/>
+  <div itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="col-md-4" itemprop='image' itemtype="https://schema.org/ImageObject">
+      <img itemprop="contentUrl" class='img-responsive img-thumbnail' alt='<%= @metaphor.title %>' title='<%= @metaphor.title %>' src='<%= @metaphor.image %>'/>
+    </div>
+
+    <div class="col-md-8">
+
+      <a itemprop="url" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
+        <div itemprop="name">
+          <h1><%= @metaphor.title %></h1>
+        </div>
+      </a>
+
+      <small>
+        <meta itemprop="datePublished" content="<%= @metaphor.created_at.strftime("%FT") %>">
+        Data de publicação: <%= @metaphor.created_at.strftime("%d/%m/%Y") %>
+      </small>
+
+      <div itemprop="description">
+        <%= simple_format @metaphor.description %>
+      </div>
+    </div>
   </div>
 
-  <div class="col-md-8">
-
-    <h1 itemprop="name"><%= @metaphor.title %></h1>
-
-    <p itemprop="description">
-      <%= simple_format @metaphor.description %>
-    </p>
-
-  </div>
 </div>

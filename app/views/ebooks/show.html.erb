@@ -13,7 +13,7 @@
 
     <div class="col-md-8">
 
-      <a itemprop="url">
+      <a itemprop="url" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
         <div itemprop="name">
           <h1><%= @ebook.title %></h1>
         </div>
@@ -39,8 +39,8 @@
         Lingua: Português brasileiro
       </div>
       <div>
-        <meta itemprop="datePublished" content="2015-05-23">
-        Data de publicação: 05/23/2015
+        <meta itemprop="datePublished" content="<%= @ebook.created_at.strftime("%FT") %>">
+        Data de publicação: <%= @ebook.created_at.strftime("%d/%m/%Y") %>
       </div>
       <div>Edition: <span itemprop="bookEdition"><%= @ebook.edition %></span></div>
       <div>Disponível em

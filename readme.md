@@ -7,6 +7,8 @@ MasteringPnl
 * Implementar contato (falta mandar email)
 * Implementar link para amazon em ebooks
 * Microdata
+* Customizar páginas 404, 422 e 500
+* Testes Automatizados
 
 ## 2.0
 
