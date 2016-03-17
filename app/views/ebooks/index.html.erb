@@ -2,10 +2,14 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h2>Listing Ebooks</h2>
+  <a itemprop="url" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
+    <div itemprop="name">
+      <h2>Listing Ebooks</h2>
+    </div>
+  </a>
 
   <% breadcrumb :ebooks, @ebooks %>
-  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', semantic: true %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true %>
 
   <div class="nav">
     <%= form_tag(ebooks_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>

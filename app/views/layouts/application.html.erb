@@ -42,9 +42,9 @@
 
   </head>
 
-  <body itemscope itemtype="http://schema.org/WebPage">
+  <body vocab="http://schema.org/" typeof="WebPage">
     <header class="header">
-      <nav class="navbar-inverse navbar-fixed-top navbar">
+      <nav class="navbar-inverse navbar-fixed-top navbar" role="navigation">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -54,16 +54,36 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <%= link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;'), root_path, class: 'navbar-brand' %>
+            <div itemscope itemtype="http://schema.org/Organization">
+              <%= link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;', itemprop: 'logo'), root_path, class: 'navbar-brand', itemprop: 'url' %>
+            </div>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Metaforas', metaphors_path %></li>
-              <li><%= link_to 'Bibliografias', bibliographies_path %></li>
-              <li><%= link_to 'Ebooks', ebooks_path %></li>
+            <ul class="nav navbar-nav navbar-right" role="menubar">
+              <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <%= link_to metaphors_path, itemprop: 'url', role: 'menuitem' do %>
+                      <span itemprop="name">
+                        Metaforas
+                      </span>
+                <% end %>
+              </li>
+              <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <%= link_to bibliographies_path, itemprop: 'url', role: 'menuitem' do %>
+                      <span itemprop="name">
+                        Bibliografias
+                      </span>
+                <% end %>
+              </li>
+              <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <%= link_to ebooks_path, itemprop: 'url', role: 'menuitem' do %>
+                      <span itemprop="name">
+                        Ebooks
+                      </span>
+                <% end %>
+              </li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -80,9 +100,29 @@
 
         <div class="col-md-4">
           <h3>Site</h3>
-          <%= link_to 'Página Inicial', root_path %> <br>
-          <%= link_to 'Sobre', sobre_nos_path %> <br>
-          <%= link_to 'Contato', contato_path %> <br>
+          <ul role="menubar" class="list-unstyled">
+            <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <%= link_to root_path, itemprop: 'url', role: 'menuitem' do %>
+                <span itemprop="name">
+                  Página Inicial
+                </span>
+              <% end %>
+            </li>
+            <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <%= link_to sobre_nos_path, itemprop: 'url', role: 'menuitem' do %>
+                <span itemprop="name">
+                  Sobre
+                </span>
+              <% end %>
+            </li>
+            <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <%= link_to contato_path, itemprop: 'url', role: 'menuitem' do %>
+                <span itemprop="name">
+                  Contato
+                </span>
+              <% end %>
+            </li>
+          </ul>
         </div>
 
         <div class="col-md-4">
@@ -95,13 +135,15 @@
         <div class="col-md-4 text-right">
           <h3 class="">Midias Sociais</h3>
           <p class="footer-social-network">
-            <%= link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank' %>
-            <%#= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank' %>
-            <%= link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher' %>
-            <%#= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank' %>
-            <%= link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank' %>
-            <%= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank' %>
-            <%= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank' %>
+            <span itemscope itemtype="http://schema.org/Organization">
+              <%= link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank', itemprop: 'sameAs' %>
+              <%#= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank', itemprop:'sameAs' %>
+              <%= link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher', itemprop: 'sameAs' %>
+              <%#= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank', itemprop:'sameAs' %>
+              <%= link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank', itemprop: 'sameAs' %>
+              <%= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank', itemprop: 'sameAs' %>
+              <%= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank', itemprop: 'sameAs' %>
+            </span>
           </p>
         </div>
 
