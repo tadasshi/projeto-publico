@@ -1,0 +1,61 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <a itemprop="url" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
+    <div itemprop="name">
+      <h2>Blog</h2>
+    </div>
+  </a>
+
+  <% breadcrumb :posts, @posts %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true %>
+
+  <div class="nav">
+    <%= form_tag(posts_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>
+        <div class="ui icon input">
+          <%= text_field_tag :search, params[:search], placeholder: 'busco por...' %>
+          <i class="search icon"></i>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="clearfix">
+    <div class="ui divided items">
+      <% @posts.each do |posts| %>
+          <div class="item">
+            <div class="image">
+              <%= image_tag(posts.image ? posts.image_url(:thumb) : 'empty-image.png', class: 'img-responsive', alt: posts.title) %>
+            </div>
+            <div class="content">
+              <%= link_to posts.title, posts, class: 'header' %>
+
+              <!--<div class="meta">-->
+                <!--<span class="cinema"><%#= posts.author %></span>-->
+              <!--</div>-->
+              <div class="description">
+                <p>
+                  <%= simple_format truncate(posts.description, :length => 200) %>
+                </p>
+              </div>
+              <div class="extra">
+                <%= link_to posts, class: 'btn flat-button remove-border blue-button white-font-color' do %>
+                    ver mais
+                    <i class="right chevron icon"></i>
+                <% end %>
+                <!--<div class="ui label">Limited</div>-->
+                <!--<div class="ui label"><i class="globe icon"></i> Additional Languages</div>-->
+              </div>
+            </div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <%= paginate @posts %>
+  </div>
+
+</div>
+

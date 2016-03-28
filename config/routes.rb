@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
   get 'sitemaps/index'

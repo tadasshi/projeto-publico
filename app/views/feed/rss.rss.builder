@@ -8,33 +8,43 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
     xml.language 'pt-br'
     xml.tag! 'atom:link', :rel => 'self', :type => 'application/rss+xml', :href => feed_url
 
-    for bibliographies in @bibliographies
+    for bibliography in @bibliographies
       xml.item do
-        xml.title bibliographies.title
-        xml.link bibliographies_url(bibliographies)
-        xml.pubDate(bibliographies.created_at.rfc2822)
-        xml.guid bibliographies.id
-        xml.description(h(bibliographies.description))
+        xml.title bibliography.title
+        xml.link bibliography_url(bibliography)
+        xml.pubDate(bibliography.created_at.rfc2822)
+        xml.guid bibliography.id
+        xml.description(h(bibliography.description))
       end
     end
 
-    for ebooks in @ebooks
+    for ebook in @ebooks
       xml.item do
-        xml.title ebooks.title
-        xml.link bibliographies_url(ebooks)
-        xml.pubDate(ebooks.created_at.rfc2822)
-        xml.guid ebooks.id
-        xml.description(h(ebooks.description))
+        xml.title ebook.title
+        xml.link ebook_url(ebook)
+        xml.pubDate(ebook.created_at.rfc2822)
+        xml.guid ebook.id
+        xml.description(h(ebook.description))
       end
     end
 
-    for metaphors in @metaphors
+    for metaphor in @metaphors
       xml.item do
-        xml.title metaphors.title
-        xml.link bibliographies_url(metaphors)
-        xml.pubDate(metaphors.created_at.rfc2822)
-        xml.guid metaphors.id
-        xml.description(h(metaphors.description))
+        xml.title metaphor.title
+        xml.link metaphor_url(metaphor)
+        xml.pubDate(metaphor.created_at.rfc2822)
+        xml.guid metaphor.id
+        xml.description(h(metaphor.description))
+      end
+    end
+
+    for post in @posts
+      xml.item do
+        xml.title post.title
+        xml.link post_url(post)
+        xml.pubDate(post.created_at.rfc2822)
+        xml.guid post.id
+        xml.description(h(post.description))
       end
     end
 

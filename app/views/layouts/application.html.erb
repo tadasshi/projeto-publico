@@ -64,6 +64,13 @@
 
             <ul class="nav navbar-nav navbar-right" role="menubar">
               <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <%= link_to posts_path, itemprop: 'url', role: 'menuitem' do %>
+                      <span itemprop="name">
+                        Blog
+                      </span>
+                <% end %>
+              </li>
+              <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
                 <%= link_to metaphors_path, itemprop: 'url', role: 'menuitem' do %>
                       <span itemprop="name">
                         Metaforas
@@ -130,6 +137,7 @@
           <%= link_to 'Metaforas', metaphors_path %> <br>
           <%= link_to 'Bibliografias', bibliographies_path %> <br>
           <%= link_to 'Ebooks', ebooks_path %> <br>
+          <%= link_to 'Blog', posts_path %> <br>
         </div>
 
         <div class="col-md-4 text-right">

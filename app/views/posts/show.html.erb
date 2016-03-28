@@ -1,0 +1,33 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <% breadcrumb :post, @post %>
+  <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true %>
+
+  <div itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="col-md-12" itemprop='image' itemscope itemtype="https://schema.org/ImageObject">
+      <img itemprop="contentUrl" class='img-responsive img-thumbnail' alt='<%= @post.title %>' title='<%= @post.title %>' src='<%= @post.image %>'/>
+    </div>
+
+    <div class="col-md-12">
+
+      <a itemprop="url" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
+        <div itemprop="name">
+          <h1><%= @post.title %></h1>
+        </div>
+      </a>
+
+      <small>
+        <meta itemprop="datePublished" content="<%= @post.created_at.strftime("%FT") %>">
+        Data de publicação: <%= @post.created_at.strftime("%d/%m/%Y") %>
+      </small>
+
+      <div itemprop="description">
+        <%= simple_format @post.description %>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -37,6 +37,15 @@ crumb :metaphor do |metaphor|
   parent :metaphors
 end
 
+crumb :posts do
+  link 'Posts', posts_path
+end
+
+crumb :post do |post|
+  link post.title, post
+  parent :posts
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
