@@ -12,6 +12,11 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
     xml.priority(0.9)
   }
   xml.url {
+    xml.loc('http://masteringpnl.com/biographies')
+    xml.changefreq('daily')
+    xml.priority(0.9)
+  }
+  xml.url {
     xml.loc('http://masteringpnl.com/bibliographies')
     xml.changefreq('daily')
     xml.priority(0.9)
@@ -63,6 +68,14 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @posts.each do |post|
     xml.url {
       xml.loc "#{post_url(post)}"
+      #xml.lastmod post.updated_at.strftime('%F')
+      xml.changefreq('weekly')
+      xml.priority(0.5)
+    }
+  end
+  @biographies.each do |biography|
+    xml.url {
+      xml.loc "#{biography_url(biography)}"
       #xml.lastmod post.updated_at.strftime('%F')
       xml.changefreq('weekly')
       xml.priority(0.5)

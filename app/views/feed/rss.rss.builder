@@ -48,6 +48,17 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
       end
     end
 
+    for biography in @biographies
+
+      xml.item do
+        xml.title biography.title
+        xml.link biography_url(biography)
+        xml.pubDate(biography.created_at.rfc2822)
+        xml.guid biography.id
+        xml.description(h(biography.description))
+      end
+    end
+
   end
 
 end

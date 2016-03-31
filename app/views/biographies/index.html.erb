@@ -8,11 +8,11 @@
     </div>
   </a>
 
-  <% breadcrumb :posts, @posts %>
+  <% breadcrumb :biographies, @biographies %>
   <%= breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true %>
 
   <div class="nav">
-    <%= form_tag(posts_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>
+    <%= form_tag(biographies_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do %>
         <div class="ui icon input">
           <%= text_field_tag :search, params[:search], placeholder: 'busco por...' %>
           <i class="search icon"></i>
@@ -22,24 +22,24 @@
 
   <div class="clearfix">
     <div class="ui divided items">
-      <% @posts.each do |post| %>
+      <% @biographies.each do |biography| %>
           <div class="item">
             <div class="image">
-              <%= image_tag(post.image ? post.image_url(:thumb) : 'empty-image.png', class: 'img-responsive', alt: post.title) %>
+              <%= image_tag(biography.image ? biography.image_url(:thumb) : 'empty-image.png', class: 'img-responsive', alt: biography.title) %>
             </div>
             <div class="content">
-              <%= link_to post.title, post, class: 'header' %>
+              <%= link_to biography.title, biography, class: 'header' %>
 
               <!--<div class="meta">-->
-                <!--<span class="cinema"><%#= posts.author %></span>-->
+              <!--<span class="cinema"><%#= biography.author %></span>-->
               <!--</div>-->
               <div class="description">
                 <p>
-                  <%= simple_format truncate(post.description, :length => 200) %>
+                  <%= simple_format truncate(biography.description, :length => 200) %>
                 </p>
               </div>
               <div class="extra">
-                <%= link_to post, class: 'btn flat-button remove-border blue-button white-font-color' do %>
+                <%= link_to biography, class: 'btn flat-button remove-border blue-button white-font-color' do %>
                     ver mais
                     <i class="right chevron icon"></i>
                 <% end %>
@@ -54,7 +54,7 @@
   </div>
 
   <div class="pagination">
-    <%= paginate @posts %>
+    <%= paginate @biographies %>
   </div>
 
 </div>

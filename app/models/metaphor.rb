@@ -1,6 +1,7 @@
 class Metaphor < ActiveRecord::Base
   validates :title, presence: true
   mount_uploader :image, AvatarUploader
+  acts_as_commentable
 
   # Make url friendly using title
   def to_param

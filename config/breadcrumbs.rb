@@ -46,6 +46,15 @@ crumb :post do |post|
   parent :posts
 end
 
+crumb :biographies do
+  link 'Biografias', biographies_path
+end
+
+crumb :biography do |biography|
+  link biography.title, biography
+  parent :biographies
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

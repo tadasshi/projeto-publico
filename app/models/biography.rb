@@ -1,4 +1,4 @@
-class Bibliography < ActiveRecord::Base
+class Biography < ActiveRecord::Base
   validates :title, presence: true
   mount_uploader :image, AvatarUploader
   acts_as_commentable
@@ -12,4 +12,5 @@ class Bibliography < ActiveRecord::Base
     # where(:title, query) -> This would return an exact match of the query
     where("title like ?", "%#{query}%")
   end
+
 end

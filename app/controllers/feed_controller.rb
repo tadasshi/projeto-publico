@@ -6,5 +6,7 @@ class FeedController < ApplicationController
     @ebooks = Ebook.all
     @metaphors = Metaphor.all
     @posts = Post.all
+    @biographies = Post.all
+
   end
 end

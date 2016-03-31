@@ -3,6 +3,7 @@ class Ebook < ActiveRecord::Base
   validates :url, presence: true
   validates :value, numericality: {greater_than: 0}
   mount_uploader :image, AvatarUploader
+  acts_as_commentable
 
   # Make url friendly using title
   def to_param

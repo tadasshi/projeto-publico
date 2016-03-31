@@ -91,6 +91,13 @@
                       </span>
                 <% end %>
               </li>
+              <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <%= link_to biographies_path, itemprop: 'url', role: 'menuitem' do %>
+                      <span itemprop="name">
+                        Biografias
+                      </span>
+                <% end %>
+              </li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -138,6 +145,7 @@
           <%= link_to 'Bibliografias', bibliographies_path %> <br>
           <%= link_to 'Ebooks', ebooks_path %> <br>
           <%= link_to 'Blog', posts_path %> <br>
+          <%= link_to 'Biografias', biographies_path %> <br>
         </div>
 
         <div class="col-md-4 text-right">
