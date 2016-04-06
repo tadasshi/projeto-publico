@@ -22,7 +22,16 @@ class BiographiesController < ApplicationController
                       description: @biography.description,
                       keywords: '',
                       image: @biography.image_url,
-                      twitter: {card: ''})
+                      og: {
+                          title: @biography.title,
+                          description: @biography.description,
+                          image: @biography.image_url
+                      },
+                      twitter: {
+                          card: '',
+                          description: @biography.description,
+                          image: @biography.image_url
+                      })
 
   end
 

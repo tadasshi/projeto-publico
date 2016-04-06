@@ -19,11 +19,22 @@ class EbooksController < ApplicationController
   # GET /ebooks/1
   # GET /ebooks/1.json
   def show
+
     prepare_meta_tags(title: 'Ebooks - ' + @ebook.title,
                       description: @ebook.description,
                       keywords: '',
                       image: @ebook.image_url,
-                      twitter: {card: ''})
+                      og: {
+                          title: @ebook.title,
+                          description: @ebook.description,
+                          image: @ebook.image_url
+                      },
+                      twitter: {
+                          card: '',
+                          description: @ebook.description,
+                          image: @ebook.image_url
+                      })
+
   end
 
   # GET /ebooks/new

@@ -23,6 +23,22 @@ class PostsController < ApplicationController
                       keywords: '',
                       image: @post.image_url,
                       twitter: {card: ''})
+
+    prepare_meta_tags(title: 'Posts - ' + @post.title,
+                      description: @post.description,
+                      keywords: '',
+                      image: @post.image_url,
+                      og: {
+                          title: @post.title,
+                          description: @post.description,
+                          image: @post.image_url
+                      },
+                      twitter: {
+                          card: '',
+                          description: @post.description,
+                          image: @post.image_url
+                      })
+
   end
 
   # GET /posts/new

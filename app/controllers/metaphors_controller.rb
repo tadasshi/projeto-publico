@@ -19,11 +19,22 @@ class MetaphorsController < ApplicationController
   # GET /metaphors/1
   # GET /metaphors/1.json
   def show
+
     prepare_meta_tags(title: 'Metáforas - ' + @metaphor.title,
                       description: @metaphor.description,
                       keywords: '',
                       image: @metaphor.image_url,
-                      twitter: {card: ''})
+                      og: {
+                          title: @metaphor.title,
+                          description: @metaphor.description,
+                          image: @metaphor.image_url
+                      },
+                      twitter: {
+                          card: '',
+                          description: @metaphor.description,
+                          image: @metaphor.image_url
+                      })
+
   end
 
   # GET /metaphors/new
@@ -78,13 +89,13 @@ class MetaphorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_metaphor
-      @metaphor = Metaphor.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_metaphor
+    @metaphor = Metaphor.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def metaphor_params
-      params.require(:metaphor).permit(:title, :description, :image)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def metaphor_params
+    params.require(:metaphor).permit(:title, :description, :image)
+  end
 end
