@@ -10,8 +10,12 @@
   <!--<![endif]-->
 
   <head>
+    <% if !params[:page] %>
+        <meta name="robots" content="index,follow"/>
+    <% else %>
+        <meta name="robots" content="noindex,follow"/>
+    <% end %>
 
-    <meta name="robots" content="index,follow"/>
     <%= display_meta_tags %>
 
     <meta charset="utf-8">
