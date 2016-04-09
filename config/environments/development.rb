@@ -51,4 +51,7 @@ Rails.application.configure do
   #     authentication: 'plain',
   #     enable_starttls_auto: true
   # }
+
+  # Identar bonitinho
+  Slim::Engine.set_default_options pretty: true
 end
