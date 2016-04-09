@@ -60,6 +60,7 @@ gem 'gretel'
 
 # https://github.com/sferik/rails_admin/wiki/Devise
 gem 'rails_admin'
+gem 'ckeditor'
 
 # https://github.com/plataformatec/mail_form
 gem 'mail_form'
@@ -69,6 +70,9 @@ gem 'puma'
 
 # https://rubygems.org/gems/acts_as_commentable
 gem 'acts_as_commentable', '>= 4.0.2'
+
+# https://rubygems.org/gems/slim
+gem 'slim', '~> 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

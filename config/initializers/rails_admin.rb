@@ -34,4 +34,24 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model Metaphor do
+    configure :description, :ck_editor
+  end
+
+  config.model Post do
+    configure :description, :ck_editor
+  end
+
+  config.model Ebook do
+    configure :description, :ck_editor
+  end
+
+  config.model Biography do
+    configure :description, :ck_editor
+  end
+
+  config.model Bibliography do
+    configure :description, :ck_editor
+  end
 end

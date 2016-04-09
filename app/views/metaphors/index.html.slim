@@ -1,0 +1,29 @@
+div class="container"
+
+  p id="notice"= notice
+
+  a itemprop="url" href="http://#{request.host + url_for(:page => params[:page]) }"
+    div itemprop="name"
+      h2= 'Listing Metaphors'
+
+      - breadcrumb :metaphors, @metaphors
+      == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true
+
+  div class="nav"
+    = form_tag(metaphors_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do
+      div class="ui icon input"
+        == text_field_tag :search, params[:search], placeholder: 'busco por...'
+        i class="search icon"
+
+  table class="table-responsive table"
+    thead
+      tr
+        th
+        th colspan="2"
+
+    tbody
+      - @metaphors.each do |metaphor|
+        tr
+          td= link_to metaphor.title, metaphor
+
+  div class="pagination"= paginate @metaphors
