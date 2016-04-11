@@ -6,8 +6,8 @@ div class="container"
     div itemprop="name"
       h2= 'Listing Metaphors'
 
-      - breadcrumb :metaphors, @metaphors
-      == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true
+  - breadcrumb :metaphors, @metaphors
+  == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true
 
   div class="nav"
     = form_tag(metaphors_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do

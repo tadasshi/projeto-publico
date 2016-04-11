@@ -1,0 +1,42 @@
+div class="container"
+
+  p id="notice"= notice
+
+  a itemprop="url" href="http://#{request.host + url_for(:page => params[:page]) }"
+    div itemprop="name"
+      h2= 'Lista de Bibliografias'
+
+      - breadcrumb :bibliographies, @bibliographies
+      == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true
+
+  div class="nav"
+    = form_tag(bibliographies_path, method: 'get', class: 'pull-right form ui', role: 'search', id: 'nav-search') do
+      div class="ui icon input"
+        == text_field_tag :search, params[:search], placeholder: 'busco por...'
+        i class="search icon"
+
+  div class="clearfix"
+    div class="ui divided items"
+      - @bibliographies.each do |bibliography|
+        div class="item"
+          div class="image"
+            = image_tag(bibliography.image ? bibliography.image_url(:thumb) : 'empty-image.png', class: 'img-responsive', alt: bibliography.title)
+
+          div class="content"
+            = link_to bibliography.title, bibliography, class: 'header'
+
+            div class="meta"
+              span class="cinema"= bibliography.author
+
+            div class="description"
+              p= simple_format truncate(bibliography.description, :length => 200)
+
+            div class="extra"
+              = link_to bibliography, class: 'btn flat-button remove-border blue-button white-font-color' do
+                = 'ver mais'
+                i class="right chevron icon"
+
+              / <div class="ui label">Limited</div>
+              / <div class="ui label"><i class="globe icon"></i> Additional Languages</div>
+
+  div class="pagination"= paginate @bibliographies
