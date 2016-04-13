@@ -20,19 +20,23 @@ class MetaphorsController < ApplicationController
   # GET /metaphors/1.json
   def show
 
-    prepare_meta_tags(title: 'Metáforas - ' + @metaphor.title,
+    description = ActionView::Base.full_sanitizer.sanitize(@metaphor.description)
+    image = 'http://' + request.host + @metaphor.image_url
+
+    prepare_meta_tags(title: 'Posts - ' + @metaphor.title,
                       description: @metaphor.description,
                       keywords: '',
                       image: @metaphor.image_url,
                       og: {
                           title: @metaphor.title,
-                          description: ActionView::Base.full_sanitizer.sanitize(@metaphor.description),
-                          image: 'http://' + request.host + @metaphor.image_url
+                          description: description,
+                          image: image,
+                          'image:type': 'image/jpg'
                       },
                       twitter: {
                           card: '',
-                          description: ActionView::Base.full_sanitizer.sanitize(@metaphor.description),
-                          image: 'http://' + request.host + @metaphor.image_url
+                          description: description,
+                          image: image
                       })
 
   end

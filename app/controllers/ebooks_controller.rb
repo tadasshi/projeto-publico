@@ -20,19 +20,23 @@ class EbooksController < ApplicationController
   # GET /ebooks/1.json
   def show
 
+    description = ActionView::Base.full_sanitizer.sanitize(@ebook.description)
+    image = 'http://' + request.host + @ebook.image_url
+
     prepare_meta_tags(title: 'Ebooks - ' + @ebook.title,
-                      description: @ebook.description,
+                      description: description,
                       keywords: '',
                       image: @ebook.image_url,
                       og: {
                           title: @ebook.title,
-                          description: ActionView::Base.full_sanitizer.sanitize(@ebook.description),
-                          image: 'http://' + request.host + @ebook.image_url
+                          description: description,
+                          image: image,
+                          'image:type': 'image/jpg'
                       },
                       twitter: {
                           card: '',
-                          description: ActionView::Base.full_sanitizer.sanitize(@ebook.description),
-                          image: 'http://' + request.host + @ebook.image_url
+                          description: description,
+                          image: image
                       })
 
   end
@@ -89,13 +93,13 @@ class EbooksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ebook
-      @ebook = Ebook.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ebook
+    @ebook = Ebook.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ebook_params
-      params.require(:ebook).permit(:title, :description, :image, :value, :url)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def ebook_params
+    params.require(:ebook).permit(:title, :description, :image, :value, :url)
+  end
 end

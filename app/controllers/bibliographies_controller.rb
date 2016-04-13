@@ -20,22 +20,24 @@ class BibliographiesController < ApplicationController
   # GET /bibliographies/1
   # GET /bibliographies/1.json
   def show
+    description = ActionView::Base.full_sanitizer.sanitize(@bibliography.description)
+    image = 'http://' + request.host + @bibliography.image_url
 
-    prepare_meta_tags(title: 'Bibliografias - ' + @bibliography.title,
+    prepare_meta_tags(title: 'Posts - ' + @bibliography.title,
                       description: @bibliography.description,
                       keywords: '',
                       image: @bibliography.image_url,
                       og: {
                           title: @bibliography.title,
-                          description: ActionView::Base.full_sanitizer.sanitize(@bibliography.description),
-                          image: 'http://' + request.host + @bibliography.image_url
+                          description: description,
+                          image: image,
+                          'image:type': 'image/jpg'
                       },
                       twitter: {
                           card: '',
-                          description: ActionView::Base.full_sanitizer.sanitize(@bibliography.description),
-                          image: 'http://' + request.host + @bibliography.image_url
+                          description: description,
+                          image: image
                       })
-
 
   end
 

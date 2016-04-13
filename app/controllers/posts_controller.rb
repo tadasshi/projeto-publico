@@ -19,19 +19,23 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
 
+    description = ActionView::Base.full_sanitizer.sanitize(@post.description)
+    image = 'http://' + request.host + @post.image_url
+
     prepare_meta_tags(title: 'Posts - ' + @post.title,
                       description: @post.description,
                       keywords: '',
                       image: @post.image_url,
                       og: {
                           title: @post.title,
-                          description: ActionView::Base.full_sanitizer.sanitize(@post.description),
-                          image: 'http://' + request.host + @post.image_url
+                          description: description,
+                          image: image,
+                          'image:type': 'image/jpg'
                       },
                       twitter: {
                           card: '',
-                          description: ActionView::Base.full_sanitizer.sanitize(@post.description),
-                          image: 'http://' + request.host + @post.image_url
+                          description: description,
+                          image: image
                       })
 
   end

@@ -18,19 +18,24 @@ class BiographiesController < ApplicationController
   # GET /biographies/1
   # GET /biographies/1.json
   def show
-    prepare_meta_tags(title: 'Biografias - ' + @biography.title,
+
+    description = ActionView::Base.full_sanitizer.sanitize(@biography.description)
+    image = 'http://' + request.host + @biography.image_url
+
+    prepare_meta_tags(title: 'Posts - ' + @biography.title,
                       description: @biography.description,
                       keywords: '',
                       image: @biography.image_url,
                       og: {
                           title: @biography.title,
-                          description: ActionView::Base.full_sanitizer.sanitize(@biography.description),
-                          image: 'http://' + request.host + @biography.image_url
+                          description: description,
+                          image: image,
+                          'image:type': 'image/jpg'
                       },
                       twitter: {
                           card: '',
-                          description: ActionView::Base.full_sanitizer.sanitize(@biography.description),
-                          image: 'http://' + request.host + @biography.image_url
+                          description: description,
+                          image: image
                       })
 
   end
