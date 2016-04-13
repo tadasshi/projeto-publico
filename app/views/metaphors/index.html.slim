@@ -4,7 +4,7 @@ div class="container"
 
   a itemprop="url" href="http://#{request.host + url_for(:page => params[:page]) }"
     div itemprop="name"
-      h2= 'Listing Metaphors'
+      h2= 'Metáforas'
 
   - breadcrumb :metaphors, @metaphors
   == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true

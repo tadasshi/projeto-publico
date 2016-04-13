@@ -21,7 +21,9 @@ class BibliographiesController < ApplicationController
   # GET /bibliographies/1.json
   def show
     description = ActionView::Base.full_sanitizer.sanitize(@bibliography.description)
-    image = 'http://' + request.host + @bibliography.image_url
+    if !@bibliography.image_url.nil?
+      image = 'http://' + request.host + @bibliography.image_url
+    end
 
     prepare_meta_tags(title: 'Posts - ' + @bibliography.title,
                       description: @bibliography.description,

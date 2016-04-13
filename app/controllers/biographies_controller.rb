@@ -20,7 +20,9 @@ class BiographiesController < ApplicationController
   def show
 
     description = ActionView::Base.full_sanitizer.sanitize(@biography.description)
-    image = 'http://' + request.host + @biography.image_url
+    if !@biography.image_url.nil?
+      image = 'http://' + request.host + @biography.image_url
+    end
 
     prepare_meta_tags(title: 'Posts - ' + @biography.title,
                       description: @biography.description,

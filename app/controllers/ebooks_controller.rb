@@ -21,7 +21,9 @@ class EbooksController < ApplicationController
   def show
 
     description = ActionView::Base.full_sanitizer.sanitize(@ebook.description)
-    image = 'http://' + request.host + @ebook.image_url
+    if !@ebook.image_url.nil?
+      image = 'http://' + request.host + @ebook.image_url
+    end
 
     prepare_meta_tags(title: 'Ebooks - ' + @ebook.title,
                       description: description,

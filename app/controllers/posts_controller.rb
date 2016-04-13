@@ -20,7 +20,9 @@ class PostsController < ApplicationController
   def show
 
     description = ActionView::Base.full_sanitizer.sanitize(@post.description)
-    image = 'http://' + request.host + @post.image_url
+    if !@post.image_url.nil?
+      image = 'http://' + request.host + @post.image_url
+    end
 
     prepare_meta_tags(title: 'Posts - ' + @post.title,
                       description: @post.description,

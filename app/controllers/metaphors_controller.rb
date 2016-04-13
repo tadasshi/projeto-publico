@@ -21,7 +21,9 @@ class MetaphorsController < ApplicationController
   def show
 
     description = ActionView::Base.full_sanitizer.sanitize(@metaphor.description)
-    image = 'http://' + request.host + @metaphor.image_url
+    if !@metaphor.image_url.nil?
+      image = 'http://' + request.host + @metaphor.image_url
+    end
 
     prepare_meta_tags(title: 'Posts - ' + @metaphor.title,
                       description: @metaphor.description,
