@@ -3,9 +3,9 @@ MasteringPnl
 
 ## 1.0
 
-* [Cadastrar Ebook](https://masteringpnl.fetchapp.com/admin/products/new)
+* (pronto)[Cadastrar Ebook](https://masteringpnl.fetchapp.com/admin/products/new)
 * Implementar contato (falta mandar email)
-* Implementar link para amazon em ebooks
+* (pronto)Implementar link para amazon em ebooks
 * Microdata
 * Customizar páginas 404, 422 e 500
 * Testes Automatizados
@@ -14,11 +14,10 @@ MasteringPnl
 
 * Add profissionais
 * Add instituições
-* Add artigos
+* (pronto)Add posts
 * Add videos
 * Add eventos
-* Add notícias
-* Add biografias
+* (pronto)Add biografias
 * Adiconar formulário newsletter
 
 ## 3.0
