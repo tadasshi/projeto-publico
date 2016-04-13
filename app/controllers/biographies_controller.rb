@@ -24,13 +24,13 @@ class BiographiesController < ApplicationController
                       image: @biography.image_url,
                       og: {
                           title: @biography.title,
-                          description: @biography.description,
-                          image: @biography.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@biography.description),
+                          image: 'http://' + request.host + @biography.image_url
                       },
                       twitter: {
                           card: '',
-                          description: @biography.description,
-                          image: @biography.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@biography.description),
+                          image: 'http://' + request.host + @biography.image_url
                       })
 
   end

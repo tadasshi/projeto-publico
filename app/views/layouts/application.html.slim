@@ -28,7 +28,7 @@ html class="no-js" lang="pt-br"
     meta name="msapplication-TileColor" content="#ffffff"/
     meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
     meta name="theme-color" content="#ffffff"/
-    link rel="canonical" href=""http://#{request.host + url_for(:page => params[:page]) }"/
+    link rel="canonical" href="http://#{request.host + url_for(:page => params[:page]) }"/
     link rel="publisher" href="http://google.com/+Masteringpnl_channel"/
     = auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'})
     = stylesheet_link_tag 'application', media: 'all'
@@ -111,13 +111,13 @@ html class="no-js" lang="pt-br"
       div style="padding: 8px 0px;"
         div class="container"
           div class="col-md-4"
-            small class="pull-left"= "&copy; Copyright #{Time.now.year} - Todos direitos reservados"
+            small class="pull-left"= "© Copyright #{Time.now.year} - Todos direitos reservados"
 
           div class="col-md-4"
 
           div class="col-md-4"
             small class="pull-right"
-              = 'Desenvolvidor por'
+              = 'Desenvolvidor por '
               = link_to 'Thiago Tadashi', thiagotadashi_path, target: '_blank', :rel => 'nofollow'
 
     = javascript_include_tag 'application'

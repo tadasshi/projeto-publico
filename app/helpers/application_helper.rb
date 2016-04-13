@@ -1,4 +1,8 @@
 module ApplicationHelper
+  module Helpers
+    extend ActionView::Helpers
+  end
+
   def resource_name
     :user
   end

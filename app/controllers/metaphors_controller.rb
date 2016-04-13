@@ -26,13 +26,13 @@ class MetaphorsController < ApplicationController
                       image: @metaphor.image_url,
                       og: {
                           title: @metaphor.title,
-                          description: @metaphor.description,
-                          image: @metaphor.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@metaphor.description),
+                          image: 'http://' + request.host + @metaphor.image_url
                       },
                       twitter: {
                           card: '',
-                          description: @metaphor.description,
-                          image: @metaphor.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@metaphor.description),
+                          image: 'http://' + request.host + @metaphor.image_url
                       })
 
   end

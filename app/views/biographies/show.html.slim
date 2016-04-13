@@ -7,10 +7,10 @@ div class="container"
 
   div itemscope='' itemtype="http://schema.org/BlogPosting"
 
-    div class="col-md-12" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
-      img itemprop="contentUrl" class='img-responsive img-thumbnail' alt='#{@biography.title}' title='#{@biography.title}' src='#{@biography.image}'/
+    div class="col-md-6" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
+      img itemprop="contentUrl" class='img-responsive' alt='#{@biography.title}' title='#{@biography.title}' src='#{@biography.image}'/
 
-    div class="col-md-12"
+    div class="col-md-6"
       a itemprop="url" href="http://#{request.host + url_for(:page => params[:page]) }"
         div itemprop="name"
           h1= @biography.title

@@ -26,13 +26,13 @@ class EbooksController < ApplicationController
                       image: @ebook.image_url,
                       og: {
                           title: @ebook.title,
-                          description: @ebook.description,
-                          image: @ebook.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@ebook.description),
+                          image: 'http://' + request.host + @ebook.image_url
                       },
                       twitter: {
                           card: '',
-                          description: @ebook.description,
-                          image: @ebook.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@ebook.description),
+                          image: 'http://' + request.host + @ebook.image_url
                       })
 
   end

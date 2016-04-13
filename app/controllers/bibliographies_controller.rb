@@ -27,13 +27,13 @@ class BibliographiesController < ApplicationController
                       image: @bibliography.image_url,
                       og: {
                           title: @bibliography.title,
-                          description: @bibliography.description,
-                          image: @bibliography.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@bibliography.description),
+                          image: 'http://' + request.host + @bibliography.image_url
                       },
                       twitter: {
                           card: '',
-                          description: @bibliography.description,
-                          image: @bibliography.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@bibliography.description),
+                          image: 'http://' + request.host + @bibliography.image_url
                       })
 
 

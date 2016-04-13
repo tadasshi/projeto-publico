@@ -29,7 +29,7 @@ div class="container"
               span class="cinema"= bibliography.author
 
             div class="description"
-              p= simple_format truncate(bibliography.description, :length => 200)
+              p= simple_format truncate(bibliography.description, :length => 200, escape: false)
 
             div class="extra"
               = link_to bibliography, class: 'btn flat-button remove-border blue-button white-font-color' do

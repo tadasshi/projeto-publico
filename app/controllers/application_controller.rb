@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :prepare_meta_tags, if: "request.get?"
 
+  #include ActionView::Helpers::TextHelper
+
   def prepare_meta_tags(options={})
     site_name = 'MasteringPNL'
     title = [controller_name, action_name].join(" ")

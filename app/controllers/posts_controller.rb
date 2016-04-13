@@ -18,11 +18,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    prepare_meta_tags(title: 'Posts - ' + @post.title,
-                      description: @post.description,
-                      keywords: '',
-                      image: @post.image_url,
-                      twitter: {card: ''})
 
     prepare_meta_tags(title: 'Posts - ' + @post.title,
                       description: @post.description,
@@ -30,13 +25,13 @@ class PostsController < ApplicationController
                       image: @post.image_url,
                       og: {
                           title: @post.title,
-                          description: @post.description,
-                          image: @post.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@post.description),
+                          image: 'http://' + request.host + @post.image_url
                       },
                       twitter: {
                           card: '',
-                          description: @post.description,
-                          image: @post.image_url
+                          description: ActionView::Base.full_sanitizer.sanitize(@post.description),
+                          image: 'http://' + request.host + @post.image_url
                       })
 
   end
