@@ -79,11 +79,16 @@ group :development, :test do
   gem 'byebug'
 
   # Test Tools
-  gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl_rails', '~> 4.5'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'selenium-webdriver'
+  # http://www.rubydoc.info/gems/rspec-rails/file/README.md
+  gem 'rspec-rails', '~> 3.4'
+  # http://www.rubydoc.info/gems/factory_girl_rails/4.7.0
+  gem 'factory_girl_rails', '~> 4.7'
+  # http://www.rubydoc.info/gems/capybara/2.7.0
+  gem 'capybara', '~> 2.7'
+  # http://www.rubydoc.info/gems/database_cleaner/1.5.1
+  gem 'database_cleaner', '~> 1.5'
+  # http://www.rubydoc.info/gems/selenium-webdriver/2.53.0
+  gem 'selenium-webdriver', '~> 2.53'
 end
 
 group :development do

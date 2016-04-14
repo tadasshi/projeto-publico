@@ -1,0 +1,16 @@
+div id="disqus_thread" class='col-md-12'
+
+javascript:
+  var disqus_config = function () {
+    this.page.url = "http://#{request.host + url_for(:page => params[:page]) }";
+    this.page.identifier = "#{url_for(:page => params[:page])}";
+  };
+
+  (function () {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//masteringpnl.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();

@@ -5,7 +5,7 @@ div class="container"
   - breadcrumb :metaphor, @metaphor
   == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true
 
-  div itemscope="" itemtype="http://schema.org/BlogPosting"
+  div itemscope="" itemtype="http://schema.org/BlogPosting" class='row'
 
     div class="col-md-4" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
       img itemprop="contentUrl" class='img-responsive' alt='#{@metaphor.title}' title='#{@metaphor.title}' src='#{@metaphor.image}'/
@@ -21,3 +21,5 @@ div class="container"
         = "Data de publicação: #{@metaphor.created_at.strftime("%d/%m/%Y")}"
 
       div itemprop="description"= simple_format @metaphor.description
+
+    = render 'disqus/comment'

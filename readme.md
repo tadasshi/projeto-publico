@@ -6,47 +6,57 @@ MasteringPnl
 * (pronto)[Cadastrar Ebook](https://masteringpnl.fetchapp.com/admin/products/new)
 * (falta mandar email)Implementar contato
 * (pronto)Implementar link para amazon em ebooks
-* (Incompleto)Microdata
-* Customizar páginas 404, 422 e 500
-* Testes Automatizados
+* (pronto)Customizar páginas 404, 422 e 500
+* (pronto)Add biografias
+* (pronto)Add posts
 
 ## 2.0
 
-* Add profissionais
-* Add instituições
-* (pronto)Add posts
-* Add videos
-* Add eventos
-* (pronto)Add biografias
-* Adiconar formulário newsletter
+* (pronto)[Implementar comentarios para ebooks/](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
+* (pronto)[Implementar comentarios para metaforas](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
+* (pronto)[Implementar comentarios para bibliografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
+* (pronto)[Implementar comentarios para biografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
+* (pronto)[Implementar comentarios para posts](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
 
 ## 3.0
 
-* [Integrar autenticaçao com midias sociais](https://github.com/intridea/omniauth)
-* [Implementar testes](https://github.com/rspec/rspec-rails)
-* Implementar i18n
 * Implementar GeoTargetings
-* [Implementar comentarios para ebooks/](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* [Implementar comentarios para metaforas](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* [Implementar comentarios para bibliografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* Link para relatar bug
-
-## 4.0
-
+* [links de compartilhar](https://github.com/hermango/shareable)
 * Automatizar posts, no twitter, facebook e google+ 
 * [Repost Google+](https://github.com/google/google-api-ruby-client)
 * [Repost twitter](https://github.com/sferik/twitter)
 * [Repost facebook](https://github.com/arsduo/koala)
 * [Repost facebook - alternativa](https://github.com/nov/fb_graph2)
 
-* [links de compartilhar](https://github.com/hermango/shareable)
-* [network](https://rubygems.org/gems/social_stream)
+## 4.0
+
+* Link para relatar bug
+* [Integrar autenticaçao com midias sociais](https://github.com/intridea/omniauth)
+* [Implementar testes](https://github.com/rspec/rspec-rails)
+* Implementar i18n
 
 ## 5.0
 
+* [network](https://rubygems.org/gems/social_stream)
+
+## 6.0
+
+* Add profissionais
+* Add instituições
+* Add videos
+* Add eventos
+* Adiconar formulário newsletter
+
+
+### Progressive improvement
+
+* Testes Automatizados
+* Microdata
+* SEO
 * [Profiling](http://blog.scoutapp.com/articles/2015/09/16/profiling-rails-with-stackprof) 
 
-## Links úteis para o deploy
+
+### Links úteis para o deploy
 
 * [Deploying a Rails App on Ubuntu 14.04 with Capistrano, Nginx, and Puma](https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma)
 
