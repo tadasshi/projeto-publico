@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'errors/not_found'
+
+  get 'errors/internal_server_error'
+
   resources :biographies
   resources :posts
 
@@ -51,6 +55,10 @@ Rails.application.routes.draw do
 
   get 'feed.rss', :controller => 'feed', :action => 'rss', :format => 'rss', as: 'feed'
   get 'sitemap.xml' => 'sitemaps#index', :format => 'xml', :as => :sitemap
+
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/422", :to => "errors#unprocessable_entity", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

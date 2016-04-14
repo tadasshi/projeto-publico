@@ -1,0 +1,72 @@
+doctype html
+html class="no-js" lang="pt-br"
+  head
+    title Page Error
+    meta charset="utf-8"/
+    meta http-equiv="X-UA-Compatible" content="IE=edge"/
+    meta name="viewport" content="width=device-width, initial-scale=1"/
+
+    = favicon_link_tag 'icon/apple-icon-57x57.png', rel: 'apple-touch-icon', sizes: '57x57'
+    = favicon_link_tag 'icon/apple-icon-60x60.png', rel: 'apple-touch-icon', sizes: '60x60'
+    = favicon_link_tag 'icon/apple-icon-72x72.png', rel: 'apple-touch-icon', sizes: '72x72'
+    = favicon_link_tag 'icon/apple-icon-114x114.png', rel: 'apple-touch-icon', sizes: '114x114'
+    = favicon_link_tag 'icon/apple-icon-120x120.png', rel: 'apple-touch-icon', sizes: '120x120'
+    = favicon_link_tag 'icon/apple-icon-144x144.png', rel: 'apple-touch-icon', sizes: '144x144'
+    = favicon_link_tag 'icon/apple-icon-152x152.png', rel: 'apple-touch-icon', sizes: '152x152'
+    = favicon_link_tag 'icon/apple-icon-180x180.png', rel: 'apple-touch-icon', sizes: '180x180'
+    = favicon_link_tag 'icon/android-icon-192x192.png', rel: 'icon', sizes: '192x192', type: 'image/png'
+    = favicon_link_tag 'icon/favicon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png'
+    = favicon_link_tag 'icon/favicon-96x96.png', rel: 'icon', sizes: '96x96', type: 'image/png'
+    = favicon_link_tag 'icon/favicon-16x16.png', rel: 'icon', sizes: '16x16', type: 'image/png'
+    = favicon_link_tag 'icon/manifest.json', rel: 'manifest'
+    meta name="msapplication-TileColor" content="#ffffff"/
+    meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
+    meta name="theme-color" content="#ffffff"/
+    link rel="canonical" href="http://#{request.host + url_for(:page => params[:page]) }"/
+    link rel="publisher" href="http://google.com/+Masteringpnl_channel"/
+
+    = stylesheet_link_tag 'application', media: 'all'
+
+  body vocab="http://schema.org/" typeof="WebPage"
+
+    section class='container'= yield
+
+    footer class='container'
+
+      div style='margin-top:300px'
+        div class="col-md-4"
+          h3= 'Site'
+          ul role="menubar" class="list-unstyled"
+            li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              = link_to root_path, itemprop: 'url', role: 'menuitem' do
+                span itemprop="name"= 'Página Inicial'
+            li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              = link_to sobre_nos_path, itemprop: 'url', role: 'menuitem' do
+                span itemprop="name"= 'Sobre'
+            li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              = link_to contato_path, itemprop: 'url', role: 'menuitem' do
+                span itemprop="name"= 'Contato'
+
+        div class="col-md-4"
+          h3= 'Conteúdos'
+          = link_to 'Metaforas', metaphors_path
+          br
+          = link_to 'Bibliografias', bibliographies_path
+          br
+          = link_to 'Ebooks', ebooks_path
+          br
+          = link_to 'Blog', posts_path
+          br
+          = link_to 'Biografias', biographies_path
+
+        div class="col-md-4 text-right"
+          h3 class=""= 'Midias Sociais'
+          p class="footer-social-network"
+            span itemscope='' itemtype="http://schema.org/Organization"
+              = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank', itemprop: 'sameAs'
+              /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank', itemprop:'sameAs'
+              = link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher', itemprop: 'sameAs'
+              /= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank', itemprop:'sameAs'
+              = link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank', itemprop: 'sameAs'
+              = link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank', itemprop: 'sameAs'
+              = link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank', itemprop: 'sameAs'

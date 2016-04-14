@@ -24,5 +24,7 @@ module Masteringpnl
     config.active_record.raise_in_transactional_callbacks = true
 
     config.encoding = 'utf-8'
+
+    config.exceptions_app = self.routes
   end
 end
