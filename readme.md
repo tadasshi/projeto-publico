@@ -21,18 +21,19 @@ MasteringPnl
 ## 3.0
 
 * (pronto)[links de compartilhar](https://github.com/hermango/shareable)
-* Implementar GeoTargetings
-* Automatizar posts, no twitter, facebook e google+ 
+* (Parcialmente)Implementar GeoTargetings
+* (pronto)[Repost facebook](https://github.com/arsduo/koala)
+* (alternativa)[Repost facebook]
+* (alternativa)[Repost facebook - alternativa]
+
 * [Repost Google+](https://github.com/google/google-api-ruby-client)
 * [Repost twitter](https://github.com/sferik/twitter)
-* [Repost facebook](https://github.com/arsduo/koala)
-* [Repost facebook - alternativa](https://github.com/nov/fb_graph2)
 
 ## 4.0
 
 * Link para relatar bug
 * [Implementar testes](https://github.com/rspec/rspec-rails)
-* Parceirinha com instituições
+* Parceiria com instituições
 
 ## 5.0
 
