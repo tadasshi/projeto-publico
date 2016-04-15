@@ -1,0 +1,14 @@
+div class='col-md-12'
+  h3= 'Compartilhe!'
+  div class="a2a_kit a2a_kit_size_32 a2a_default_style"
+    a class="a2a_button_facebook"
+    a class="a2a_button_twitter"
+    a class="a2a_button_google_plus"
+    a class="a2a_button_reddit"
+  javascript:
+    var a2a_config = a2a_config || {};
+    a2a_config.linkname = "Mastering PNL";
+    a2a_config.linkurl = "http://#{request.host + url_for(:page => params[:page]) }";
+    a2a_config.locale = "pt-BR";
+  script async='true' src="https://static.addtoany.com/menu/page.js"
+  br

@@ -59,6 +59,11 @@ div class="container"
 
         br
         - if @ebook.url
+
           = link_to 'Comprar', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color pull-right'
+
+      = render 'addtoany/share_buttons'
+
+    br
 
     = render 'disqus/comment'

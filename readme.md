@@ -31,16 +31,17 @@ MasteringPnl
 ## 4.0
 
 * Link para relatar bug
-* [Integrar autenticaçao com midias sociais](https://github.com/intridea/omniauth)
 * [Implementar testes](https://github.com/rspec/rspec-rails)
-* Implementar i18n
+* Parceirinha com instituições
 
 ## 5.0
 
-* [network](https://rubygems.org/gems/social_stream)
+* [Integrar autenticaçao com midias sociais](https://github.com/intridea/omniauth)
+* [Network](https://rubygems.org/gems/social_stream)
 
 ## 6.0
 
+* Implementar i18n
 * Add profissionais
 * Add instituições
 * Add videos

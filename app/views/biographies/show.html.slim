@@ -21,4 +21,8 @@ div class="container"
 
       div itemprop="description"= simple_format @biography.description
 
+      = render 'addtoany/share_buttons'
+
+    br
+
     = render 'disqus/comment'
