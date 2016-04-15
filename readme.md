@@ -20,8 +20,8 @@ MasteringPnl
 
 ## 3.0
 
+* (pronto)[links de compartilhar](https://github.com/hermango/shareable)
 * Implementar GeoTargetings
-* [links de compartilhar](https://github.com/hermango/shareable)
 * Automatizar posts, no twitter, facebook e google+ 
 * [Repost Google+](https://github.com/google/google-api-ruby-client)
 * [Repost twitter](https://github.com/sferik/twitter)
