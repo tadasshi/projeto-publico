@@ -31,12 +31,11 @@ MasteringPnl
 
 ## 4.0
 
-* Link para relatar bug
-* [Implementar testes](https://github.com/rspec/rspec-rails)
 * Parceiria com instituições
 
 ## 5.0
 
+* [Implementar testes](https://github.com/rspec/rspec-rails)
 * [Integrar autenticaçao com midias sociais](https://github.com/intridea/omniauth)
 * [Network](https://rubygems.org/gems/social_stream)
 
@@ -49,6 +48,9 @@ MasteringPnl
 * Add eventos
 * Adiconar formulário newsletter
 
+## 7.0
+
+* Link para relatar bug
 
 ### Progressive improvement
 
