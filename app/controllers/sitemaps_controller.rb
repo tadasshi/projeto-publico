@@ -6,7 +6,7 @@ class SitemapsController < ApplicationController
     @ebooks = Ebook.all
     @metaphors = Metaphor.all
     @posts = Post.all
-    @biographies = Post.all
+    @biographies = Biography.all
 
     respond_to do |format|
       format.xml

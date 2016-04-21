@@ -29,6 +29,10 @@ MasteringPnl
 * [Repost Google+](https://github.com/google/google-api-ruby-client)
 * [Repost twitter](https://github.com/sferik/twitter)
 
+* Sitemap para imagens
+* Sitemap para mobile
+* Sitemap para news
+
 ## 4.0
 
 * Parceiria com instituições

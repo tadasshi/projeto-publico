@@ -34,36 +34,36 @@ html class="no-js" lang="pt-br"
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
 
-  body vocab="http://schema.org/" typeof="WebPage"
-    header class="header"
-      nav class="navbar-inverse navbar-fixed-top navbar" role="navigation"
-        div class="container"
-          div class="navbar-header"
-            button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
-              span class="sr-only"= 'Toggle navigation'
-              span class="icon-bar"
-              span class="icon-bar"
-              span class="icon-bar"
+  body vocab='http://schema.org/' typeof='WebPage'
+    header class='header'
+      nav class='navbar-inverse navbar-fixed-top navbar' role='navigation'
+        div class='container'
+          div class='navbar-header'
+            button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'
+              span class='sr-only'= 'Toggle navigation'
+              span class='icon-bar'
+              span class='icon-bar'
+              span class='icon-bar'
 
-            div itemscope='' itemtype="http://schema.org/Organization"
+            div itemscope='' itemtype='http://schema.org/Organization'
               = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;', itemprop: 'logo'), root_path, class: 'navbar-brand', itemprop: 'url'
 
           div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
 
             ul class="nav navbar-nav navbar-right" role="menubar"
-              li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to posts_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Blog'
-              li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to metaphors_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Metaforas'
-              li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to bibliographies_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Bibliografias'
-              li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to ebooks_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Ebooks'
-              li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to biographies_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Biografias'
 
@@ -74,13 +74,13 @@ html class="no-js" lang="pt-br"
         div class="col-md-4"
           h3= 'Site'
           ul role="menubar" class="list-unstyled"
-            li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
               = link_to root_path, itemprop: 'url', role: 'menuitem' do
                 span itemprop="name"= 'Página Inicial'
-            li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
               = link_to sobre_nos_path, itemprop: 'url', role: 'menuitem' do
                 span itemprop="name"= 'Sobre'
-            li itemscope='' itemtype="http://www.schema.org/SiteNavigationElement"
+            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
               = link_to contato_path, itemprop: 'url', role: 'menuitem' do
                 span itemprop="name"= 'Contato'
 
@@ -99,7 +99,7 @@ html class="no-js" lang="pt-br"
         div class="col-md-4 text-right"
           h3 class=""= 'Midias Sociais'
           p class="footer-social-network"
-            span itemscope='' itemtype="http://schema.org/Organization"
+            span itemscope='' itemtype='http://schema.org/Organization'
               = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank', itemprop: 'sameAs'
               /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank', itemprop:'sameAs'
               = link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher', itemprop: 'sameAs'
@@ -114,6 +114,9 @@ html class="no-js" lang="pt-br"
             small class="pull-left"= "© Copyright #{Time.now.year} - Todos direitos reservados"
 
           div class="col-md-4"
+            small class="pull-right"
+              = 'Hospedado por '
+              = link_to 'DigitalOcean', digitalocean_path, target: '_blank', :rel => 'nofollow'
 
           div class="col-md-4"
             small class="pull-right"
