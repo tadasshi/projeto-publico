@@ -67,7 +67,7 @@ html class="no-js" lang="pt-br"
                 = link_to biographies_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Biografias'
 
-    section ng-app="masteringpnl" style="padding-top: 50px"= yield
+    section ng-app="masteringpnl"= yield
 
     footer class="footer"
       div class="container" style="margin-bottom: 20px"
@@ -79,7 +79,7 @@ html class="no-js" lang="pt-br"
                 span itemprop="name"= 'Página Inicial'
             li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
               = link_to sobre_nos_path, itemprop: 'url', role: 'menuitem' do
-                span itemprop="name"= 'Sobre'
+                span itemprop="name"= 'Sobre nós'
             li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
               = link_to contato_path, itemprop: 'url', role: 'menuitem' do
                 span itemprop="name"= 'Contato'
