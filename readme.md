@@ -33,6 +33,9 @@ MasteringPnl
 * Sitemap para mobile
 * Sitemap para news
 
+* Colocar conteúdo do golfinho em um armazem.
+* Publicações relacionadas na lateral
+
 ## 4.0
 
 * Parceiria com instituições
@@ -51,7 +54,7 @@ MasteringPnl
 * Add videos
 * Add eventos
 * Adiconar formulário newsletter
-
+* Publique Aqui
 ## 7.0
 
 * Link para relatar bug
