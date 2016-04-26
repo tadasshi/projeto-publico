@@ -16,7 +16,7 @@
 /**********************HEADER*********************/
 .header
   .navbar
-    background-color: rgba(255,255,255,0.7)
+    background-color: rgba(255,255,255,0.8)
     border-bottom: 0 none
 
     .navbar-nav
@@ -26,9 +26,26 @@
           text-decoration: underline
         &:hover
           color: $light-blue
+        &:focus
+          color: $light-blue
       .active a
         background-color: $light-blue
         color: #FFF
+
+    .navbar-nav > li > .dropdown-menu
+      background-color: rgba(255,255,255,0.8)
+      border-radius: 0
+      border: 0 none
+      letter-spacing: 1px
+      border-top: 1px solid $blue
+      border-bottom: 5px solid $blue
+
+      li
+        margin: 10px 0
+
+    &> li > a
+      padding: 15px 5px
+      margin: 0 15px
 
   .navbar-inverse
     .navbar-collapse, .navbar-form
@@ -37,6 +54,9 @@
     .navbar-toggle
       border-color: $blue
       background-color: $blue !important
+
+    .navbar-nav .open  a
+      background-color: transparent !important
 
   .navbar-collapse.collapse.in
     background-color: rgba(255,255,255,1)

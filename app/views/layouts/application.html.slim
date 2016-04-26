@@ -50,30 +50,45 @@ html class="no-js" lang="pt-br"
 
           div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
 
-            ul class="nav navbar-nav navbar-right" role="menubar"
+            ul class="nav navbar-nav" role="menubar"
               li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to posts_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Blog'
               li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                = link_to metaphors_path, itemprop: 'url', role: 'menuitem' do
-                  span itemprop="name"= 'Metaforas'
-              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                = link_to bibliographies_path, itemprop: 'url', role: 'menuitem' do
-                  span itemprop="name"= 'Bibliografias'
-              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
                 = link_to ebooks_path, itemprop: 'url', role: 'menuitem' do
                   span itemprop="name"= 'Ebooks'
-              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                = link_to biographies_path, itemprop: 'url', role: 'menuitem' do
-                  span itemprop="name"= 'Biografias'
+              li class='dropdown'
+                a href='javascript:' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'
+                  = 'Conteúdos'
+                  span class="caret"
+
+                ul class='dropdown-menu'
+                  li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
+                    = link_to bibliographies_path, itemprop: 'url', role: 'menuitem' do
+                      span itemprop="name"= 'Bibliografias'
+                  li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
+                    = link_to biographies_path, itemprop: 'url', role: 'menuitem' do
+                      span itemprop="name"= 'Biografias'
+                  li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
+                    = link_to metaphors_path, itemprop: 'url', role: 'menuitem' do
+                      span itemprop="name"= 'Metaforas'
 
     section ng-app="masteringpnl"= yield
 
     footer class="footer"
       div class="container" style="margin-bottom: 20px"
         div class="col-md-4"
+          h3= 'Loja'
+          ul role="menubar" class="list-unstyled"
+            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
+              = link_to ebooks_path, itemprop: 'url', role: 'menuitem' do
+                span itemprop="name"= 'Ebooks'
+
           h3= 'Site'
           ul role="menubar" class="list-unstyled"
+            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
+              = link_to posts_path, itemprop: 'url', role: 'menuitem' do
+                span itemprop="name"= 'Blog'
             li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
               = link_to root_path, itemprop: 'url', role: 'menuitem' do
                 span itemprop="name"= 'Página Inicial'
@@ -84,20 +99,15 @@ html class="no-js" lang="pt-br"
               = link_to contato_path, itemprop: 'url', role: 'menuitem' do
                 span itemprop="name"= 'Contato'
 
-        div class="col-md-4"
+        div class="col-md-3"
           h3= 'Conteúdos'
           = link_to 'Metaforas', metaphors_path
           br
           = link_to 'Bibliografias', bibliographies_path
           br
-          = link_to 'Ebooks', ebooks_path
-          br
-          = link_to 'Blog', posts_path
-          br
           = link_to 'Biografias', biographies_path
 
-        div class="col-md-4 text-right"
-          h3 class=""= 'Midias Sociais'
+          h3= 'Midias Sociais'
           p class="footer-social-network"
             span itemscope='' itemtype='http://schema.org/Organization'
               = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank', itemprop: 'sameAs'
@@ -107,6 +117,10 @@ html class="no-js" lang="pt-br"
               = link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank', itemprop: 'sameAs'
               = link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank', itemprop: 'sameAs'
               = link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank', itemprop: 'sameAs'
+
+        div class="col-md-5 text-right"
+          h3 class='text-right'= 'Siga-nos no Facebook'
+          iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasteringpnl&width=400&height=220&colorscheme=dark&show_faces=true&header=true&stream=false&show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:400px; height:220px;" allowTransparency="true"
 
       div style="padding: 8px 0px;"
         div class="container"

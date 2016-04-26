@@ -1,3 +1,6 @@
+div
+  = image_tag('banner-ebooks.jpg', :alt => 'Banner', class: 'img-responsive')
+
 div class="container"
 
   p id="notice"= notice
@@ -17,7 +20,7 @@ div class="container"
           h1= @ebook.title
 
       div itemprop="author" itemscope='' itemtype="http://schema.org/Person"
-        = 'Escrito por:'
+        = 'Escrito por: '
         span itemprop="name"= 'Wilson Y. K. Neves'
 
       br
@@ -55,12 +58,10 @@ div class="container"
         meta itemprop="priceCurrency" content="BRL"/
         link itemprop="availability" href="http://schema.org/InStock"/
 
-        h3 class="text-right"= number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$")
-
-        br
+        h3 class="text-right"= 'Preço - ' + number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$")
         - if @ebook.url
 
-          = link_to 'Comprar', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color pull-right'
+          = link_to 'Adiquirir este Ebook', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color pull-right'
 
       = render 'addtoany/share_buttons'
 
