@@ -10,31 +10,35 @@ class ApplicationController < ActionController::Base
     site_name = 'MasteringPNL'
     title = [controller_name, action_name].join(" ")
     description = 'Grupo com o propósito de desenvolver, adaptar e difundir as ferramentas da PNL aliado com a psicologia, para todos que desejam bem estar psicológico.'
-    image = options[:image] || 'your-default-image-url'
+    #image = options[:image] || 'your-default-image-url'
     current_url = request.url
 
     # Let's prepare a nice set of defaults
     defaults = {
         site: site_name,
         title: title,
-        image: image,
+        #image: image,
+        reverse: true,
         description: description,
-        keywords: %w[pnl psicologia],
+        #keywords: %w[pnl psicologia],
         twitter: {
             site_name: site_name,
             site: '@masteringpnl',
             card: 'summary',
             description: description,
-            image: image
+            #image: image
         },
         og: {
+            locale: 'pt_BR',
+            type: 'website',
             url: current_url,
-            site_name: site_name,
-            title: title,
-            image: image,
-            description: description,
-            type: 'website'
-        }
+            site_name: site_name
+        },
+        fb:{
+            profile_id: '947897365241721',
+            #app_id: '238224526567263',
+            #admins, #A Facebook app ID
+        },
     }
 
     options.reverse_merge!(defaults)

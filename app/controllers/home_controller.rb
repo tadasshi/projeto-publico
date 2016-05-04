@@ -11,9 +11,9 @@ class HomeController < ApplicationController
   end
 
   def send_email
-    c = Contact.new(contact_params)
-    c.deliver
-    redirect_to root_path, notice: 'Bibliography was successfully created.'
+    email = Contact.new(contact_params)
+    UserNotifier.send_signup_email(email).deliver
+    redirect_to root_path, notice: 'Email enviado com sucesso!'
   end
 
   def about_us
@@ -23,5 +23,4 @@ class HomeController < ApplicationController
   def contact_params
     params.require(:contact).permit(:name, :email, :message)
   end
-
 end

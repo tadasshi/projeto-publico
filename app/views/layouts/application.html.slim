@@ -25,11 +25,14 @@ html class="no-js" lang="pt-br"
     = favicon_link_tag 'icon/favicon-96x96.png', rel: 'icon', sizes: '96x96', type: 'image/png'
     = favicon_link_tag 'icon/favicon-16x16.png', rel: 'icon', sizes: '16x16', type: 'image/png'
     = favicon_link_tag 'icon/manifest.json', rel: 'manifest'
+
     meta name="msapplication-TileColor" content="#ffffff"/
     meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
     meta name="theme-color" content="#ffffff"/
+
     link rel="canonical" href="http://#{request.host + url_for(:page => params[:page]) }"/
     link rel="publisher" href="http://google.com/+Masteringpnl_channel"/
+
     = auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'})
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
@@ -45,33 +48,33 @@ html class="no-js" lang="pt-br"
               span class='icon-bar'
               span class='icon-bar'
 
-            div itemscope='' itemtype='http://schema.org/Organization'
-              = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;', itemprop: 'logo'), root_path, class: 'navbar-brand', itemprop: 'url'
+            div
+              = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;'), root_path, class: 'navbar-brand'
 
           div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
 
             ul class="nav navbar-nav" role="menubar"
-              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                = link_to posts_path, itemprop: 'url', role: 'menuitem' do
-                  span itemprop="name"= 'Blog'
-              li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                = link_to ebooks_path, itemprop: 'url', role: 'menuitem' do
-                  span itemprop="name"= 'Ebooks'
+              li
+                = link_to posts_path, role: 'menuitem' do
+                  span = 'Blog'
+              li
+                = link_to ebooks_path, role: 'menuitem' do
+                  span = 'Ebooks'
               li class='dropdown'
                 a href='javascript:' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'
                   = 'Conteúdos'
                   span class="caret"
 
                 ul class='dropdown-menu'
-                  li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                    = link_to bibliographies_path, itemprop: 'url', role: 'menuitem' do
-                      span itemprop="name"= 'Bibliografias'
-                  li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                    = link_to biographies_path, itemprop: 'url', role: 'menuitem' do
-                      span itemprop="name"= 'Biografias'
-                  li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-                    = link_to metaphors_path, itemprop: 'url', role: 'menuitem' do
-                      span itemprop="name"= 'Metaforas'
+                  li
+                    = link_to bibliographies_path, role: 'menuitem' do
+                      span= 'Bibliografias'
+                  li
+                    = link_to biographies_path, role: 'menuitem' do
+                      span= 'Biografias'
+                  li
+                    = link_to metaphors_path, role: 'menuitem' do
+                      span= 'Metaforas'
 
     section ng-app="masteringpnl"= yield
 
@@ -80,24 +83,24 @@ html class="no-js" lang="pt-br"
         div class="col-md-4"
           h3= 'Loja'
           ul role="menubar" class="list-unstyled"
-            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-              = link_to ebooks_path, itemprop: 'url', role: 'menuitem' do
-                span itemprop="name"= 'Ebooks'
+            li
+              = link_to ebooks_path, role: 'menuitem' do
+                span = 'Ebooks'
 
           h3= 'Site'
           ul role="menubar" class="list-unstyled"
-            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-              = link_to posts_path, itemprop: 'url', role: 'menuitem' do
-                span itemprop="name"= 'Blog'
-            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-              = link_to root_path, itemprop: 'url', role: 'menuitem' do
-                span itemprop="name"= 'Página Inicial'
-            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-              = link_to sobre_nos_path, itemprop: 'url', role: 'menuitem' do
-                span itemprop="name"= 'Sobre nós'
-            li itemscope='' itemtype='http://www.schema.org/SiteNavigationElement'
-              = link_to contato_path, itemprop: 'url', role: 'menuitem' do
-                span itemprop="name"= 'Contato'
+            li
+              = link_to posts_path, role: 'menuitem' do
+                span= 'Blog'
+            li
+              = link_to root_path, role: 'menuitem' do
+                span= 'Página Inicial'
+            li
+              = link_to sobre_nos_path, role: 'menuitem' do
+                span= 'Sobre nós'
+            li
+              = link_to contato_path, role: 'menuitem' do
+                span= 'Contato'
 
         div class="col-md-3"
           h3= 'Conteúdos'
@@ -109,14 +112,14 @@ html class="no-js" lang="pt-br"
 
           h3= 'Midias Sociais'
           p class="footer-social-network"
-            span itemscope='' itemtype='http://schema.org/Organization'
-              = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank', itemprop: 'sameAs'
-              /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank', itemprop:'sameAs'
-              = link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher', itemprop: 'sameAs'
-              /= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank', itemprop:'sameAs'
-              = link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank', itemprop: 'sameAs'
-              = link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank', itemprop: 'sameAs'
-              = link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank', itemprop: 'sameAs'
+            span
+              = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank'
+              /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank'
+              = link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher'
+              /= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank'
+              = link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank'
+              = link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
+              = link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
 
         div class="col-md-5 text-right"
           h3 class='text-right'= 'Siga-nos no Facebook'
@@ -154,3 +157,80 @@ html class="no-js" lang="pt-br"
 
       ga('create', 'UA-27929345-12', 'auto');
       ga('send', 'pageview');
+
+    script type = "application/ld+json"
+      = '[{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "WebSite",'
+      = '"name" : "Mastering PNL",'
+      = '"url": ' + "\"http://#{request.host}\"" + ','
+      = '"potentialAction": {'
+      = '"@type": "SearchAction",'
+      = '"target":' + "\"http://#{request.host}" + "/blog?utf8=✓&search={search_term_string}\"" + ','
+      = '"query-input": "required name=search_term_string"'
+      = '},'
+      = '"sameAs" : ['
+      = '"https://www.facebook.com/masteringpnl",'
+      = '"http://google.com/+Masteringpnl_channel",'
+      = '"https://twitter.com/masteringpnl",'
+      = '"http://youtube.com/c/Masteringpnl_channel"'
+      = ']'
+      = '}]'
+
+    script type = "application/ld+json"
+      = '[{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "Organization",'
+      = '"url": ' + "\"http://masteringpnl.com\"" + ','
+      = '"name": "Mastering PNL",'
+      = '"sameAs" : ['
+      = '"https://www.facebook.com/masteringpnl",'
+      = '"http://google.com/+Masteringpnl_channel",'
+      = '"https://twitter.com/masteringpnl",'
+      = '"http://youtube.com/c/Masteringpnl_channel"'
+      = '],'
+      = '"logo": "http://masteringpnl.com/assets/logo-8f19e14f9561fc3683926e0dba8c42b21f2d090176e69a1ecd599452615efb36.png"'
+      = '}]'
+
+    script type = "application/ld+json"
+      = '[{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Blog",'
+      = '"url": ' + "\"http://#{request.host}" + "/blog\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Ebooks",'
+      = '"url": ' + "\"http://#{request.host}" + "/ebooks\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Metaforas",'
+      = '"url": ' + "\"http://#{request.host}" + "/metaphors\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Bibliografias",'
+      = '"url": ' + "\"http://#{request.host}" + "/bibliographies\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Biografias",'
+      = '"url": ' + "\"http://#{request.host}" + "/biographies\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Página Inicial",'
+      = '"url": ' + "\"http://#{request.host}\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Sobre nós",'
+      = '"url": ' + "\"http://#{request.host}" + "/sobre-nos\""
+      = '},{'
+      = '"@context": "http://schema.org",'
+      = '"@type": "SiteNavigationElement",'
+      = '"name" : "Contato",'
+      = '"url": ' + "\"http://#{request.host}" + "/contato\""
+      = '}]]'

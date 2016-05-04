@@ -25,7 +25,7 @@ class BibliographiesController < ApplicationController
       image = 'http://' + request.host + @bibliography.image_url
     end
 
-    prepare_meta_tags(title: 'Posts - ' + @bibliography.title,
+    prepare_meta_tags(title: 'Bibliografias - ' + @bibliography.title,
                       description: @bibliography.description,
                       keywords: '',
                       image: @bibliography.image_url,

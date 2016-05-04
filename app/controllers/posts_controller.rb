@@ -20,11 +20,14 @@ class PostsController < ApplicationController
   def show
 
     description = ActionView::Base.full_sanitizer.sanitize(@post.description)
+
+    image = ''
+
     if !@post.image_url.nil?
       image = 'http://' + request.host + @post.image_url
     end
 
-    prepare_meta_tags(title: 'Posts - ' + @post.title,
+    prepare_meta_tags(title: @post.title + ' - Blog | Mastering PNL',
                       description: @post.description,
                       keywords: '',
                       image: @post.image_url,
@@ -32,14 +35,23 @@ class PostsController < ApplicationController
                           title: @post.title,
                           description: description,
                           image: image,
-                          'image:type': 'image/jpg'
+                          type: 'article',
+                          'image:type': 'image/jpg',
+                          updated_time: @article.updated_at.strftime('%FT%T')
+                      },
+                      article: {
+                          #tag: @article.tag_list,
+                          author: '947897365241721',
+                          section: 'Blog',
+                          published_time: @post.created_at.strftime('%FT%T'),
+                          modified_time: @post.updated_at.strftime('%FT%T')
                       },
                       twitter: {
+                          title: @post.title,
                           card: '',
                           description: description,
                           image: image
                       })
-
   end
 
   # GET /posts/new

@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'errors/not_found'
-
-  get 'errors/internal_server_error'
-
-  resources :biographies
-  resources :posts
-
-  mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
-
-  get 'sitemaps/index'
+  resources :contacts
+  root 'home#index'
 
   resources :ebooks
+  resources :posts, :path => "blog"
+
+  resources :biographies
   resources :bibliographies
   resources :metaphors
 
@@ -40,8 +35,6 @@ Rails.application.routes.draw do
       sign_up: ''
   }
 
-  root 'home#index'
-
   get 'facebook', to: redirect('https://www.facebook.com/masteringpnl')
   get 'googleplus', to: redirect('http://google.com/+Masteringpnl_channel')
   get 'twitter', to: redirect('https://twitter.com/masteringpnl')
@@ -50,6 +43,8 @@ Rails.application.routes.draw do
   get 'digitalocean', to: redirect('https://m.do.co/c/37a21a960bcd')
   get 'feed_path', to: redirect('/feed.rss')
 
+  get 'sitemaps/index'
+
   get 'contato' => 'home#contact'
   get 'sobre-nos' => 'home#about_us'
   post 'enviar' => 'home#send_email'
@@ -57,9 +52,14 @@ Rails.application.routes.draw do
   get 'feed.rss', :controller => 'feed', :action => 'rss', :format => 'rss', as: 'feed'
   get 'sitemap.xml' => 'sitemaps#index', :format => 'xml', :as => :sitemap
 
-  match "/404", :to => "errors#not_found", :via => :all
-  match "/422", :to => "errors#unprocessable_entity", :via => :all
-  match "/500", :to => "errors#internal_server_error", :via => :all
+  match '/404', :to => 'errors#not_found', :via => :all
+  match '/422', :to => 'errors#unprocessable_entity', :via => :all
+  match '/500', :to => 'errors#internal_server_error', :via => :all
+
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
+
+  mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
