@@ -24,6 +24,13 @@ div class="container"
 
       div itemprop="description"= simple_format @biography.description
 
+    div class='col-md-12'
+      h3= 'Biografias relacionados'
+
+      - if @biographies
+        - @biographies.each do |biography|
+          p= link_to biography.title, biography
+
       = render 'addtoany/share_buttons'
 
     br

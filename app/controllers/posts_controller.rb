@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       @posts = Post.order("created_at DESC").page params[:page]
     end
 
-    prepare_meta_tags title: 'Posts'
+    prepare_meta_tags title: 'Blog'
 
   end
 
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
 
-    description = ActionView::Base.full_sanitizer.sanitize(@post.description)
+    @posts = Post.where("id != '#{@post.id}'").order("RANDOM()").limit(5)
 
     image = ''
 
@@ -27,17 +27,17 @@ class PostsController < ApplicationController
       image = 'http://' + request.host + @post.image_url
     end
 
-    prepare_meta_tags(title: @post.title + ' - Blog | Mastering PNL',
-                      description: @post.description,
+    prepare_meta_tags(title: @post.title + ' - Blog',
+                      description: @post.summary,
                       keywords: '',
                       image: @post.image_url,
                       og: {
                           title: @post.title,
-                          description: description,
+                          description: @post.summary,
                           image: image,
                           type: 'article',
                           'image:type': 'image/jpg',
-                          updated_time: @article.updated_at.strftime('%FT%T')
+                          updated_time: @post.updated_at.strftime('%FT%T')
                       },
                       article: {
                           #tag: @article.tag_list,
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
                       twitter: {
                           title: @post.title,
                           card: '',
-                          description: description,
+                          description: @post.summary,
                           image: image
                       })
   end

@@ -1,9 +1,10 @@
 class Ebook < ActiveRecord::Base
-  validates :title, presence: true
-  validates :url, presence: true
-  validates :value, numericality: {greater_than: 0}
+
   mount_uploader :image, AvatarUploader
-  acts_as_commentable
+
+  validates :title, :url, presence: true
+  validates :value, numericality: {greater_than: 0}
+  validates :summary, length: { maximum: 155 }
 
   # Make url friendly using title
   def to_param

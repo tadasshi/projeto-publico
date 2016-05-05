@@ -19,26 +19,40 @@ class BiographiesController < ApplicationController
   # GET /biographies/1.json
   def show
 
-    description = ActionView::Base.full_sanitizer.sanitize(@biography.description)
+    @biographies = Biography.where("id != '#{@biography.id}'").order("RANDOM()").limit(5)
+
+    image = ''
+
     if !@biography.image_url.nil?
       image = 'http://' + request.host + @biography.image_url
     end
 
-    prepare_meta_tags(title: 'Posts - ' + @biography.title,
-                      description: @biography.description,
+    prepare_meta_tags(title: @biography.title + ' - Biografias',
+                      description: @biography.summary,
                       keywords: '',
                       image: @biography.image_url,
                       og: {
                           title: @biography.title,
-                          description: description,
+                          description: @biography.summary,
                           image: image,
-                          'image:type': 'image/jpg'
+                          type: 'article',
+                          'image:type': 'image/jpg',
+                          updated_time: @biography.updated_at.strftime('%FT%T')
+                      },
+                      article: {
+                          #tag: @article.tag_list,
+                          author: '947897365241721',
+                          section: 'Biografias',
+                          published_time: @biography.created_at.strftime('%FT%T'),
+                          modified_time: @biography.updated_at.strftime('%FT%T')
                       },
                       twitter: {
+                          title: @biography.title,
                           card: '',
-                          description: description,
+                          description: @biography.summary,
                           image: image
                       })
+
 
   end
 

@@ -42,6 +42,13 @@ div class="container" itemscope="http://schema.org/Product"
           br
           br
 
+    div class='col-md-12'
+      h3= 'Bibliografias relacionados'
+
+      - if @bibliographies
+        - @bibliographies.each do |bibliography|
+          p= link_to bibliography.title, bibliography
+
       = render 'addtoany/share_buttons'
 
     br

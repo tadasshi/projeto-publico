@@ -25,6 +25,13 @@ div class="container"
 
       div itemprop="description"= simple_format @metaphor.description
 
+    div class='col-md-12'
+      h3= 'Metáforas relacionados'
+
+      - if @metaphors
+        - @metaphors.each do |metaphor|
+          p= link_to metaphor.title, metaphor
+
       = render 'addtoany/share_buttons'
 
     br

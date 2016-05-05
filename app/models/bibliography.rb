@@ -1,7 +1,9 @@
 class Bibliography < ActiveRecord::Base
-  validates :title, presence: true
+
   mount_uploader :image, AvatarUploader
-  acts_as_commentable
+
+  validates :title, presence: true
+  validates :summary, length: { maximum: 155 }
 
   # Make url friendly using title
   def to_param

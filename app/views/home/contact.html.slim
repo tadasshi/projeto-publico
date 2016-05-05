@@ -3,6 +3,11 @@ div
 
 div class="container"
 
+  - if notice
+    p class="alert alert-success"= notice
+    - if alert
+      p class="alert alert-danger"= alert
+
   h1= 'Contato'
 
   - breadcrumb :contato

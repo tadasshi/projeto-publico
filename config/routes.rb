@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :ebooks
-  resources :posts, :path => "blog"
+  resources :posts, :path => 'blog'
 
   resources :biographies
   resources :bibliographies

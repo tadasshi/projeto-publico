@@ -35,23 +35,28 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.model Metaphor do
-    configure :description, :ck_editor
-  end
-
   config.model Post do
     configure :description, :ck_editor
+    configure :summary, :text
   end
 
   config.model Ebook do
     configure :description, :ck_editor
+    configure :summary, :text
+  end
+
+  config.model Metaphor do
+    configure :description, :ck_editor
+    configure :summary, :text
   end
 
   config.model Biography do
     configure :description, :ck_editor
+    configure :summary, :text
   end
 
   config.model Bibliography do
     configure :description, :ck_editor
+    configure :summary, :text
   end
 end

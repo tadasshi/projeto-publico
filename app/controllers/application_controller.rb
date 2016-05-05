@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def prepare_meta_tags(options={})
     site_name = 'MasteringPNL'
-    title = [controller_name, action_name].join(" ")
+    #title = [controller_name, action_name].join(" ")
     description = 'Grupo com o propósito de desenvolver, adaptar e difundir as ferramentas da PNL aliado com a psicologia, para todos que desejam bem estar psicológico.'
     #image = options[:image] || 'your-default-image-url'
     current_url = request.url
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     # Let's prepare a nice set of defaults
     defaults = {
         site: site_name,
-        title: title,
+        #title: title,
         #image: image,
         reverse: true,
         description: description,

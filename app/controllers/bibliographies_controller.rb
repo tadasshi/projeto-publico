@@ -20,26 +20,41 @@ class BibliographiesController < ApplicationController
   # GET /bibliographies/1
   # GET /bibliographies/1.json
   def show
-    description = ActionView::Base.full_sanitizer.sanitize(@bibliography.description)
+
+    @bibliographies = Bibliography.where("id != '#{@bibliography.id}'").order("RANDOM()").limit(5)
+
+    image = ''
+
     if !@bibliography.image_url.nil?
       image = 'http://' + request.host + @bibliography.image_url
     end
 
-    prepare_meta_tags(title: 'Bibliografias - ' + @bibliography.title,
-                      description: @bibliography.description,
+    prepare_meta_tags(title: @bibliography.title + ' - Bibliografias',
+                      description: @bibliography.summary,
                       keywords: '',
                       image: @bibliography.image_url,
                       og: {
                           title: @bibliography.title,
-                          description: description,
+                          description: @bibliography.summary,
                           image: image,
-                          'image:type': 'image/jpg'
+                          type: 'article',
+                          'image:type': 'image/jpg',
+                          updated_time: @bibliography.updated_at.strftime('%FT%T')
+                      },
+                      article: {
+                          #tag: @article.tag_list,
+                          author: '947897365241721',
+                          section: 'Bibliografias',
+                          published_time: @bibliography.created_at.strftime('%FT%T'),
+                          modified_time: @bibliography.updated_at.strftime('%FT%T')
                       },
                       twitter: {
+                          title: @bibliography.title,
                           card: '',
-                          description: description,
+                          description: @bibliography.summary,
                           image: image
                       })
+
 
   end
 

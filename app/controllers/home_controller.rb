@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   def send_email
     email = Contact.new(contact_params)
     UserNotifier.send_signup_email(email).deliver
-    redirect_to root_path, notice: 'Email enviado com sucesso!'
+    redirect_to contato_path, notice: 'Email enviado, aguarde o nosso retorno!'
   end
 
   def about_us

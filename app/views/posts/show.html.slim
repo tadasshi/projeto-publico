@@ -26,6 +26,13 @@ div class="container"
       div itemprop="description"= simple_format @post.description
 
     div class='col-md-12'
+      h3= 'Posts relacionados'
+
+      - if @posts
+        - @posts.each do |post|
+          p= link_to post.title, post
+
+    div class='col-md-12'
       = render 'addtoany/share_buttons'
 
     br

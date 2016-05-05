@@ -20,24 +20,28 @@ class EbooksController < ApplicationController
   # GET /ebooks/1.json
   def show
 
-    description = ActionView::Base.full_sanitizer.sanitize(@ebook.description)
+    image = ''
+
     if !@ebook.image_url.nil?
       image = 'http://' + request.host + @ebook.image_url
     end
-
-    prepare_meta_tags(title: 'Ebooks - ' + @ebook.title,
-                      description: description,
+    
+    prepare_meta_tags(title: @ebook.title + ' - Ebooks',
+                      description: @ebook.summary,
                       keywords: '',
                       image: @ebook.image_url,
                       og: {
                           title: @ebook.title,
-                          description: description,
+                          description: @ebook.summary,
                           image: image,
-                          'image:type': 'image/jpg'
+                          type: 'article',
+                          'image:type': 'image/jpg',
+                          updated_time: @ebook.updated_at.strftime('%FT%T')
                       },
                       twitter: {
+                          title: @ebook.title,
                           card: '',
-                          description: description,
+                          description: @ebook.summary,
                           image: image
                       })
 

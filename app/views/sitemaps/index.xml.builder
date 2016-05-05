@@ -1,29 +1,36 @@
 base_url = "http://#{request.host_with_port}"
 xml.instruct! :xml, :version => '1.0'
-xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
+xml.tag! 'urlset',
+         'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' ,
+         'xmlns:mobile' => 'http://www.google.com/schemas/sitemap-mobile/1.0' do
   xml.url {
     xml.loc(root_url)
     xml.changefreq('weekly')
+    xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
     xml.loc('http://masteringpnl.com/sobre-nos')
     xml.changefreq('monthly')
+    xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
     xml.loc('http://masteringpnl.com/contato')
     xml.changefreq('monthly')
+    xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
     xml.loc(ebooks_url)
     xml.changefreq('daily')
+    xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
     xml.loc(posts_url)
     xml.changefreq('daily')
+    xml.mobile(:mobile)
     xml.priority(1.0)
   }
   # xml.url {
@@ -46,6 +53,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
       xml.loc "#{ebook_url(ebook)}"
       xml.lastmod ebook.updated_at.strftime('%F')
       xml.changefreq('weekly')
+      xml.mobile(:mobile)
       xml.priority(0.9)
     }
   end
@@ -54,6 +62,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
       xml.loc "#{post_url(post)}"
       xml.lastmod post.updated_at.strftime('%F')
       xml.changefreq('weekly')
+      xml.mobile(:mobile)
       xml.priority(0.8)
     }
   end
