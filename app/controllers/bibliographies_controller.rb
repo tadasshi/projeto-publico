@@ -38,15 +38,12 @@ class BibliographiesController < ApplicationController
                           description: @bibliography.summary,
                           image: image,
                           type: 'article',
-                          'image:type': 'image/jpg',
-                          updated_time: @bibliography.updated_at.strftime('%FT%T')
+                          'image:type': 'image/jpg'
                       },
                       article: {
                           #tag: @article.tag_list,
                           author: '947897365241721',
-                          section: 'Bibliografias',
-                          published_time: @bibliography.created_at.strftime('%FT%T'),
-                          modified_time: @bibliography.updated_at.strftime('%FT%T')
+                          section: 'Bibliografias'
                       },
                       twitter: {
                           title: @bibliography.title,

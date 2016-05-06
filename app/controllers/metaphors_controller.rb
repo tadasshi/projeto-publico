@@ -38,14 +38,11 @@ class MetaphorsController < ApplicationController
                           image: image,
                           type: 'article',
                           'image:type': 'image/jpg',
-                          updated_time: @metaphor.updated_at.strftime('%FT%T')
                       },
                       article: {
                           #tag: @article.tag_list,
                           author: '947897365241721',
-                          section: 'Metáforas',
-                          published_time: @metaphor.created_at.strftime('%FT%T'),
-                          modified_time: @metaphor.updated_at.strftime('%FT%T')
+                          section: 'Metáforas'
                       },
                       twitter: {
                           title: @metaphor.title,
