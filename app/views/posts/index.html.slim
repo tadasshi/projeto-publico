@@ -33,7 +33,7 @@ div class="container"
             /<div class="meta">
             /<span class="cinema"><%#= posts.author %></span>
             /</div>
-            div class="description"= simple_format truncate(post.description, :length => 200, escape: false)
+            div class="description"= truncate(strip_tags(post.description), :length => 400, :separator => ' ', escape: false)
 
             div class="extra"
               = link_to post, class: 'btn flat-button remove-border blue-button white-font-color' do
