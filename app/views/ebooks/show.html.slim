@@ -24,7 +24,7 @@ div class="container"
         span itemprop="name"= 'Wilson Y. K. Neves'
 
       br
-      div itemprop="description"= simple_format @ebook.description
+      div itemprop="description"= @ebook.description.html_safe
       br
 
       div itemprop="publisher" itemscope='' itemtype="http://schema.org/Organization"

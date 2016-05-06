@@ -22,7 +22,7 @@ div class="container"
         meta itemprop="datePublished" content="#{@biography.created_at.strftime("%FT")}"
         = "Data de publicação: #{@biography.created_at.strftime("%d/%m/%Y")}"
 
-      div itemprop="description"= simple_format @biography.description
+      div itemprop="description"= @biography.description.html_safe
 
     div class='col-md-12'
       h3= 'Biografias relacionados'

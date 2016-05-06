@@ -19,7 +19,7 @@ div class="container" itemscope="http://schema.org/Product"
         div itemprop="name"
           h1= @bibliography.title
 
-      p itemprop="description"= simple_format @bibliography.description
+      p itemprop="description"= @bibliography.description.html_safe
 
       p= @bibliography.year
 
