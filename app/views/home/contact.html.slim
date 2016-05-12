@@ -2,7 +2,7 @@ div
   = image_tag('banner-contact.jpg', :alt => 'Banner', class: 'img-responsive', style: 'width:100%')
 
 div class="container"
-
+  br
   - if notice
     p class="alert alert-success"= notice
     - if alert
@@ -17,19 +17,19 @@ div class="container"
 
   div class="row"
     div class="col-lg-5"
-      = form_for(@contact, url: enviar_path, :html => {:class => 'ui form', :id => ''}, :method => 'post') do |f|
+      = form_for(@contact, :html => {:class => 'ui form', :id => ''}, :method => 'post') do |f|
 
         div class="field"
           = f.label :name
-          = f.text_field :name, placeholder: 'Seu nome'
+          = f.text_field :name, placeholder: 'Seu nome', :required => true
 
         div class="field"
           = f.label :email
-          = f.email_field :email, placeholder: 'Seu email'
+          = f.email_field :email, placeholder: 'Seu email', :required => true
 
         div class="field"
           = f.label :message
-          = f.text_area :message, placeholder: 'Seu email'
+          = f.text_area :message, placeholder: 'Seu email', :required => true
 
         div class="form-group"
           = f.button "Enviar Contato", class: 'btn flat-button remove-border blue-button white-font-color'

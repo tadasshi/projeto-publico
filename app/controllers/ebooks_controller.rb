@@ -48,55 +48,55 @@ class EbooksController < ApplicationController
   end
 
   # GET /ebooks/new
-  def new
-    @ebook = Ebook.new
-    prepare_meta_tags noindex: true
-  end
+  # def new
+  #   @ebook = Ebook.new
+  #   prepare_meta_tags noindex: true
+  # end
 
   # GET /ebooks/1/edit
-  def edit
-    prepare_meta_tags noindex: true
-  end
+  # def edit
+  #   prepare_meta_tags noindex: true
+  # end
 
   # POST /ebooks
   # POST /ebooks.json
-  def create
-    @ebook = Ebook.new(ebook_params)
-
-    respond_to do |format|
-      if @ebook.save
-        format.html { redirect_to @ebook, notice: 'Ebook was successfully created.' }
-        format.json { render :show, status: :created, location: @ebook }
-      else
-        format.html { render :new }
-        format.json { render json: @ebook.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   @ebook = Ebook.new(ebook_params)
+  #
+  #   respond_to do |format|
+  #     if @ebook.save
+  #       format.html { redirect_to @ebook, notice: 'Ebook was successfully created.' }
+  #       format.json { render :show, status: :created, location: @ebook }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @ebook.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /ebooks/1
   # PATCH/PUT /ebooks/1.json
-  def update
-    respond_to do |format|
-      if @ebook.update(ebook_params)
-        format.html { redirect_to @ebook, notice: 'Ebook was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ebook }
-      else
-        format.html { render :edit }
-        format.json { render json: @ebook.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @ebook.update(ebook_params)
+  #       format.html { redirect_to @ebook, notice: 'Ebook was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @ebook }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @ebook.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /ebooks/1
   # DELETE /ebooks/1.json
-  def destroy
-    @ebook.destroy
-    respond_to do |format|
-      format.html { redirect_to ebooks_url, notice: 'Ebook was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @ebook.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to ebooks_url, notice: 'Ebook was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -105,7 +105,7 @@ class EbooksController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def ebook_params
-    params.require(:ebook).permit(:title, :description, :image, :value, :url)
-  end
+  # def ebook_params
+  #   params.require(:ebook).permit(:title, :description, :image, :value, :url)
+  # end
 end
