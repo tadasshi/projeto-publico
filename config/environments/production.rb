@@ -79,4 +79,20 @@ Rails.application.configure do
 
   Slim::Engine.options[:disable_escape] = true
 
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  host = 'masteringpnl.com/'
+
+  config.action_mailer.default_url_options = {host: host}
+
+  ActionMailer::Base.smtp_settings = {
+      :user_name => 'tadasshi',
+      :password => 'Sendgrip*147',
+      :domain => host,
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
 end

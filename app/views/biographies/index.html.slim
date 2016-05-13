@@ -32,7 +32,7 @@ div class="container"
             /<span class="cinema"><%#= biography.author %></span>
             /</div>
             div class="description"
-              p= simple_format truncate(biography.description, :length => 200, escape: false)
+              p= truncate(strip_tags(biography.description), :length => 400, :separator => ' ', escape: false)
 
             div class="extra"
               = link_to biography, class: 'btn flat-button remove-border blue-button white-font-color' do

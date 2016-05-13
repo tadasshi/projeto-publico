@@ -65,3 +65,5 @@ MasteringPnl
 > config/initializers/devise.rb
 
 * [Setup Capistrano on LOCAL](https://gist.github.com/stevenyap/9130882)
+
+* [ativar ipv6](https://www.digitalocean.com/community/tutorials/how-to-enable-ipv6-for-digitalocean-droplets)

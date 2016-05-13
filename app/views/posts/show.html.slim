@@ -23,7 +23,7 @@ div class="container"
         meta itemprop="datePublished" content="#{@post.created_at.strftime('%FT')}"
         = "Data de publicação: #{@post.created_at.strftime('%d/%m/%Y')}"
 
-      div itemprop="description"= simple_format @post.description
+      div itemprop="description"= @post.description.html_safe
 
     div class='col-md-12'
       h3= 'Posts relacionados'
@@ -33,7 +33,7 @@ div class="container"
           p= link_to post.title, post
 
     div class='col-md-12'
-      = render 'addtoany/share_buttons'
+      = render 'shareaholic/share_buttons'
 
     br
     br

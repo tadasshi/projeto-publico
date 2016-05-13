@@ -3,8 +3,81 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :prepare_meta_tags, if: "request.get?"
+  before_action :prepare_json_dl, if: "request.get?"
 
   #include ActionView::Helpers::TextHelper
+
+  def prepare_json_dl()
+    @json_Organization = JSON.generate(
+        [{'@context': 'http://schema.org',
+          '@type': 'Organization',
+          'url': 'http://masteringpnl.com',
+          'name': 'Mastering PNL',
+          'sameAs': %w(https://www.facebook.com/masteringpnl http://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl http://youtube.com/c/Masteringpnl_channel),
+          'logo': 'http://masteringpnl.com/assets/logo-8f19e14f9561fc3683926e0dba8c42b21f2d090176e69a1ecd599452615efb36.png'
+         }]
+    )
+
+    @json_Elements = JSON.generate(
+        [{
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Blog',
+             'url': "http://#{request.host}\blog"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Ebooks',
+             'url': "http://#{request.host}\ebooks"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Metaforas',
+             'url': "http://#{request.host}\metaphors"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Bibliografias',
+             'url': "http://#{request.host}\bibliographies"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Biografias',
+             'url': "http://#{request.host}\biographies"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Página Inicial',
+             'url': "http://#{request.host}"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Sobre nós',
+             'url': "http://#{request.host}\sobre-nos"
+         }, {
+             '@context': 'http://schema.org',
+             '@type': 'SiteNavigationElement',
+             'name': 'Contato',
+             'url': "http://#{request.host}\contato"
+         }]
+    )
+
+    @json_Website = JSON.generate(
+        [{
+             '@context': 'http://schema.org',
+             '@type': 'WebSite',
+             'name': 'Mastering PNL',
+             'url': "http://#{request.host}",
+             'potentialAction': {
+                 '@type': 'SearchAction',
+                 'target': "http://#{request.host}/blog?utf8=✓&search={search_term_string}",
+                 'query-input': 'required name=search_term_string'
+             }, 'sameAs': %w(https://www.facebook.com/masteringpnl http://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl http://youtube.com/c/Masteringpnl_channel)
+         }]
+    )
+
+  end
+
 
   def prepare_meta_tags(options={})
     site_name = 'MasteringPNL'
@@ -34,7 +107,7 @@ class ApplicationController < ActionController::Base
             url: current_url,
             site_name: site_name
         },
-        fb:{
+        fb: {
             profile_id: '947897365241721',
             #app_id: '238224526567263',
             #admins, #A Facebook app ID
