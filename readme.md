@@ -1,40 +1,12 @@
 MasteringPnl
 =============================
 
-## 1.0
-
-* (pronto)[Cadastrar Ebook](https://masteringpnl.fetchapp.com/admin/products/new)
-* (falta mandar email)Implementar contato
-* (pronto)Implementar link para amazon em ebooks
-* (pronto)Customizar páginas 404, 422 e 500
-* (pronto)Add biografias
-* (pronto)Add posts
-
-## 2.0
-
-* (pronto)[Implementar comentarios para ebooks/](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* (pronto)[Implementar comentarios para metaforas](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* (pronto)[Implementar comentarios para bibliografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* (pronto)[Implementar comentarios para biografias](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-* (pronto)[Implementar comentarios para posts](http://www.rubydoc.info/gems/acts_as_commentable/4.0.2)
-
 ## 3.0
 
-* (pronto)[links de compartilhar](https://github.com/hermango/shareable)
 * (Parcialmente)Implementar GeoTargetings
-* (pronto)[Repost facebook](https://github.com/arsduo/koala)
-* (alternativa)[Repost facebook]
-* (alternativa)[Repost facebook - alternativa]
 
 * [Repost Google+](https://github.com/google/google-api-ruby-client)
 * [Repost twitter](https://github.com/sferik/twitter)
-
-* Sitemap para imagens
-* Sitemap para mobile
-* Sitemap para news
-
-* Colocar conteúdo do golfinho em um armazem.
-* Publicações relacionadas na lateral
 
 ## 4.0
 
