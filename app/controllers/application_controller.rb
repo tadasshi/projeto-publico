@@ -23,42 +23,42 @@ class ApplicationController < ActionController::Base
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Blog',
-             'url': "http://www.#{request.host}\blog"
+             'url': "http://#{request.host}\blog"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Ebooks',
-             'url': "http://www.#{request.host}\ebooks"
+             'url': "http://#{request.host}\ebooks"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Metaforas',
-             'url': "http://www.#{request.host}\metaphors"
+             'url': "http://#{request.host}\metaphors"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Bibliografias',
-             'url': "http://www.#{request.host}\bibliographies"
+             'url': "http://#{request.host}\bibliographies"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Biografias',
-             'url': "http://www.#{request.host}\biographies"
+             'url': "http://#{request.host}\biographies"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Página Inicial',
-             'url': "http://www.#{request.host}"
+             'url': "http://#{request.host}"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Sobre nós',
-             'url': "http://www.#{request.host}\sobre-nos"
+             'url': "http://#{request.host}\sobre-nos"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Contato',
-             'url': "http://www.#{request.host}\contato"
+             'url': "http://#{request.host}\contato"
          }]
     )
 
@@ -67,10 +67,10 @@ class ApplicationController < ActionController::Base
              '@context': 'http://schema.org',
              '@type': 'WebSite',
              'name': 'Mastering PNL',
-             'url': "http://www.#{request.host}",
+             'url': "http://#{request.host}",
              'potentialAction': {
                  '@type': 'SearchAction',
-                 'target': "http://www.#{request.host}/blog?utf8=✓&search={search_term_string}",
+                 'target': "http://#{request.host}/blog?utf8=✓&search={search_term_string}",
                  'query-input': 'required name=search_term_string'
              }, 'sameAs': %w(https://www.facebook.com/masteringpnl http://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl http://youtube.com/c/Masteringpnl_channel)
          }]
