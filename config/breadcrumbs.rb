@@ -38,7 +38,7 @@ crumb :metaphor do |metaphor|
 end
 
 crumb :posts do
-  link 'Posts', posts_path
+  link 'Blog/Posts', posts_path
 end
 
 crumb :post do |post|

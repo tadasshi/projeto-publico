@@ -7,7 +7,7 @@ div class="container"
 
   a itemprop="url" href="http://#{request.host + url_for(:page => params[:page]) }"
     div itemprop="name"
-      h2= 'Blog'
+      h2= 'Ultimos posts'
 
       - breadcrumb :posts, @posts
       == breadcrumbs pretext: 'Você está aqui: ', separator: ' &rsaquo; ', :semantic => true, :link_current => true

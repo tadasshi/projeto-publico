@@ -10,13 +10,13 @@ xml.tag! 'urlset',
     xml.priority(1.0)
   }
   xml.url {
-    xml.loc('http://masteringpnl.com/sobre-nos')
+    xml.loc('http://www.masteringpnl.com/sobre-nos')
     xml.changefreq('monthly')
     xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
-    xml.loc('http://masteringpnl.com/contato')
+    xml.loc('http://www.masteringpnl.com/contato')
     xml.changefreq('monthly')
     xml.mobile(:mobile)
     xml.priority(1.0)

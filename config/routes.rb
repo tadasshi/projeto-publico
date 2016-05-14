@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  if Rails.env.production?
+    constraints(host: /^(?!www\.)/i) do
+      match '(*any)' => redirect { |params, request|
+        URI.parse(request.url).tap { |uri| uri.host = "www.#{uri.host}" }.to_s }, via: [:get, :post]
+    end
+  end
+
   resources :contacts
   root 'home#index'
 

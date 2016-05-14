@@ -1,6 +1,6 @@
 doctype html
 html class="no-js" lang="pt-br"
-  head
+  head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
     - if !params[:page]
       meta name="robots" content="index,follow"/
     - else
@@ -30,7 +30,7 @@ html class="no-js" lang="pt-br"
     meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
     meta name="theme-color" content="#ffffff"/
 
-    link rel="canonical" href="http://#{request.host + url_for(:page => params[:page]) }"/
+    link rel="canonical" href="http://www.#{request.host + url_for(:page => params[:page]) }"/
     link rel="publisher" href="http://google.com/+Masteringpnl_channel"/
 
     = auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'})
@@ -56,7 +56,7 @@ html class="no-js" lang="pt-br"
             ul class="nav navbar-nav" role="menubar"
               li
                 = link_to posts_path, role: 'menuitem' do
-                  span = 'Blog'
+                  span = 'Blog/Conteúdos'
               li
                 = link_to ebooks_path, role: 'menuitem' do
                   span = 'Ebooks'
