@@ -23,42 +23,37 @@ class ApplicationController < ActionController::Base
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Blog',
-             'url': "http://#{request.host}\blog"
+             'url': "http://#{request.host}/blog"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Ebooks',
-             'url': "http://#{request.host}\ebooks"
+             'url': "http://#{request.host}/ebooks"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Metaforas',
-             'url': "http://#{request.host}\metaphors"
+             'url': "http://#{request.host}/metaphors"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Bibliografias',
-             'url': "http://#{request.host}\bibliographies"
+             'url': "http://#{request.host}/bibliographies"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Biografias',
-             'url': "http://#{request.host}\biographies"
-         }, {
-             '@context': 'http://schema.org',
-             '@type': 'SiteNavigationElement',
-             'name': 'Página Inicial',
-             'url': "http://#{request.host}"
+             'url': "http://#{request.host}/biographies"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Sobre nós',
-             'url': "http://#{request.host}\sobre-nos"
+             'url': "http://#{request.host}/sobre-nos"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Contato',
-             'url': "http://#{request.host}\contato"
+             'url': "http://#{request.host}/contato"
          }]
     )
 
