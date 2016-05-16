@@ -66,7 +66,30 @@ div class="site-index"
 
           div class="field"
             = f.label :message
-            = f.text_area :message, placeholder: 'Seu email', :required => true
+            = f.text_area :message, placeholder: 'Sua mensagem', :required => true
 
           div class="form-group text-center"
             = f.button "Enviar Contato", class: 'btn flat-button remove-border blue-button white-font-color'
+
+    div
+      div class="container"
+      div class="col-lg-5 center-block float-none"
+        br
+        h3 class="text-center"= 'Assine nossa newsletter'
+        br
+        = form_for(@newsletter, remote: true, :html => {:class => 'ui form', :'data-type' => :json}) do |f|
+          /- if @newsletter.errors.any?
+          /  div id="error_explanation"
+          /    h2= "#{pluralize(@newsletter.errors.count, 'error')} prohibited this newsletter from being saved:"
+          /    ul
+          /    - @newsletter.errors.full_messages.each do |message|
+          /      li= message
+          div class="field"
+            = f.label :name
+            = f.text_field :name, placeholder: 'Seu nome', required: true
+          div class="field"
+            = f.label :email
+            = f.email_field :email, placeholder: 'Seu email', required: true
+          div class="form-group text-center"
+            = f.button 'Quero receber novidades', class: 'btn flat-button remove-border blue-button white-font-color'
+        br

@@ -20,3 +20,11 @@
 //= require_tree .
 
 app = angular.module('masteringpnl', []);
+
+$("#new_newsletter").on("ajax:success", function(e, data, status, xhr) {
+    $('#newsletter_success').modal();
+    return $(this).find("input[type=text],input[type=email], textarea").val("");
+}).on("ajax:error", function(e, xhr, status, error) {
+    $('#newsletter_error').modal();
+    return $("input[type=text], textarea").val("");
+});

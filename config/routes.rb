@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :newsletters
   if Rails.env.production?
     constraints(host: /^(?!www\.)/i) do
       match '(*any)' => redirect { |params, request|

@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     prepare_meta_tags title: 'Página Inicial'
     @contact = Contact.new
+    @newsletter = Newsletter.new
   end
 
   def contact
