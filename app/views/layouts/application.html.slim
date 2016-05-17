@@ -135,40 +135,27 @@ html class="no-js" lang="pt-br"
               = 'Hospedado por '
               = link_to 'DigitalOcean', digitalocean_path, target: '_blank', :rel => 'nofollow'
 
-          /div class="col-md-4"
-          /  small class="pull-right"
-          /    = 'Desenvolvidor por '
-          /    = link_to 'Thiago Tadashi', thiagotadashi_path, target: '_blank', :rel => 'nofollow'
-          /
-          /    = javascript_include_tag 'application'
-
     div class="modal fade" id="newsletter_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       div class="modal-dialog" role="document"
-        div class="modal-content"
-          div class="modal-header"
+        div class="modal-content white-font-color blue-background"
+          div class="modal-body"
             button type="button" class="close" data-dismiss="modal" aria-label="Close"
               span aria-hidden="true" = "&times;"
-            h4 class="modal-title" id="myModalLabel"= 'Newsletter'
-
-          div class="modal-body"
-            = 'Email cadastrado com sucesso!'
-
-          div class="modal-footer"
-            button type="button" class="btn btn-success" data-dismiss="modal"= 'Ok!'
+            h3= 'Email cadastrado com sucesso!'
+            br
+            p class='text-right'
+              button type="button" class="btn btn-claro" data-dismiss="modal"= 'Obrigado!'
 
     div class="modal fade" id="newsletter_error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       div class="modal-dialog" role="document"
-        div class="modal-content"
-          div class="modal-header"
+        div class="modal-content white-font-color blue-background"
+          div class="modal-body"
             button type="button" class="close" data-dismiss="modal" aria-label="Close"
               span aria-hidden="true" = "&times;"
-            h4 class="modal-title" id="myModalLabel"= 'Newsletter'
-
-          div class="modal-body"
-            = 'Houve um erro no cadastro, tente novamente mais tarde!'
-
-          div class="modal-footer"
-            button type="button" class="btn btn-danger" data-dismiss="modal"= 'Ok!'
+            h3= 'Houve um erro no cadastro, tente novamente mais tarde!'
+            br
+            p class='text-right'
+              button type="button" class="btn btn-claro" data-dismiss="modal"= 'Ok!'
 
     = javascript_include_tag 'application'
 
