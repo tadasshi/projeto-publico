@@ -67,6 +67,17 @@ Rails.application.routes.draw do
   get 'errors/not_found'
   get 'errors/internal_server_error'
 
+  get '/site/about', to: redirect('/', status: 302)
+  get '/bibliografia/view/guia-de-pnl-programacao-neurolinguistica', to: redirect('/', status: 302)
+  get '/default.php', to: redirect('/', status: 302)
+  get '/bibliografia/view/introducao-a-neurolinguistica', to: redirect('/', status: 302)
+  get '/bibliografia/view/pnl-sucesso-e-exito-pessoal', to: redirect('/', status: 302)
+  get '/bibliografia/view/introducao-a-programacao-neurolinguistica-como-entender-e-influenciar-as-pessoas', to: redirect('/', status: 302)
+  get '/site/index', to: redirect('/', status: 302)
+  get '/site/contact', to: redirect('/', status: 302)
+  get '/bibliografia/view/por-tras-da-consciencia', to: redirect('/', status: 302)
+  get '/bibliografia/view/o-poder-da-pnl', to: redirect('/', status: 302)
+
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
   # The priority is based upon order of creation: first created -> highest priority.
