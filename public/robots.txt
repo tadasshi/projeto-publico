@@ -5,3 +5,5 @@
 # Disallow: /
 
 Sitemap: http://masteringpnl.com/sitemap.xml
+
+Disallow: /posts
