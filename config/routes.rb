@@ -83,6 +83,16 @@ Rails.application.routes.draw do
   get '/biographies/8-o-que-e-a-pnl', to: redirect('/', status: 302)
   get '/biographies/12-e-possivel-reprogramar-seu-cerebro-com-a-pnl', to: redirect('/', status: 302)
   get '/biographies/11-3-mitos-e-equivocos-sobre-pnl', to: redirect('/', status: 302)
+  get '/biographies/10-7-niveis-de-processamento-do-pensamento-em-pnl', to: redirect('/', status: 302)
+  get '/biographies/7-tecnicas-de-acompanhar-e-conduzir-que-qualquer-um-pode-fazer-facilmente', to: redirect('/', status: 302)
+  get '/biographies/7-pnl-tecnicas-de-acompanhar-e-conduzir-que-qualquer-um-pode-fazer-facilmente', to: redirect('/', status: 302)
+  get '/posts/5-principios-da-pnl', to: redirect('/', status: 302)
+  get '/posts/4-processo-x-conteudo', to: redirect('/', status: 302)
+  get '/posts/7-tecnicas-de-acompanhar-e-conduzir-que-qualquer-um-pode-fazer-facilmente', to: redirect('/', status: 302)
+  get '/biographies/5-principios-da-pnl', to: redirect('/', status: 302)
+  get '/posts/13-3-maneiras-na-qual-a-pnl-pode-ajudar-voce-a-ser-mais-bem-sucedido', to: redirect('/', status: 302)
+  get '/posts/8-o-que-e-a-pnl', to: redirect('/', status: 302)
+  get '/posts/3-1-pressuposto-da-pnl-o-mapa-nao-e-territorio', to: redirect('/', status: 302)
 
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
