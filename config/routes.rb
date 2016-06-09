@@ -76,7 +76,13 @@ Rails.application.routes.draw do
   get '/site/index', to: redirect('/', status: 302)
   get '/site/contact', to: redirect('/', status: 302)
   get '/bibliografia/view/por-tras-da-consciencia', to: redirect('/', status: 302)
-  get '/bibliografia/view/o-poder-da-pnl', to: redirect('/', status: 302)
+  get '/posts/1-7-citacoes-para-sentir-se-fantastico-por-richard-bandler', to: redirect('/', status: 302)
+  get '/posts/5-principios-da-pnl', to: redirect('/', status: 302)
+  get '/admin/site/login', to: redirect('/', status: 302)
+  get '/posts/21-como-modelar-pessoas-confiantes', to: redirect('/', status: 302)
+  get '/biographies/8-o-que-e-a-pnl', to: redirect('/', status: 302)
+  get '/biographies/12-e-possivel-reprogramar-seu-cerebro-com-a-pnl', to: redirect('/', status: 302)
+  get '/biographies/11-3-mitos-e-equivocos-sobre-pnl', to: redirect('/', status: 302)
 
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
