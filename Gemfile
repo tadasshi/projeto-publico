@@ -109,4 +109,6 @@ group :development do
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-passenger',   require: false
   gem 'capistrano-faster-assets'
+
+  gem 'quiet_assets'
 end
