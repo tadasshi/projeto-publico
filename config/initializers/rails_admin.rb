@@ -53,6 +53,7 @@ RailsAdmin.config do |config|
     list do
       field :id
       field :title
+      field :summary
       field :created_at do
         strftime_format '%d/%m/%Y'
         label do
@@ -80,6 +81,7 @@ RailsAdmin.config do |config|
     list do
       field :id
       field :title
+      field :summary
       field :created_at do
         strftime_format '%d/%m/%Y'
         label do
@@ -107,6 +109,7 @@ RailsAdmin.config do |config|
     list do
       field :id
       field :title
+      field :summary
       field :created_at do
         strftime_format '%d/%m/%Y'
         label do
@@ -134,6 +137,7 @@ RailsAdmin.config do |config|
     list do
       field :id
       field :title
+      field :summary
       field :created_at do
         strftime_format '%d/%m/%Y'
         label do
@@ -161,6 +165,7 @@ RailsAdmin.config do |config|
     list do
       field :id
       field :title
+      field :summary
       field :created_at do
         strftime_format '%d/%m/%Y'
         label do
