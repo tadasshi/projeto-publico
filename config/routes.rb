@@ -98,6 +98,10 @@ Rails.application.routes.draw do
   get '/posts/11-3-mitos-e-equivocos-sobre-pnl', to: redirect('/', status: 302)
   get '/posts/14-o-que-e-coaching-de-pnl-programacao-neuro-linguistica', to: redirect('/', status: 302)
   get '/posts/16-a-pnl-pode-ajudar-voce-a-conseguir-maior-sucesso-na-vida', to: redirect('/', status: 302)
+  get '/bibliografia/view/o-poder-da-pnl', to: redirect('/', status: 302)
+  get '/metaphors/906-o-problema-educacional', to: redirect('/', status: 302)
+  get '/metaphors/904-o-perigo-dos-pressupostos', to: redirect('/', status: 302)
+  get '/biographies/13-3-maneiras-na-qual-a-pnl-pode-ajudar-voce-a-ser-mais-bem-sucedido', to: redirect('/', status: 302)
   get '/bibliografia/view/introducao-a-neurolinguistica', to: redirect('/', status: 302)
 
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
