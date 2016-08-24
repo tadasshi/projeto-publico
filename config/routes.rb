@@ -93,6 +93,10 @@ Rails.application.routes.draw do
   get '/posts/13-3-maneiras-na-qual-a-pnl-pode-ajudar-voce-a-ser-mais-bem-sucedido', to: redirect('/', status: 302)
   get '/posts/8-o-que-e-a-pnl', to: redirect('/', status: 302)
   get '/posts/3-1-pressuposto-da-pnl-o-mapa-nao-e-territorio', to: redirect('/', status: 302)
+  get '/metaphors/896-o-moinho-magico', to: redirect('/', status: 302)
+  get '/metaphors/906-o-problema-educacional', to: redirect('/', status: 302)
+  get '/bibliografia', to: redirect('/', status: 302)
+  get '/bibliografia/view/novos-rumos-em-comunicacao-interpessoal', to: redirect('/', status: 302)
 
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 
