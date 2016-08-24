@@ -37,26 +37,141 @@ RailsAdmin.config do |config|
 
   config.model Post do
     configure :description, :ck_editor
-    configure :summary, :text
+    configure :summary, :text do
+      html_attributes do
+        {:maxlength => 155}
+      end
+    end
+    show do
+      include_all_fields
+      field :description do
+        pretty_value do
+          value.html_safe
+        end
+      end
+    end
+    list do
+      field :id
+      field :title
+      field :summary
+      field :created_at do
+        strftime_format '%d/%m/%Y'
+        label do
+          'Criado em'
+        end
+      end
+    end
   end
 
   config.model Ebook do
     configure :description, :ck_editor
-    configure :summary, :text
+    configure :summary, :text do
+      html_attributes do
+        {:maxlength => 155}
+      end
+    end
+    show do
+      include_all_fields
+      field :description do
+        pretty_value do
+          value.html_safe
+        end
+      end
+    end
+    list do
+      field :id
+      field :title
+      field :summary
+      field :created_at do
+        strftime_format '%d/%m/%Y'
+        label do
+          'Criado em'
+        end
+      end
+    end
   end
 
   config.model Metaphor do
     configure :description, :ck_editor
-    configure :summary, :text
+    configure :summary, :text do
+      html_attributes do
+        {:maxlength => 155}
+      end
+    end
+    show do
+      include_all_fields
+      field :description do
+        pretty_value do
+          value.html_safe
+        end
+      end
+    end
+    list do
+      field :id
+      field :title
+      field :summary
+      field :created_at do
+        strftime_format '%d/%m/%Y'
+        label do
+          'Criado em'
+        end
+      end
+    end
   end
 
   config.model Biography do
     configure :description, :ck_editor
-    configure :summary, :text
+    configure :summary, :text do
+      html_attributes do
+        {:maxlength => 155}
+      end
+    end
+    show do
+      include_all_fields
+      field :description do
+        pretty_value do
+          value.html_safe
+        end
+      end
+    end
+    list do
+      field :id
+      field :title
+      field :summary
+      field :created_at do
+        strftime_format '%d/%m/%Y'
+        label do
+          'Criado em'
+        end
+      end
+    end
   end
 
   config.model Bibliography do
     configure :description, :ck_editor
-    configure :summary, :text
+    configure :summary, :text do
+      html_attributes do
+        {:maxlength => 155}
+      end
+    end
+    show do
+      include_all_fields
+      field :description do
+        pretty_value do
+          value.html_safe
+        end
+      end
+    end
+    list do
+      field :id
+      field :title
+      field :summary
+      field :created_at do
+        strftime_format '%d/%m/%Y'
+        label do
+          'Criado em'
+        end
+      end
+    end
   end
 end

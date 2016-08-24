@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :prepare_meta_tags, if: "request.get?"
   before_action :prepare_json_dl, if: "request.get?"
+  layout :layout_by_resource
 
   #include ActionView::Helpers::TextHelper
 
@@ -112,5 +113,15 @@ class ApplicationController < ActionController::Base
     options.reverse_merge!(defaults)
 
     set_meta_tags options
+  end
+
+  protected
+
+  def layout_by_resource
+    if devise_controller?
+      'dashboard'
+    else
+      'application'
+    end
   end
 end
