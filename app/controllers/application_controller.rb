@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, if: "request.get?"
   before_action :prepare_json_dl, if: "request.get?"
   layout :layout_by_resource
-  force_ssl if Rails.env.production?
+
 
   #include ActionView::Helpers::TextHelper
 
