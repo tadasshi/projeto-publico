@@ -174,4 +174,18 @@ RailsAdmin.config do |config|
       end
     end
   end
+
+  config.model Bibliography do
+    list do
+      field :id
+      field :name
+      field :email
+      field :created_at do
+        strftime_format '%d/%m/%Y'
+        label do
+          'Criado em'
+        end
+      end
+    end
+  end
 end
