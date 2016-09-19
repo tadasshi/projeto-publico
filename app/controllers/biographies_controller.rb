@@ -24,13 +24,13 @@ class BiographiesController < ApplicationController
     image = ''
 
     if !@biography.image_url.nil?
-      image = 'http://' + request.host + @biography.image_url
+      image = 'https://' + request.host + @biography.image_url
     end
 
     prepare_meta_tags(title: @biography.title + ' - Biografias',
                       description: @biography.summary,
                       keywords: '',
-                      image: @biography.image_url,
+                      image: image,
                       og: {
                           title: @biography.title,
                           description: @biography.summary,

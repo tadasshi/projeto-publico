@@ -6,12 +6,12 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
     xml.description 'Feed description'
     xml.link root_url
     xml.language 'pt-br'
-    xml.tag! 'atom:link', :rel => 'self', :type => 'application/rss+xml', :href => feed_url
+    xml.tag! 'atom:link', :rel => 'self', :type => 'application/rss+xml', :href => feed_url(protocol: 'https')
 
     for post in @posts
       xml.item do
         xml.title post.title
-        xml.link post_url(post)
+        xml.link post_url(post, protocol: 'https')
         xml.pubDate(post.created_at.rfc2822)
         xml.guid post.id
         xml.description(h(post.summary))
@@ -21,7 +21,7 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
     for ebook in @ebooks
       xml.item do
         xml.title ebook.title
-        xml.link ebook_url(ebook)
+        xml.link ebook_url(ebook, protocol: 'https')
         xml.pubDate(ebook.created_at.rfc2822)
         xml.guid ebook.id
         xml.description(h(ebook.summary))

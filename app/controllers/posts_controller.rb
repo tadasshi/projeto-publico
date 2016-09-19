@@ -24,13 +24,13 @@ class PostsController < ApplicationController
     image = ''
 
     if !@post.image_url.nil?
-      image = 'http://' + request.host + @post.image_url
+      image = 'https://' + request.host + @post.image_url
     end
 
     prepare_meta_tags(title: @post.title + ' - Blog',
                       description: @post.summary,
                       keywords: '',
-                      image: @post.image_url,
+                      image: image,
                       og: {
                           title: @post.title,
                           description: @post.summary,

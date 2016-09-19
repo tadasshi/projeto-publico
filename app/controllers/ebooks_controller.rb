@@ -23,13 +23,13 @@ class EbooksController < ApplicationController
     image = ''
 
     if !@ebook.image_url.nil?
-      image = 'http://' + request.host + @ebook.image_url
+      image = 'https://' + request.host + @ebook.image_url
     end
     
     prepare_meta_tags(title: @ebook.title + ' - Ebooks',
                       description: @ebook.summary,
                       keywords: '',
-                      image: @ebook.image_url,
+                      image: image,
                       og: {
                           title: @ebook.title,
                           description: @ebook.summary,

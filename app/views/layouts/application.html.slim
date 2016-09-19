@@ -48,8 +48,8 @@ html class="no-js" lang="pt-br"
     meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
     meta name="theme-color" content="#ffffff"/
 
-    link rel="canonical" href="http://#{request.host + url_for(:page => params[:page]) }"/
-    link rel="publisher" href="http://google.com/+Masteringpnl_channel"/
+    link rel="canonical" href="https://#{request.host + url_for(:page => params[:page]) }"/
+    link rel="publisher" href="https://google.com/+Masteringpnl_channel"/
 
     = auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'})
     = stylesheet_link_tag 'application', media: 'all'
@@ -67,7 +67,7 @@ html class="no-js" lang="pt-br"
               span class='icon-bar'
 
             div
-              = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 36px;'), root_path, class: 'navbar-brand'
+              = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 42px;'), root_path, class: 'navbar-brand'
 
           div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
 

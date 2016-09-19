@@ -13,10 +13,10 @@ class ApplicationController < ActionController::Base
     @json_Organization = JSON.generate(
         [{'@context': 'http://schema.org',
           '@type': 'Organization',
-          'url': 'http://www.masteringpnl.com',
+          'url': 'https://masteringpnl.com',
           'name': 'Mastering PNL',
-          'sameAs': %w(https://www.facebook.com/masteringpnl http://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl http://youtube.com/c/Masteringpnl_channel),
-          'logo': 'http://www.masteringpnl.com/assets/logo-8f19e14f9561fc3683926e0dba8c42b21f2d090176e69a1ecd599452615efb36.png'
+          'sameAs': %w(https://www.facebook.com/masteringpnl https://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl https://youtube.com/c/Masteringpnl_channel),
+          'logo': 'https://masteringpnl.com/assets/logo-8f19e14f9561fc3683926e0dba8c42b21f2d090176e69a1ecd599452615efb36.png'
          }]
     )
 
@@ -25,37 +25,37 @@ class ApplicationController < ActionController::Base
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Blog',
-             'url': "http://#{request.host}/blog"
+             'url': "https://#{request.host}/blog"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Ebooks',
-             'url': "http://#{request.host}/ebooks"
+             'url': "https://#{request.host}/ebooks"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Metaforas',
-             'url': "http://#{request.host}/metaphors"
+             'url': "https://#{request.host}/metaphors"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Bibliografias',
-             'url': "http://#{request.host}/bibliographies"
+             'url': "https://#{request.host}/bibliographies"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Biografias',
-             'url': "http://#{request.host}/biographies"
+             'url': "https://#{request.host}/biographies"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Sobre nós',
-             'url': "http://#{request.host}/sobre-nos"
+             'url': "https://#{request.host}/sobre-nos"
          }, {
              '@context': 'http://schema.org',
              '@type': 'SiteNavigationElement',
              'name': 'Contato',
-             'url': "http://#{request.host}/contato"
+             'url': "https://#{request.host}/contato"
          }]
     )
 
@@ -64,12 +64,12 @@ class ApplicationController < ActionController::Base
              '@context': 'http://schema.org',
              '@type': 'WebSite',
              'name': 'Mastering PNL',
-             'url': "http://#{request.host}",
+             'url': "https://#{request.host}",
              'potentialAction': {
                  '@type': 'SearchAction',
-                 'target': "http://#{request.host}/blog?utf8=✓&search={search_term_string}",
+                 'target': "https://#{request.host}/blog?utf8=✓&search={search_term_string}",
                  'query-input': 'required name=search_term_string'
-             }, 'sameAs': %w(https://www.facebook.com/masteringpnl http://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl http://youtube.com/c/Masteringpnl_channel)
+             }, 'sameAs': %w(https://www.facebook.com/masteringpnl https://google.com/+Masteringpnl_channel https://twitter.com/masteringpnl https://youtube.com/c/Masteringpnl_channel)
          }]
     )
 
