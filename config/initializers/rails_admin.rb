@@ -175,7 +175,7 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model Bibliography do
+  config.model Contact do
     list do
       field :id
       field :name
