@@ -12,22 +12,12 @@
  *
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
-@import "semantic-ui/collections/form";
-@import "semantic-ui/modules/checkbox";
-@import "semantic-ui/elements/icon";
-@import "semantic-ui/elements/input";
-@import "semantic-ui/views/card";
-@import "semantic-ui/views/item";
-@import "semantic-ui/elements/image";
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 $blue: #4D5FA9;
 $light-blue: #7B8EDD;
 
 @import "custom";
 @import "helper";
-@import "bibliographies";
 
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 

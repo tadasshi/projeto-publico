@@ -30,6 +30,18 @@ html class="no-js" lang="pt-br"
     meta http-equiv="X-UA-Compatible" content="IE=edge"/
     meta name="viewport" content="width=device-width, initial-scale=1"/
 
+    script type = "application/ld+json"
+      = @json_Website
+
+    script type = "application/ld+json"
+      = @json_Organization
+
+    script type = "application/ld+json"
+      = @json_Elements
+
+    link rel="canonical" href="https://#{request.host + url_for(:page => params[:page]) }"/
+    link rel="publisher" href="https://google.com/+Masteringpnl_channel"/
+
     = favicon_link_tag 'icon/apple-icon-57x57.png', rel: 'apple-touch-icon', sizes: '57x57'
     = favicon_link_tag 'icon/apple-icon-60x60.png', rel: 'apple-touch-icon', sizes: '60x60'
     = favicon_link_tag 'icon/apple-icon-72x72.png', rel: 'apple-touch-icon', sizes: '72x72'
@@ -48,16 +60,19 @@ html class="no-js" lang="pt-br"
     meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
     meta name="theme-color" content="#ffffff"/
 
-    link rel="canonical" href="http://#{request.host + url_for(:page => params[:page]) }"/
-    link rel="publisher" href="http://google.com/+Masteringpnl_channel"/
-
     = auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'})
+
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" integrity="sha256-BQwSEeLxuDggfePeFdo3V906rcvcJpkSAYr/Lqc2oSo=" crossorigin="anonymous"
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=" crossorigin="anonymous"
     = stylesheet_link_tag 'application', media: 'all'
+
     = csrf_meta_tags
+
 
   body vocab='http://schema.org/' typeof='WebPage'
     header class='header'
-      nav class='navbar-inverse navbar-fixed-top navbar' role='navigation'
+      nav class='navbar-inverse navbar' role='navigation'
         div class='container'
           div class='navbar-header'
             button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'
@@ -74,7 +89,7 @@ html class="no-js" lang="pt-br"
             ul class="nav navbar-nav" role="menubar"
               li
                 = link_to posts_path, role: 'menuitem' do
-                  span = 'Blog/Posts'
+                  span = 'Blog'
               li
                 = link_to ebooks_path, role: 'menuitem' do
                   span = 'Ebooks'
@@ -131,13 +146,15 @@ html class="no-js" lang="pt-br"
           h3= 'Midias Sociais'
           p class="footer-social-network"
             span
-              = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank'
+              = link_to facebook_path, target: '_blank' do
+                i class="fa fa-facebook" aria-hidden="true"
               /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank'
-              = link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher'
+              /= link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher'
               /= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank'
-              = link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank'
-              = link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
-              = link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
+              = link_to feed_path, target: '_blank' do
+                i class="fa fa-rss" aria-hidden="true"
+              /= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
+              /= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
 
         div class="col-md-5 text-right"
           h3 class='text-right'= 'Siga-nos no Facebook'
@@ -175,13 +192,8 @@ html class="no-js" lang="pt-br"
             p class='text-right'
               button type="button" class="btn btn-claro" data-dismiss="modal"= 'Ok!'
 
+    script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"
+    script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js" integrity="sha256-BlYXc67JeIFZfxjseL6XCBWFi7MwxKoUEF6rPIzHmBM=" crossorigin="anonymous"
+    script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" integrity="sha256-6Sr0HqNgUf/p88g6vsl87CrAnNqiOWhjlY6LS8jeWHA=" crossorigin="anonymous"
+
     = javascript_include_tag 'application'
-
-    script type = "application/ld+json"
-      = @json_Website
-
-    script type = "application/ld+json"
-      = @json_Organization
-
-    script type = "application/ld+json"
-      = @json_Elements

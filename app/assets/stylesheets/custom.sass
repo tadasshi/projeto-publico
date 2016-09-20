@@ -16,8 +16,9 @@
 /**********************HEADER*********************/
 .header
   .navbar
-    background-color: rgba(255,255,255,0.8)
-    border-bottom: 0 none
+    background-color: rgb(255, 255, 255)
+    border: 0 none
+    margin-bottom: 10px
 
     .navbar-nav
       a
@@ -33,7 +34,7 @@
         color: #FFF
 
     .navbar-nav > li > .dropdown-menu
-      background-color: rgba(255,255,255,0.8)
+      background-color: rgba(255, 255, 255, 0.8)
       border-radius: 0
       border: 0 none
       letter-spacing: 1px
@@ -43,8 +44,8 @@
       li
         margin: 10px 0
 
-    &> li > a
-      padding: 15px 5px
+    & > li > a
+      padding: 20px 5px
       margin: 0 15px
 
   .navbar-inverse
@@ -55,11 +56,8 @@
       border-color: $blue
       background-color: $blue !important
 
-    .navbar-nav .open  a
-      background-color: transparent !important
-
   .navbar-collapse.collapse.in
-    background-color: rgba(255,255,255,1)
+    background-color: rgba(255, 255, 255, 1)
 
 .main-menu
   background-color: #F2F2F2
@@ -146,8 +144,9 @@ a
     color: #fff
 
 .footer-social-network
-  img
-    width: 45px
+  a
+    margin: 0 15px 0 0
+    font-size: 26px
 
 /********* Breadcrumb ***********/
 
@@ -198,3 +197,14 @@ html, body
 
 h1, h2, h3, h4, h5, h6
   font-weight: 300
+
+/************BIBLIOGRAFIA*************/
+.bibliografia-record-index div > div
+  margin-bottom: 10px
+
+@media screen and (min-width: 970px)
+  .bibliografia-record-index .bibliografia-item
+    min-height: 390px
+    img
+      max-height: 364px
+

@@ -26,13 +26,13 @@ class BibliographiesController < ApplicationController
     image = ''
 
     if !@bibliography.image_url.nil?
-      image = 'http://' + request.host + @bibliography.image_url
+      image = 'https://' + request.host + @bibliography.image_url
     end
 
     prepare_meta_tags(title: @bibliography.title + ' - Bibliografias',
                       description: @bibliography.summary,
                       keywords: '',
-                      image: @bibliography.image_url,
+                      image: image,
                       og: {
                           title: @bibliography.title,
                           description: @bibliography.summary,

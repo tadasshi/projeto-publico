@@ -4,31 +4,31 @@ xml.tag! 'urlset',
          'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' ,
          'xmlns:mobile' => 'http://www.google.com/schemas/sitemap-mobile/1.0' do
   xml.url {
-    xml.loc(root_url)
+    xml.loc(root_url(protocol: 'https'))
     xml.changefreq('weekly')
     xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
-    xml.loc('http://www.masteringpnl.com/sobre-nos')
+    xml.loc('https://masteringpnl.com/sobre-nos')
     xml.changefreq('monthly')
     xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
-    xml.loc('http://www.masteringpnl.com/contato')
+    xml.loc('https://masteringpnl.com/contato')
     xml.changefreq('monthly')
     xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
-    xml.loc(ebooks_url)
+    xml.loc(ebooks_url(protocol: 'https'))
     xml.changefreq('daily')
     xml.mobile(:mobile)
     xml.priority(1.0)
   }
   xml.url {
-    xml.loc(posts_url)
+    xml.loc(posts_url(protocol: 'https'))
     xml.changefreq('daily')
     xml.mobile(:mobile)
     xml.priority(1.0)
@@ -50,7 +50,7 @@ xml.tag! 'urlset',
   # }
   @ebooks.each do |ebook|
     xml.url {
-      xml.loc "#{ebook_url(ebook)}"
+      xml.loc "#{ebook_url(ebook, protocol: 'https')}"
       xml.lastmod ebook.updated_at.strftime('%F')
       xml.changefreq('weekly')
       xml.mobile(:mobile)
@@ -59,7 +59,7 @@ xml.tag! 'urlset',
   end
   @posts.each do |post|
     xml.url {
-      xml.loc "#{post_url(post)}"
+      xml.loc "#{post_url(post, protocol: 'https')}"
       xml.lastmod post.updated_at.strftime('%F')
       xml.changefreq('weekly')
       xml.mobile(:mobile)

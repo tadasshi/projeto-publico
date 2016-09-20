@@ -25,13 +25,13 @@ class MetaphorsController < ApplicationController
     image = ''
 
     if !@metaphor.image_url.nil?
-      image = 'http://' + request.host + @metaphor.image_url
+      image = 'https://' + request.host + @metaphor.image_url
     end
 
     prepare_meta_tags(title: @metaphor.title + ' - Metáforas',
                       description: @metaphor.summary,
                       keywords: '',
-                      image: @metaphor.image_url,
+                      image: image,
                       og: {
                           title: @metaphor.title,
                           description: @metaphor.summary,

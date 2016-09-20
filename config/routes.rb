@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   resources :newsletters
+
   if Rails.env.production?
-    constraints(host: /^(?!www\.)/i) do
+    constraints(host: /^www\./i) do
       match '(*any)' => redirect { |params, request|
-        URI.parse(request.url).tap { |uri| uri.host = "www.#{uri.host}" }.to_s }, via: [:get, :post]
+        URI.parse(request.url).tap { |uri| uri.host.sub!(/^www\./i, '') }.to_s
+      }, via: [:get, :post]
     end
   end
 
