@@ -1,5 +1,5 @@
 crumb :root do
-  link 'Home', root_path
+  link 'Mastering PNL', root_path
 end
 
 crumb :sobre_nos do
@@ -38,7 +38,7 @@ crumb :metaphor do |metaphor|
 end
 
 crumb :posts do
-  link 'Blog/Posts', posts_path
+  link 'Blog', posts_path
 end
 
 crumb :post do |post|
