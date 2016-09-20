@@ -35,16 +35,6 @@ gem 'carrierwave', '~> 0.11.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Rails bootstrap
-# http://www.rubydoc.info/gems/bootstrap-sass/3.3.6
-gem 'bootstrap-sass', '~> 3.3.6'
-
-# https://github.com/Semantic-Org/Semantic-UI
-gem 'semantic-ui-sass', '>= 2.1.8.0'
-
-# Angular
-gem 'angularjs-rails', '>= 1.4.8'
-
 # User autentication
 # https://github.com/plataformatec/devise
 gem 'devise'
