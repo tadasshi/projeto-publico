@@ -146,13 +146,15 @@ html class="no-js" lang="pt-br"
           h3= 'Midias Sociais'
           p class="footer-social-network"
             span
-              = link_to image_tag('icon/social/128-facebook.png', :alt => 'facebook'), facebook_path, target: '_blank'
+              = link_to facebook_path, target: '_blank' do
+                i class="fa fa-facebook" aria-hidden="true"
               /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank'
-              = link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher'
+              /= link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher'
               /= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank'
-              = link_to image_tag('icon/social/128-rss.png', :alt => 'rss'), feed_path, target: '_blank'
-              = link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
-              = link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
+              = link_to feed_path, target: '_blank' do
+                i class="fa fa-rss" aria-hidden="true"
+              /= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
+              /= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
 
         div class="col-md-5 text-right"
           h3 class='text-right'= 'Siga-nos no Facebook'
