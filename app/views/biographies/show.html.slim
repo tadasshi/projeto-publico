@@ -31,8 +31,8 @@ div class="container"
         - @biographies.each do |biography|
           p= link_to biography.title, biography
 
-      = render 'shareaholic/share_buttons'
+      = render 'layouts/shareaholic/share_buttons'
 
     br
 
-    = render 'disqus/comment'
+    = render 'layouts/disqus/comment'

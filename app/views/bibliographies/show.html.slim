@@ -49,8 +49,8 @@ div class="container" itemscope="http://schema.org/Product"
         - @bibliographies.each do |bibliography|
           p= link_to bibliography.title, bibliography
 
-      = render 'shareaholic/share_buttons'
+      = render 'layouts/layouts/share_buttons'
 
     br
 
-    = render 'disqus/comment'
+    = render 'layouts/disqus/comment'
