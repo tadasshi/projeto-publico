@@ -7,7 +7,7 @@ div class="container"
   - breadcrumb :posts, @posts
   == breadcrumbs separator: ' <i class="fa fa-chevron-right" aria-hidden="true"></i> ', :semantic => true, :link_current => true
 
-  a itemprop="url" href="http://#{request.host + url_for(:page => params[:page]) }"
+  a itemprop="url" href="https://#{request.host + url_for(:page => params[:page]) }"
     div itemprop="name"
       h2= 'Ultimos posts'
 
