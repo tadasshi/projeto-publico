@@ -14,6 +14,7 @@ class EbooksController < ApplicationController
 
     prepare_meta_tags title: 'Ebooks'
 
+    @banner = Banner.where(name: 'ebook').take
   end
 
   # GET /ebooks/1
@@ -25,7 +26,7 @@ class EbooksController < ApplicationController
     if !@ebook.image_url.nil?
       image = 'https://' + request.host + @ebook.image_url
     end
-    
+
     prepare_meta_tags(title: @ebook.title + ' - Ebooks',
                       description: @ebook.summary,
                       keywords: '',
@@ -45,6 +46,7 @@ class EbooksController < ApplicationController
                           image: image
                       })
 
+    @banner = Banner.where(name: 'ebook').take
   end
 
   # GET /ebooks/new

@@ -15,6 +15,7 @@ class BibliographiesController < ApplicationController
 
     prepare_meta_tags title: 'Bibliografias'
 
+    @banner = Banner.where(name: 'bibliography').take
   end
 
   # GET /bibliographies/1
@@ -52,7 +53,7 @@ class BibliographiesController < ApplicationController
                           image: image
                       })
 
-
+    @banner = Banner.where(name: 'bibliography').take
   end
 
   # GET /bibliographies/new

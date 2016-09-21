@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
     prepare_meta_tags title: 'Blog'
 
+    @banner = Banner.where(name: 'post').take
   end
 
   # GET /posts/1
@@ -52,6 +53,8 @@ class PostsController < ApplicationController
                           description: @post.summary,
                           image: image
                       })
+
+    @banner = Banner.where(name: 'post').take
   end
 
   # GET /posts/new

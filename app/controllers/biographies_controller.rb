@@ -13,6 +13,7 @@ class BiographiesController < ApplicationController
 
     prepare_meta_tags title: 'Biografias'
 
+    @banner = Banner.where(name: 'biography').take
   end
 
   # GET /biographies/1
@@ -53,7 +54,7 @@ class BiographiesController < ApplicationController
                           image: image
                       })
 
-
+    @banner = Banner.where(name: 'biography').take
   end
 
   # GET /biographies/new

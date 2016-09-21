@@ -8,8 +8,8 @@ div class="site-index"
   /      = image_tag('banner-3.jpg', :alt => 'Banner', class: 'img-responsive')
   /    div class="item"
   /      = image_tag('banner-2.jpg', :alt => 'Banner', class: 'img-responsive')
-  div
-    = image_tag('banner-home.png', :alt => 'Banner', class: 'img-responsive')
+
+  = render partial: 'layouts/banner', locals: {banner: @banner}
 
   div class="body-content"
 

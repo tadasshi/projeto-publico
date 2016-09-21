@@ -14,6 +14,7 @@ class MetaphorsController < ApplicationController
 
     prepare_meta_tags title: 'Metáforas'
 
+    @banner = Banner.where(name: 'metaphor').take
   end
 
   # GET /metaphors/1
@@ -51,7 +52,7 @@ class MetaphorsController < ApplicationController
                           image: image
                       })
 
-
+    @banner = Banner.where(name: 'metaphor').take
   end
 
   # GET /metaphors/new

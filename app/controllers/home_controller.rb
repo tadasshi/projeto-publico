@@ -3,11 +3,14 @@ class HomeController < ApplicationController
     prepare_meta_tags title: 'Página Inicial'
     @contact = Contact.new
     @newsletter = Newsletter.new
+
+    @banner = Banner.where(name: 'home').take
   end
 
   def contact
     prepare_meta_tags title: 'Contato'
     @contact = Contact.new
+    @banner = Banner.where(name: 'contact').take
   end
 
   # def send_email
@@ -19,6 +22,7 @@ class HomeController < ApplicationController
 
   def about_us
     prepare_meta_tags title: 'Sobre nós'
+    @banner = Banner.where(name: 'about_us').take
   end
 
   # private
