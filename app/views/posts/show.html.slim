@@ -1,5 +1,4 @@
-div
-  = image_tag('banner-posts.jpg', :alt => 'Banner', class: 'img-responsive')
+= render partial: 'layouts/banner', locals: {banner: @banner}
 
 div class="container"
 
