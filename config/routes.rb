@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :newsletters
-
+  # Redireciona www para non-www
   if Rails.env.production?
     constraints(host: /^www\./i) do
       match '(*any)' => redirect { |params, request|
@@ -10,20 +9,24 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts
+  # Página root
   root 'home#index'
 
-  resources :ebooks
-  resources :posts, :path => 'blog'
+  # Instituições
+  resources :institutions, :path => 'instituicao'
 
+  # Newsletters
+  resources :newsletters
+
+  # Contato
+  resources :contacts
+
+
+  resources :posts, :path => 'blog'
+  resources :ebooks
   resources :biographies
   resources :bibliographies
   resources :metaphors
-
-  devise_scope :user do
-    get '/login' => 'user/sessions#new'
-    get '/logout' => 'user/sessions#destroy'
-  end
 
   devise_for :users, controllers: {
       confirmations: "user/confirmations",
@@ -32,6 +35,14 @@ Rails.application.routes.draw do
       registrations: "user/registrations",
       sessions: "user/sessions",
       unlocks: "user/unlocks",
+  }, :path => 'usuario', path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      password: 'secret',
+      confirmation: 'verification',
+      unlock: 'unblock',
+      registration: 'register',
+      sign_up: 'cmon_let_me_in'
   }
 
   devise_for :admins, controllers: {
@@ -68,47 +79,6 @@ Rails.application.routes.draw do
 
   get 'errors/not_found'
   get 'errors/internal_server_error'
-
-  get '/site/about', to: redirect('/', status: 302)
-  get '/bibliografia/view/guia-de-pnl-programacao-neurolinguistica', to: redirect('/', status: 302)
-  get '/default.php', to: redirect('/', status: 302)
-  get '/bibliografia/view/introducao-a-neurolinguistica', to: redirect('/', status: 302)
-  get '/bibliografia/view/pnl-sucesso-e-exito-pessoal', to: redirect('/', status: 302)
-  get '/bibliografia/view/introducao-a-programacao-neurolinguistica-como-entender-e-influenciar-as-pessoas', to: redirect('/', status: 302)
-  get '/site/index', to: redirect('/', status: 302)
-  get '/site/contact', to: redirect('/', status: 302)
-  get '/bibliografia/view/por-tras-da-consciencia', to: redirect('/', status: 302)
-  get '/posts/1-7-citacoes-para-sentir-se-fantastico-por-richard-bandler', to: redirect('/', status: 302)
-  get '/posts/5-principios-da-pnl', to: redirect('/', status: 302)
-  get '/admin/site/login', to: redirect('/', status: 302)
-  get '/posts/21-como-modelar-pessoas-confiantes', to: redirect('/', status: 302)
-  get '/biographies/8-o-que-e-a-pnl', to: redirect('/', status: 302)
-  get '/biographies/12-e-possivel-reprogramar-seu-cerebro-com-a-pnl', to: redirect('/', status: 302)
-  get '/biographies/11-3-mitos-e-equivocos-sobre-pnl', to: redirect('/', status: 302)
-  get '/biographies/10-7-niveis-de-processamento-do-pensamento-em-pnl', to: redirect('/', status: 302)
-  get '/biographies/7-tecnicas-de-acompanhar-e-conduzir-que-qualquer-um-pode-fazer-facilmente', to: redirect('/', status: 302)
-  get '/biographies/7-pnl-tecnicas-de-acompanhar-e-conduzir-que-qualquer-um-pode-fazer-facilmente', to: redirect('/', status: 302)
-  get '/posts/5-principios-da-pnl', to: redirect('/', status: 302)
-  get '/posts/4-processo-x-conteudo', to: redirect('/', status: 302)
-  get '/posts/7-tecnicas-de-acompanhar-e-conduzir-que-qualquer-um-pode-fazer-facilmente', to: redirect('/', status: 302)
-  get '/biographies/5-principios-da-pnl', to: redirect('/', status: 302)
-  get '/posts/13-3-maneiras-na-qual-a-pnl-pode-ajudar-voce-a-ser-mais-bem-sucedido', to: redirect('/', status: 302)
-  get '/posts/8-o-que-e-a-pnl', to: redirect('/', status: 302)
-  get '/posts/3-1-pressuposto-da-pnl-o-mapa-nao-e-territorio', to: redirect('/', status: 302)
-  get '/posts/9-como-a-pnl-pode-mudar-sua-vida', to: redirect('/', status: 302)
-  get '/metaphors/896-o-moinho-magico', to: redirect('/', status: 302)
-  get '/posts/11-3-mitos-e-equivocos-sobre-pnl', to: redirect('/', status: 302)
-  get '/posts/14-o-que-e-coaching-de-pnl-programacao-neuro-linguistica', to: redirect('/', status: 302)
-  get '/posts/16-a-pnl-pode-ajudar-voce-a-conseguir-maior-sucesso-na-vida', to: redirect('/', status: 302)
-  get '/bibliografia/view/o-poder-da-pnl', to: redirect('/', status: 302)
-  get '/metaphors/906-o-problema-educacional', to: redirect('/', status: 302)
-  get '/metaphors/904-o-perigo-dos-pressupostos', to: redirect('/', status: 302)
-  get '/biographies/13-3-maneiras-na-qual-a-pnl-pode-ajudar-voce-a-ser-mais-bem-sucedido', to: redirect('/', status: 302)
-  get '/bibliografia/view/introducao-a-neurolinguistica', to: redirect('/', status: 302)
-  get '/metaphors/896-o-moinho-magico', to: redirect('/', status: 302)
-  get '/metaphors/906-o-problema-educacional', to: redirect('/', status: 302)
-  get '/bibliografia', to: redirect('/', status: 302)
-  get '/bibliografia/view/novos-rumos-em-comunicacao-interpessoal', to: redirect('/', status: 302)
 
   mount RailsAdmin::Engine => '/cms', as: 'rails_admin'
 

@@ -1,0 +1,25 @@
+= form_for @institution, :html => {:class => 'ui form', :id => ''} do |f|
+  - if @institution.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@institution.errors.count, "error")} prohibited this institution from being saved:"
+      ul
+        - @institution.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :website
+    = f.text_field :website
+  .field
+    = f.label :description
+    = f.text_area :description
+
+  = f.button 'Cadastrar Instituição', class: 'btn remove-border blue-button white-font-color'

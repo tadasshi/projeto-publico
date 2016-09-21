@@ -54,7 +54,7 @@ div class="site-index"
       div class="col-lg-5 center-block float-none"
         h3 class="text-center"= 'Contato'
 
-        = form_for(@contact, :html => {:class => 'ui form', :id => ''}, :method => 'post') do |f|
+        = form_for @contact, :html => {:class => 'ui form', :id => ''} do |f|
 
           div class="field"
             = f.label :name
@@ -69,7 +69,7 @@ div class="site-index"
             = f.text_area :message, placeholder: 'Sua mensagem', :required => true
 
           div class="form-group text-center"
-            = f.button "Enviar Contato", class: 'btn flat-button remove-border blue-button white-font-color'
+            = f.button "Enviar Contato", class: 'btn remove-border blue-button white-font-color'
 
     div
       div class="container"

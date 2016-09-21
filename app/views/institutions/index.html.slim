@@ -1,0 +1,32 @@
+.container
+  h1 Listing institutions
+
+  table class='table'
+    thead
+      tr
+        th Name
+        th Email
+        th Phone
+        th Website
+        th Description
+        th Website
+        th
+        th
+        th
+
+    tbody
+      - @institutions.each do |institution|
+        tr
+          td = institution.name
+          td = institution.email
+          td = institution.phone
+          td = institution.website
+          td = institution.description
+          td = institution.website
+          td = link_to 'Show', institution
+          td = link_to 'Edit', edit_institution_path(institution)
+          td = link_to 'Destroy', institution, data: { confirm: 'Are you sure?' }, method: :delete
+
+  br
+
+  = link_to 'New Institution', new_institution_path
