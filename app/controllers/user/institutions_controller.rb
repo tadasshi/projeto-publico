@@ -1,6 +1,11 @@
 class User::InstitutionsController < ApplicationController
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
+  prepend_view_path 'app/views/users/institutions'
+
+  def self.controller_path
+    'users/institutions'
+  end
 
   # GET /institutions
   # GET /institutions.json

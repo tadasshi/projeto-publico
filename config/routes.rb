@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # Página root
   root 'home#index'
 
-  namespace :user, as: :user do
+  namespace :user, as: :user, :path => 'usuario' do
     # Instituições
     resources :institutions, :path => 'instituicao'
   end
