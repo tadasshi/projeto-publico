@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   # Página root
   root 'home#index'
 
+  namespace :user, as: :user do
+    # Instituições
+    resources :institutions, :path => 'instituicao'
+  end
+
   # Instituições
   resources :institutions, :path => 'instituicao'
 
@@ -51,7 +56,7 @@ Rails.application.routes.draw do
       passwords: "admin/passwords",
       registrations: "admin/registrations",
       sessions: "admin/sessions",
-      unlocks: "user/unlocks",
+      unlocks: "admin/unlocks",
   }, path_names: {
       sign_up: ''
   }

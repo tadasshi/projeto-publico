@@ -101,4 +101,6 @@ group :development do
   gem 'capistrano-faster-assets'
 
   gem 'quiet_assets'
+
+  gem 'better_errors'
 end
