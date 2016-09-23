@@ -13,8 +13,6 @@
         th Description
         th Website
         th
-        th
-        th
 
     tbody
       - @institutions.each do |institution|
@@ -25,6 +23,6 @@
           td = institution.website
           td = institution.description
           td = institution.website
+          td
+            = link_to 'ver', institution
   br
-
-= link_to 'Quero cadastrar uma instituição', new_user_institution_path

@@ -1,9 +1,9 @@
 .container
-  h1 Editing' institution
+  h1 Editing institution
 
   == render 'form'
 
-  = link_to 'Show', @institution
+  = link_to 'Show', user_institution_path(@institution)
   '|
-  = link_to ''Back', institutions_path
+  = link_to 'Back', user_institutions_path
 

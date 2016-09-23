@@ -10,7 +10,7 @@ class User::InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.json
   def index
-    @institutions = Institution.all
+    @institutions = Institution.where(user: current_user.id)
   end
 
   # GET /institutions/1
@@ -35,7 +35,7 @@ class User::InstitutionsController < ApplicationController
 
     respond_to do |format|
       if @institution.save
-        format.html { redirect_to @institution, notice: 'Institution was successfully created.' }
+        format.html { redirect_to user_institution_path @institution, notice: 'Institution was successfully created.' }
         format.json { render :show, status: :created, location: @institution }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class User::InstitutionsController < ApplicationController
   def update
     respond_to do |format|
       if @institution.update(institution_params)
-        format.html { redirect_to @institution, notice: 'Institution was successfully updated.' }
+        format.html { redirect_to user_institution_path @institution, notice: 'Institution was successfully updated.' }
         format.json { render :show, status: :ok, location: @institution }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class User::InstitutionsController < ApplicationController
   def destroy
     @institution.destroy
     respond_to do |format|
-      format.html { redirect_to institutions_url, notice: 'Institution was successfully destroyed.' }
+      format.html { redirect_to user_institutions_url, notice: 'Institution was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

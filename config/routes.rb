@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # Instituições
   resources :institutions, :path => 'instituicao'
+  get 'vantagesns-de-fazer-parte-das-instituicoes-de-pnl', to: 'institutions#landingpage', as: :institution_landingpage
 
   # Newsletters
   resources :newsletters

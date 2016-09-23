@@ -1,4 +1,4 @@
-= form_for @institution, :html => {:class => 'ui form', :id => ''} do |f|
+= form_for @institution, url:{controller: 'user/institutions'}, :html => {:class => 'ui form', :id => ''} do |f|
   - if @institution.errors.any?
     #error_explanation
       h2 = "#{pluralize(@institution.errors.count, "error")} prohibited this institution from being saved:"

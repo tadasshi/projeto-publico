@@ -25,10 +25,10 @@
           td = institution.website
           td = institution.description
           td = institution.website
-          td = link_to 'Show', institution
-          td = link_to 'Edit', edit_institution_path(institution)
-          td = link_to 'Destroy', institution, data: { confirm: 'Are you sure?' }, method: :delete
+          td = link_to 'Show', user_institution_path(institution)
+          td = link_to 'Edit', edit_user_institution_path(institution)
+          td = link_to 'Destroy', user_institution_path(institution), data: { confirm: 'Are you sure?' }, method: :delete
 
   br
 
-  = link_to 'New Institution', new_institution_path
+  = link_to 'Quero cadastrar uma instituição', new_user_institution_path
