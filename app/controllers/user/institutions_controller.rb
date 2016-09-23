@@ -31,6 +31,7 @@ class User::InstitutionsController < ApplicationController
   # POST /institutions.json
   def create
     @institution = Institution.new(institution_params)
+    @institution.user_id = current_user.id
 
     respond_to do |format|
       if @institution.save
