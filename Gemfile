@@ -41,7 +41,7 @@ gem 'devise'
 
 # Paginador
 # https://github.com/amatsuda/kaminari
-gem 'kaminari', '~> 0.16.3'
+gem 'kaminari'
 
 # kpumuk/meta-tags
 # https://github.com/kpumuk/meta-tags
@@ -50,7 +50,7 @@ gem 'meta-tags'
 # https://github.com/lassebunk/gretel
 gem 'gretel'
 
-# https://github.com/sferik/rails_admin/wiki/Devise
+gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin'
 gem 'ckeditor_rails'
 
@@ -64,11 +64,11 @@ gem 'puma'
 #gem 'acts_as_commentable', '>= 4.0.2'
 
 # https://rubygems.org/gems/slim
-gem 'slim-rails', '~> 3.0'
+gem 'slim-rails'
 
 gem 'sendgrid'
 
-gem 'stripe'
+gem 'pagarme'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

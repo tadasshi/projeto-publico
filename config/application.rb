@@ -26,5 +26,7 @@ module Masteringpnl
     config.encoding = 'utf-8'
 
     config.exceptions_app = self.routes
+
+    ENV['RAILS_ADMIN_THEME'] = 'rollincode'
   end
 end
