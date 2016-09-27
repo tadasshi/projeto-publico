@@ -30,9 +30,22 @@ Rails.application.routes.draw do
 
   resources :posts, :path => 'blog'
   resources :ebooks
-  resources :biographies
-  resources :bibliographies
-  resources :metaphors
+
+  # Biografias
+  resources :biographies, :path => 'biografias'
+  get '/biographies', to: redirect('/biografias')
+  get '/biographies/:id', to: redirect('/biografias/%{id}')
+
+  # Bibliografias
+  resources :bibliographies, :path => 'bibliografias'
+  get '/bibliographies', to: redirect('/bibliografias')
+  get '/bibliographies/:id', to: redirect('/bibliografias/%{id}')
+
+
+  # Metáforas
+  resources :metaphors, :path => 'metaforas'
+  get '/metaphors', to: redirect('/metaforas')
+  get '/metaphors/:id', to: redirect('/metaforas/%{id}')
 
   devise_for :users, controllers: {
       confirmations: "user/confirmations",
