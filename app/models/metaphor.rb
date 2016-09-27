@@ -1,7 +1,5 @@
 class Metaphor < ActiveRecord::Base
 
-  mount_uploader :image, AvatarUploader
-
   validates :title, presence: true
   validates :summary, length: { maximum: 155 }
 

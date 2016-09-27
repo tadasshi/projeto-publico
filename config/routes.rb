@@ -79,8 +79,6 @@ Rails.application.routes.draw do
   get 'googleplus', to: redirect('http://google.com/+Masteringpnl_channel')
   get 'twitter', to: redirect('https://twitter.com/masteringpnl')
   get 'youtube', to: redirect('http://youtube.com/c/Masteringpnl_channel')
-  get 'thiagotadashi', to: redirect('http://thiagotadashi.com')
-  get 'digitalocean', to: redirect('https://m.do.co/c/37a21a960bcd')
   get 'feed_path', to: redirect('/feed.rss')
 
   get 'sitemaps/index'

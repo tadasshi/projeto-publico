@@ -20,14 +20,11 @@ class MetaphorsController < ApplicationController
   # GET /metaphors/1
   # GET /metaphors/1.json
   def show
+    @banner = Banner.where(name: 'metaphor').take
 
     @metaphors = Metaphor.where("id != '#{@metaphor.id}'").order("RANDOM()").limit(5)
 
-    image = ''
-
-    if !@metaphor.image_url.nil?
-      image = 'https://' + request.host + @metaphor.image_url
-    end
+    image = @banner.banner_pictures.first.picture_url
 
     prepare_meta_tags(title: @metaphor.title + ' - Metáforas',
                       description: @metaphor.summary,
@@ -52,7 +49,6 @@ class MetaphorsController < ApplicationController
                           image: image
                       })
 
-    @banner = Banner.where(name: 'metaphor').take
   end
 
   # GET /metaphors/new

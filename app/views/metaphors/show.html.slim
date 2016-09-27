@@ -9,10 +9,7 @@ div class="container"
 
   div itemscope="" itemtype="http://schema.org/BlogPosting" class='row'
 
-    div class="col-md-4" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
-      img itemprop="contentUrl" class='img-responsive' alt='#{@metaphor.title}' title='#{@metaphor.title}' src='#{@metaphor.image}'/
-
-    div class="col-md-8"
+    div class="col-md-12"
 
       a itemprop="url" href="https://#{request.host + url_for(:page => params[:page])}"
         div itemprop="name"

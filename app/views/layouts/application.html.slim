@@ -126,7 +126,7 @@ html class="no-js" lang="pt-br"
                 li
                   = link_to 'Registrar-se', new_user_registration_path
                 li
-                  a style='font-size: 22px;padding: 15px 0px;'= '|'
+                  a style='font-size: 22px;padding: 15px 0px; color:#ccc'= '|'
                 li
                   = link_to 'Entrar', new_user_session_path
 
@@ -134,7 +134,7 @@ html class="no-js" lang="pt-br"
 
     footer class="footer"
       div class="container" style="margin-bottom: 20px"
-        div class="col-md-4"
+        div class="col-md-4 col-sm-6"
           h3= 'Loja'
           ul role="menubar" class="list-unstyled"
             li
@@ -156,7 +156,7 @@ html class="no-js" lang="pt-br"
               = link_to contato_path, role: 'menuitem' do
                 span= 'Contato'
 
-        div class="col-md-3"
+        div class="col-md-3 col-sm-6"
           h3= 'Conteúdos'
           = link_to 'Metáforas', metaphors_path
           br
@@ -177,19 +177,14 @@ html class="no-js" lang="pt-br"
               /= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
               /= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
 
-        div class="col-md-5 text-right"
+        div class="col-md-5 text-right hidden-md"
           h3 class='text-right'= 'Siga-nos no Facebook'
           iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasteringpnl&width=400&height=220&colorscheme=dark&show_faces=true&header=true&stream=false&show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:400px; height:220px;" allowTransparency="true"
 
       div style="padding: 8px 0px;"
         div class="container"
-          div class="col-md-6"
+          div class="col-md-12"
             small class="pull-left"= "© Copyright #{Time.now.year} - Todos direitos reservados"
-
-          div class="col-md-6"
-            small class="pull-right"
-              = 'Hospedado por '
-              = link_to 'DigitalOcean', digitalocean_path, target: '_blank', :rel => 'nofollow'
 
     div class="modal fade" id="newsletter_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       div class="modal-dialog" role="document"
