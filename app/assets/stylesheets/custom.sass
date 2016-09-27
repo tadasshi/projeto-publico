@@ -153,18 +153,23 @@ a
 /********* Breadcrumb ***********/
 
 .breadcrumbs
-  background-color: $blue
   padding: 5px
   margin-bottom: 10px
   color: #fff
 
   a
-    color: #fff
+    color: $blue
+    font-weight: normal
+
     &:hover, &:focus
-      color: #FFF
+      color: #ccc
 
   .active
-    color: #FFF
+    color: #ccc
+
+  .fa-chevron-right
+    color: #ccc
+    font-size: 18px
 
 /**********************buttons*********************/
 
@@ -216,3 +221,13 @@ h1, h2, h3, h4, h5, h6
     img
       max-height: 364px
 
+// Banner
+.banner
+  position: relative
+
+  .pelicula
+    position: absolute
+    top: 0
+    height: 100%
+    width: 100%
+    background-color: rgba(0,0,0,0.5)

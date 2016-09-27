@@ -2,8 +2,6 @@
 
 div class="container"
 
-  p id="notice"= notice
-
   - breadcrumb :biography, @biography
   == breadcrumbs separator: ' <i class="fa fa-chevron-right" aria-hidden="true"></i> ', :semantic => true, :link_current => true
 
@@ -19,7 +17,8 @@ div class="container"
 
       small
         meta itemprop="datePublished" content="#{@biography.created_at.strftime("%FT")}"
-        = "Data de publicação: #{@biography.created_at.strftime("%d/%m/%Y")}"
+        i class="fa fa-clock-o" aria-hidden="true"
+        = " Ultima Atualização: #{@biography.created_at.strftime("%d/%m/%Y")}"
 
       div itemprop="description"= @biography.description.html_safe
 

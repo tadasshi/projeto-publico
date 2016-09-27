@@ -1,4 +1,14 @@
 - unless !@banner
-  = image_tag(@banner.banner_pictures.first.picture_url, :alt => 'Banner', class: 'img-responsive')
+  div class='banner'
+    = image_tag(@banner.banner_pictures.first.picture_url, :alt => 'Banner', class: 'img-responsive')
+    /- if @metaphor
+    /  div class='pelicula'
+    /    div class='container'
+    /      div
+    /        h1= @metaphor.title
+    /        small
+    /          meta itemprop="datePublished" content='#{@metaphor.created_at.strftime("%FT")}'
+    /          i class="fa fa-clock-o" aria-hidden="true"
+    /          = " Ultima Atualização: #{@metaphor.updated_at.strftime("%d/%m/%Y")}"
 -else
   hr style='margin:0'

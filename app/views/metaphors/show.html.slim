@@ -1,8 +1,6 @@
-= render partial: 'layouts/banner', locals: {banner: @banner}
+= render partial: 'layouts/banner', locals: {banner: @banner, metaphor: @metaphor}
 
 div class="container"
-
-  p id="notice" = notice
 
   - breadcrumb :metaphor, @metaphor
   == breadcrumbs separator: ' <i class="fa fa-chevron-right" aria-hidden="true"></i> ', :semantic => true, :link_current => true
@@ -17,14 +15,14 @@ div class="container"
 
       small
         meta itemprop="datePublished" content='#{@metaphor.created_at.strftime("%FT")}'
-        = "Data de publicação: #{@metaphor.created_at.strftime("%d/%m/%Y")}"
+        i class="fa fa-clock-o" aria-hidden="true"
+        = " Ultima Atualização: #{@metaphor.updated_at.strftime("%d/%m/%Y")}"
 
       div itemprop="description"= @metaphor.description.html_safe
 
     div class='col-md-12'
-      h3= 'Metáforas relacionados'
-
-      - if @metaphors
+      - if !@metaphors.empty?
+        h3= 'Metáforas relacionados'
         - @metaphors.each do |metaphor|
           p= link_to metaphor.title, metaphor
 
