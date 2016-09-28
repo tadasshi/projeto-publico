@@ -67,3 +67,12 @@ MasteringPnl
 * [Setup Capistrano on LOCAL](https://gist.github.com/stevenyap/9130882)
 
 * [ativar ipv6](https://www.digitalocean.com/community/tutorials/how-to-enable-ipv6-for-digitalocean-droplets)
+
+Nome do usuário da API	
+paypal_api1.thiagotadashi.com
+
+Senha da API	
+MBS9JT38DTT2EQ5Y
+
+Assinatura
+AFcWxV21C7fd0v3bYYYRCpSSRl31A.NM7pPKFyppIA541dmqRAyu5yOJ
