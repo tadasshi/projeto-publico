@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # Página root
   root 'home#index'
 
+  # Usuario
   namespace :user, as: :user, :path => 'usuario' do
     # Instituições
     resources :institutions, :path => 'instituicao'
@@ -26,7 +27,6 @@ Rails.application.routes.draw do
 
   # Contato
   resources :contacts
-
 
   resources :posts, :path => 'blog'
   resources :ebooks
@@ -80,8 +80,6 @@ Rails.application.routes.draw do
   get 'twitter', to: redirect('https://twitter.com/masteringpnl')
   get 'youtube', to: redirect('http://youtube.com/c/Masteringpnl_channel')
   get 'feed_path', to: redirect('/feed.rss')
-
-  get 'sitemaps/index'
 
   get 'contato' => 'home#contact'
   get 'sobre-nos' => 'home#about_us'
