@@ -149,9 +149,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mail_form (1.5.1)
-      actionmailer (>= 3.2, < 5)
-      activemodel (>= 3.2, < 5)
     meta-tags (2.1.0)
       actionpack (>= 3.0.0)
     mime-types (3.1)
@@ -269,8 +266,6 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
-    sendgrid (1.2.4)
-      json
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
@@ -338,7 +333,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
-  mail_form
   meta-tags
   paypal-sdk-buttonmanager
   pg (~> 0.15)
@@ -352,7 +346,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver (~> 2.53)
-  sendgrid
   slim-rails
   spring
   uglifier (>= 1.3.0)
