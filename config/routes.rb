@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'charge/index'
+  get 'charge/detail'
+
   # Redireciona www para non-www
   if Rails.env.production?
     constraints(host: /^www\./i) do

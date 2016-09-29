@@ -54,9 +54,6 @@ gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin', '0.8.1'
 gem 'ckeditor_rails'
 
-# https://github.com/plataformatec/mail_form
-gem 'mail_form'
-
 # http://puma.io/
 gem 'puma'
 
@@ -66,9 +63,7 @@ gem 'puma'
 # https://rubygems.org/gems/slim
 gem 'slim-rails'
 
-gem 'sendgrid'
-
-gem 'pagarme'
+gem 'paypal-sdk-buttonmanager'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
