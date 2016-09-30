@@ -1,67 +1,56 @@
-= render partial: 'layouts/banner', locals: {banner: @banner}
-
-div class="container"
-
-  - breadcrumb :ebook, @ebook
-  == breadcrumbs separator: ' <i class="fa fa-chevron-right" aria-hidden="true"></i> ', :semantic => true, :link_current => true
-
+div
   div itemscope='' itemtype="http://schema.org/Book" class='row'
-
-    div class="col-md-4" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
-      img itemprop="url" class='img-responsive' alt='#{@ebook.title}' title='#{@ebook.title}' src='#{@ebook.image}'/
-
-    div class="col-md-8"
-
-      a itemprop="url" href="https://#{request.host + url_for(:page => params[:page])}"
-        div itemprop="name"
-          h1= @ebook.title
-
-      div itemprop="author" itemscope='' itemtype="http://schema.org/Person"
-        = 'Escrito por: '
-        span itemprop="name"= 'Wilson Y. K. Neves'
-
+    div style='background-color:#EEEEEE'
       br
-      div itemprop="description"= @ebook.description.html_safe
       br
+      br
+      div class='col-md-12 text-center'
+        = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 52px;'), root_path
+      br
+      br
+      br
+      br
+      div class="container"
+        div class='col-md-1'
 
-      div itemprop="publisher" itemscope='' itemtype="http://schema.org/Organization"
-        = 'Publicado por:'
-        span itemprop="name"= 'MasteringPNL'
+        div class="col-md-3" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
+          img itemprop="url" class='img-responsive' alt='#{@ebook.title}' title='#{@ebook.title}' src='#{@ebook.image}'/
 
-      div
-        meta itemprop="numberOfPages" content="27"/
-        = "Número de Páginas: #{@ebook.pages} páginas"
+        div class='col-md-1'
 
-      div
-        meta itemprop="inLanguage" content="pt-BR"/
-        = 'Lingua: Português brasileiro'
+        div class="col-md-6"
+          .jumbotron
+            h2 class='text-right'= @ebook.title
+            p class='text-right'= @ebook.summary
 
-      div
-        meta itemprop="datePublished" content="#{@ebook.created_at.strftime('%FT')}"/
-        = "Data de publicação: #{@ebook.created_at.strftime('%d/%m/%Y')}"
-
-      div
-        = 'Edition: '
-        span itemprop="bookEdition"= @ebook.edition
-
-      div
-        = 'Disponível em'
-        link itemprop="bookFormat" href="http://schema.org/Ebook"/
-        = 'Ebook'
-
-      div itemprop="offers" itemscope='' itemtype="http://schema.org/Offer"
-
-        meta itemprop="price" content="#{@ebook.value}"/
-        meta itemprop="priceCurrency" content="BRL"/
-        link itemprop="availability" href="http://schema.org/InStock"/
-
-        h3 class="text-right"= 'Preço - ' + number_to_currency(@ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$")
-        - if @ebook.url
-
-          = link_to 'Adiquirir este Ebook', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color pull-right'
-
-      = render 'layouts/shareaholic/share_buttons'
-
+        div class='col-md-1'
+      br
+      br
+      br
     br
+    br
+    div class='row'
+      br
+      div class='container text-center'
+        .col-md-4
+          p= 'vantagem'
+        .col-md-4
+          p= 'vantagem'
+        .col-md-4
+          p= 'vantagem'
+      br
+    br
+    br
+    div style='background-color:#EEEEEE' class='row'
+      br
+      div class='container text-center'
+        p=@ebook.description
+      br
+    br
+    br
+    div class='container text-center'
+      = link_to 'Adiquirir este Ebook', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color'
 
+  .container
+    br
     = render 'layouts/disqus/comment'
