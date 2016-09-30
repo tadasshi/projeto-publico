@@ -1,6 +1,7 @@
 class EbooksController < ApplicationController
   before_action :set_ebook, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, :except => [:show, :index]
+  layout 'ebook_dedicated', only: [:show]
   #caches_page :index, :show
 
   # GET /ebooks

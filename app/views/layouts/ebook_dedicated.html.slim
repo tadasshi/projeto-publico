@@ -19,10 +19,7 @@ html class="no-js" lang="pt-br"
         ga('create', 'UA-27929345-12', 'auto');
         ga('send', 'pageview');
 
-    - if !params[:page]
-      meta name="robots" content="index,follow"/
-    - else
-      meta name="robots" content="noindex,follow"/
+    meta name="robots" content="index,follow"/
 
     = display_meta_tags
 
@@ -71,64 +68,6 @@ html class="no-js" lang="pt-br"
 
 
   body vocab='http://schema.org/' typeof='WebPage'
-    header class='header'
-      nav class='navbar' role='navigation'
-        div class='container'
-          div class='navbar-header'
-            button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'
-              span class='sr-only'= 'Toggle navigation'
-              span class='icon-bar'
-              span class='icon-bar'
-              span class='icon-bar'
-
-            div
-              = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 24px;'), root_path, class: 'navbar-brand'
-
-          div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
-
-            ul class="nav navbar-nav" role="menubar"
-              li
-                = link_to posts_path, role: 'menuitem' do
-                  span = 'Blog'
-              li
-                = link_to ebooks_path, role: 'menuitem' do
-                  span = 'Ebooks'
-              li class='dropdown'
-                a href='javascript:' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'
-                  = 'Conteúdos'
-                  span class="caret"
-
-                ul class='dropdown-menu'
-                  li
-                    = link_to bibliographies_path, role: 'menuitem' do
-                      span= 'Bibliografias'
-                  li
-                    = link_to biographies_path, role: 'menuitem' do
-                      span= 'Biografias'
-                  li
-                    = link_to metaphors_path, role: 'menuitem' do
-                      span= 'Metáforas'
-
-            ul class="nav navbar-nav navbar-right" role="menubar"
-              li
-                = link_to institutions_path, role: 'menuitem' do
-                  span = 'Instituições'
-              - if user_signed_in?
-                li class='dropdown'
-                  a href='javascript:' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'
-                    = current_user.email
-                    span class="caret"
-
-                  ul class='dropdown-menu'
-                    li
-                      = link_to 'Sair', destroy_user_session_path, method: :delete
-              -else
-                li
-                  = link_to 'Registrar-se', new_user_registration_path
-                li
-                  a style='font-size: 22px;padding: 15px 0px; color:#ccc'= '|'
-                li
-                  = link_to 'Entrar', new_user_session_path
 
     section ng-app="masteringpnl"= yield
 
