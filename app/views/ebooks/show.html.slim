@@ -5,7 +5,7 @@ div
       br
       br
       div class='col-md-12 text-center'
-        = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 52px;'), root_path
+        = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 24px;'), root_path
       br
       br
       br
@@ -20,7 +20,7 @@ div
 
         div class="col-md-6"
           .jumbotron
-            h2 class='text-right'= @ebook.title
+            h1 class='text-right'= @ebook.title
             p class='text-right'= @ebook.summary
 
         div class='col-md-1'
@@ -33,11 +33,11 @@ div
       br
       div class='container text-center'
         .col-md-4
-          p= 'vantagem'
+          h2= 'Fácil'
         .col-md-4
-          p= 'vantagem'
+          h2= 'Rápido'
         .col-md-4
-          p= 'vantagem'
+          h2= 'Eficaz'
       br
     br
     br
@@ -49,8 +49,11 @@ div
     br
     br
     div class='container text-center'
-      = link_to 'Adiquirir este Ebook', @ebook.url, class: 'btn flat-button remove-border blue-button white-font-color'
-
+      = link_to @ebook.url, class: 'btn btn-comprar' do
+        i class="fa fa-amazon" aria-hidden="true"
+        = ' Adiquirir este Ebook na Amazon'
+  br
+  hr class='container'
   .container
     br
     = render 'layouts/disqus/comment'
