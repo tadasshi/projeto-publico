@@ -1,6 +1,6 @@
 - unless !@banner
   div class='banner'
-    = image_tag(@banner.banner_pictures.first.picture_url, :alt => 'Banner', class: 'img-responsive')
+    = image_tag(@banner.banner_images.first.image_url, :alt => 'Banner', class: 'img-responsive')
     /- if @metaphor
     /  div class='pelicula'
     /    div class='container'

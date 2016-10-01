@@ -1,6 +1,7 @@
 class Ebook < ActiveRecord::Base
 
-  mount_uploader :image, AvatarUploader
+  mount_uploader :image, EbookCoverUploader
+  mount_uploader :facebook_image, FacebookImageUploader
 
   validates :title, :url, presence: true
   validates :value, numericality: {greater_than: 0}

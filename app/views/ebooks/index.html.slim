@@ -6,7 +6,7 @@ div class="container"
 
   a itemprop="url" href="https://#{request.host + url_for(:page => params[:page]) }"
     div itemprop="name"
-      h2= 'Listing Ebooks'
+      h2= 'Lista de Ebooks'
 
   - breadcrumb :ebooks, @ebooks
   == breadcrumbs separator: ' <i class="fa fa-chevron-right" aria-hidden="true"></i> ', :semantic => true, :link_current => true
@@ -30,10 +30,9 @@ div class="container"
             div class="meta text-center"
               span class="date"= 'Wilson Y. K. Neves'
 
-            div class="description"= 'Disponível apenas em formato digital'
+            small class="description text-center"= 'Disponível apenas em formato digital'
 
           div class="extra content"
-            = number_to_currency(ebook.value, :format => "%u %n", :separator => ",", :delimiter => ".", :unit => "R$")
             = link_to 'Ver/Comprar', ebook, class: 'pull-right'
 
   div class="pagination"= paginate @ebooks
