@@ -1,5 +1,5 @@
 div
-  div itemscope='' itemtype="http://schema.org/Book" class='row'
+  div
     div style='background-color:#EEEEEE'
       br
       br
@@ -13,8 +13,8 @@ div
       div class="container"
         div class='col-md-1'
 
-        div class="col-md-3" itemprop='image' itemscope='' itemtype="https://schema.org/ImageObject"
-          img itemprop="url" class='img-responsive' alt='#{@ebook.title}' title='#{@ebook.title}' src='#{@ebook.image}'/
+        div class="col-md-3"
+          img class='img-responsive' alt='#{@ebook.title}' title='#{@ebook.title}' src='#{@ebook.image}'/
 
         div class='col-md-1'
 

@@ -1,5 +1,5 @@
 doctype html
-html class="no-js" lang="pt-br"
+html class="no-js" lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
   head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
 
     - if !Rails.env.development?
@@ -67,9 +67,9 @@ html class="no-js" lang="pt-br"
     = csrf_meta_tags
 
 
-  body vocab='http://schema.org/' typeof='WebPage'
+  body
 
-    section ng-app="masteringpnl"= yield
+    section = yield
 
     footer class="footer"
       div class="container" style="margin-bottom: 20px"
