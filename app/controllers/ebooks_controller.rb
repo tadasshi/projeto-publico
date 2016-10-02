@@ -25,7 +25,7 @@ class EbooksController < ApplicationController
     image = ''
 
     if !@ebook.image_url.nil?
-      image = 'https://' + request.host + @ebook.image_url
+      image = @ebook.image_url
     end
 
     prepare_meta_tags(title: @ebook.title + ' - Ebooks',
@@ -35,7 +35,7 @@ class EbooksController < ApplicationController
                       og: {
                           title: @ebook.title,
                           description: @ebook.summary,
-                          image: image,
+                          image: @ebook.facebook_image_url,
                           type: 'article',
                           'image:type': 'image/jpg',
                           updated_time: @ebook.updated_at.strftime('%FT%T')
@@ -44,7 +44,7 @@ class EbooksController < ApplicationController
                           title: @ebook.title,
                           card: '',
                           description: @ebook.summary,
-                          image: image
+                          image: @ebook.facebook_image_url
                       })
 
     @banner = Banner.where(name: 'ebook').take
