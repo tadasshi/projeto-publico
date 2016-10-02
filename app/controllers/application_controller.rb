@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
     #title = [controller_name, action_name].join(" ")
     description = 'Grupo com o propósito de desenvolver, adaptar e difundir as ferramentas da PNL aliado com a psicologia, para todos que desejam bem estar psicológico.'
     #image = options[:image] || 'your-default-image-url'
-    current_url = request.original_url
+    current_url = url_for(:only_path => false, :protocol => :https)
 
     # Let's prepare a nice set of defaults
     defaults = {
