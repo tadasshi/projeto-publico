@@ -44,8 +44,8 @@ class EbooksController < ApplicationController
                           #tag: @article.tag_list,
                           author: '947897365241721',
                           section: 'Blog',
-                          published_time: @post.created_at.strftime('%FT%T'),
-                          modified_time: @post.updated_at.strftime('%FT%T')
+                          published_time: @ebook.created_at.strftime('%FT%T'),
+                          modified_time: @ebook.updated_at.strftime('%FT%T')
                       },
                       twitter: {
                           title: @ebook.title,
