@@ -60,7 +60,7 @@ html class="no-js" lang="pt-br"
     meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png"/
     meta name="theme-color" content="#ffffff"/
 
-    = auto_discovery_link_tag(:rss, feed_url, {title: 'Mastering PNL - RSS'})
+    = auto_discovery_link_tag(:rss, feed_url(protocol: 'https'), {title: 'Mastering PNL - RSS'})
 
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
     link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" integrity="sha256-BQwSEeLxuDggfePeFdo3V906rcvcJpkSAYr/Lqc2oSo=" crossorigin="anonymous"

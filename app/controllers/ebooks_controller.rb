@@ -31,7 +31,7 @@ class EbooksController < ApplicationController
     prepare_meta_tags(title: @ebook.title + ' - Ebooks',
                       description: @ebook.summary,
                       keywords: '',
-                      image: image,
+                      image: @ebook.facebook_image_url,
                       og: {
                           title: @ebook.title,
                           description: @ebook.summary,
@@ -39,6 +39,13 @@ class EbooksController < ApplicationController
                           type: 'article',
                           'image:type': 'image/jpg',
                           updated_time: @ebook.updated_at.strftime('%FT%T')
+                      },
+                      article: {
+                          #tag: @article.tag_list,
+                          author: '947897365241721',
+                          section: 'Blog',
+                          published_time: @post.created_at.strftime('%FT%T'),
+                          modified_time: @post.updated_at.strftime('%FT%T')
                       },
                       twitter: {
                           title: @ebook.title,
