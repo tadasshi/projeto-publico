@@ -16,7 +16,7 @@ div class="container"
       small
         meta itemprop="datePublished" content='#{@metaphor.created_at.strftime("%FT")}'
         i class="fa fa-clock-o" aria-hidden="true"
-        = " Ultima Atualização: #{@metaphor.created_at.strftime("%d/%m/%Y")}"
+        = " Ultima Atualização: #{@metaphor.created_at.strftime("%B %d, %Y")}"
 
       div itemprop="description"= @metaphor.description.html_safe
 

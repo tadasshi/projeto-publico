@@ -18,7 +18,7 @@ div class="container"
       small
         meta itemprop="datePublished" content="#{@biography.created_at.strftime("%FT")}"
         i class="fa fa-clock-o" aria-hidden="true"
-        = " Ultima Atualização: #{@biography.created_at.strftime("%d/%m/%Y")}"
+        = " Ultima Atualização: #{@biography.created_at.strftime("%B %d, %Y")}"
 
       div itemprop="description"= @biography.description.html_safe
 

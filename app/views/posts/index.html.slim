@@ -25,7 +25,7 @@ div class="container"
           div class="content"
             = link_to post.title, post, class: 'header'
             = ' '
-            small= post.created_at.strftime('%d/%m/%Y')
+            small= post.created_at.strftime("%B %d, %Y")
 
             /<div class="meta">
             /<span class="cinema"><%#= posts.author %></span>

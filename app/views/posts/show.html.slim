@@ -19,7 +19,7 @@ div class="container"
       small
         meta itemprop="datePublished" content="#{@post.created_at.strftime('%FT')}"
         i class="fa fa-clock-o" aria-hidden="true"
-        = " Ultima Atualização: #{@post.created_at.strftime('%d/%m/%Y')}"
+        = " Ultima Atualização: #{@post.created_at.strftime("%B %d, %Y")}"
 
       div itemprop="description"= @post.description.html_safe
 
