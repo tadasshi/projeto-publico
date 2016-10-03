@@ -24,7 +24,7 @@ class MetaphorsController < ApplicationController
 
     @metaphors = Metaphor.where("id != '#{@metaphor.id}'").order("RANDOM()").limit(5)
 
-    image = @banner.banner_pictures.first.picture_url
+    image = @banner.banner_images.first.image_url
 
     prepare_meta_tags(title: @metaphor.title + ' - Metáforas',
                       description: @metaphor.summary,
