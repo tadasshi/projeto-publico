@@ -11,7 +11,7 @@ div class="site-index"
             h3 class="bola"= 'Bibliografias'
           br
           p= 'Confira nossa lista de sujestões.'
-          = link_to 'veja mais', bibliographies_path, class: 'btn btn-default flat-button remove-border blue-button white-font-color'
+          = link_to 'veja mais', bibliographies_path, class: 'btn'
 
       hr class='visible-xs'
       div class="col-sm-4"
@@ -20,7 +20,7 @@ div class="site-index"
             h3 class="bola"= 'Ebooks'
           br
           p= 'Nossos Ebooks.'
-          = link_to 'veja mais', ebooks_path, class: 'btn btn-default flat-button remove-border blue-button white-font-color'
+          = link_to 'veja mais', ebooks_path, class: 'btn'
 
       hr class='visible-xs'
       div class="col-sm-4"
@@ -29,7 +29,7 @@ div class="site-index"
             h3 class="bola"= 'Metaforas'
           br
           p= 'Um arsenal de metaforas.'
-          = link_to 'veja mais', metaphors_path, class: 'btn btn-default flat-button remove-border blue-button white-font-color'
+          = link_to 'veja mais', metaphors_path, class: 'btn'
 
     div
       div class="container text-center"
@@ -59,7 +59,7 @@ div class="site-index"
             = f.text_area :message, placeholder: 'Sua mensagem', :required => true
 
           div class="form-group text-center"
-            = f.button "Enviar Contato", class: 'btn remove-border blue-button white-font-color'
+            = f.button "Enviar Contato", class: 'btn'
 
     div
       div class="container"
@@ -81,5 +81,5 @@ div class="site-index"
             = f.label :email
             = f.email_field :email, placeholder: 'Seu email', required: true
           div class="form-group text-center"
-            = f.button 'Quero receber novidades', class: 'btn flat-button remove-border blue-button white-font-color'
+            = f.button 'Quero receber novidades', class: 'btn'
         br

@@ -16,7 +16,7 @@ div class="container"
       div class="ui icon input"
         = text_field_tag :search, params[:search], placeholder: 'busco por...'
         i class="search icon"
-
+  br
   div class="clearfix"
     div class="ui divided items"
       - @posts.each do |post|
@@ -34,8 +34,8 @@ div class="container"
             /</div>
             div class="description"= truncate(strip_tags(post.description), :length => 400, :separator => ' ', escape: false)
 
-            div class="extra"
-              = link_to post, class: 'btn flat-button remove-border blue-button white-font-color' do
+            div class="extra text-right"
+              = link_to post, class: 'btn' do
                 = 'ver mais'
                 i class="right chevron icon"
               /<!--<div class="ui label">Limited</div>-->

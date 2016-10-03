@@ -23,13 +23,17 @@ div class="container"
 
       div itemprop="description"= @post.description.html_safe
 
+    br
+    br
     div class='col-md-12'
-      h3= 'Posts relacionados'
+      h2= 'Posts relacionados'
 
       - if @posts
         - @posts.each do |post|
           p= link_to post.title, post
 
+    br
+    br
     div class='col-md-12'
       = render 'layouts/shareaholic/share_buttons'
 

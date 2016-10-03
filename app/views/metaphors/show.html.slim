@@ -20,14 +20,18 @@ div class="container"
 
       div itemprop="description"= @metaphor.description.html_safe
 
+    br
+    br
     div class='col-md-12'
       - if !@metaphors.empty?
-        h3= 'Metáforas relacionados'
+        h2= 'Metáforas relacionados'
         - @metaphors.each do |metaphor|
           p= link_to metaphor.title, metaphor
-
+    br
+    br
+    div class='col-md-12'
       = render 'layouts/shareaholic/share_buttons'
 
     br
-
+    br
     = render 'layouts/disqus/comment'

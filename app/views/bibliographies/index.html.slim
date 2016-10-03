@@ -16,7 +16,7 @@ div class="container"
       div class="ui icon input"
         == text_field_tag :search, params[:search], placeholder: 'busco por...'
         i class="search icon"
-
+  br
   div class="clearfix"
     div class="ui divided items"
       - @bibliographies.each do |bibliography|
@@ -33,8 +33,8 @@ div class="container"
             div class="description"
               p= truncate(strip_tags(bibliography.description), :length => 400, :separator => ' ', escape: false)
 
-            div class="extra"
-              = link_to bibliography, class: 'btn flat-button remove-border blue-button white-font-color' do
+            div class="extra text-right"
+              = link_to bibliography, class: 'btn' do
                 = 'ver mais'
                 i class="right chevron icon"
 

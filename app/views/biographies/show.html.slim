@@ -22,15 +22,20 @@ div class="container"
 
       div itemprop="description"= @biography.description.html_safe
 
+    br
+    br
     div class='col-md-12'
-      h3= 'Biografias relacionados'
+      h2= 'Biografias relacionados'
 
       - if @biographies
         - @biographies.each do |biography|
           p= link_to biography.title, biography
 
+    br
+    br
+    div class='col-md-12'
       = render 'layouts/shareaholic/share_buttons'
 
     br
-
+    br
     = render 'layouts/disqus/comment'
