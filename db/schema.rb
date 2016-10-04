@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001140807) do
+ActiveRecord::Schema.define(version: 20161004205141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 20161001140807) do
     t.string   "summary"
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "capital"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
+
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
     t.text     "comment"
@@ -118,6 +128,7 @@ ActiveRecord::Schema.define(version: 20161001140807) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.string   "image"
   end
 
   add_index "institutions", ["user_id"], name: "index_institutions_on_user_id", using: :btree
@@ -146,6 +157,22 @@ ActiveRecord::Schema.define(version: 20161001140807) do
     t.string   "summary"
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.string   "acronym"
+    t.integer  "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "states", ["region_id"], name: "index_states_on_region_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -165,5 +192,7 @@ ActiveRecord::Schema.define(version: 20161001140807) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "banner_images", "banners"
+  add_foreign_key "cities", "states"
   add_foreign_key "institutions", "users"
+  add_foreign_key "states", "regions"
 end
