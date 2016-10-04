@@ -20,6 +20,8 @@
 
 
     <div class="actions">
-      <%= f.button "Entrar", class: 'btn flat-button remove-border blue-button white-font-color' %>
+      <%= f.button "Entrar", class: 'btn' %>
+
+      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
     </div>
 <% end %>

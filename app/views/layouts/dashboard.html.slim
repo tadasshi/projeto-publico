@@ -11,5 +11,90 @@ html class="no-js" lang="pt-br"
     = csrf_meta_tags
 
   body
+    br
+    br
+    br
+    div class='col-md-12 text-center'
+      = link_to image_tag('logo.png', :alt => 'Logo', :style => 'height: 24px;'), root_path
+    br
+    br
+    br
+    br
 
     section ng-app="masteringpnl"= yield
+    br
+    footer class="footer"
+      div class="container" style="margin-bottom: 20px"
+        div class="col-md-4 col-sm-6"
+          h3= 'Loja'
+          ul role="menubar" class="list-unstyled"
+            li
+              = link_to ebooks_path, role: 'menuitem' do
+                span = 'Ebooks'
+
+          h3= 'Site'
+          ul role="menubar" class="list-unstyled"
+            li
+              = link_to posts_path, role: 'menuitem' do
+                span= 'Blog'
+            li
+              = link_to root_path, role: 'menuitem' do
+                span= 'Página Inicial'
+            li
+              = link_to sobre_nos_path, role: 'menuitem' do
+                span= 'Sobre nós'
+            li
+              = link_to contato_path, role: 'menuitem' do
+                span= 'Contato'
+
+        div class="col-md-3 col-sm-6"
+          h3= 'Conteúdos'
+          = link_to 'Metáforas', metaphors_path
+          br
+          = link_to 'Bibliografias', bibliographies_path
+          br
+          = link_to 'Biografias', biographies_path
+
+          h3= 'Midias Sociais'
+          p class="footer-social-network"
+            span
+              = link_to facebook_path, target: '_blank' do
+                i class="fa fa-facebook" aria-hidden="true"
+              /= link_to image_tag('icon/social/128-blogger.png', :alt => 'blogger'), '', target: '_blank'
+              /= link_to image_tag('icon/social/128-googleplus.png', :alt => 'googleplus'), googleplus_path, target: '_blank', rel: 'publisher'
+              /= link_to image_tag('icon/social/128-instagram.png', :alt => 'instagram'), '', target: '_blank'
+              = link_to feed_path, target: '_blank' do
+                i class="fa fa-rss" aria-hidden="true"
+        /= link_to image_tag('icon/social/128-twitter.png', :alt => 'twitter'), twitter_path, target: '_blank'
+        /= link_to image_tag('icon/social/128-youtube-2.png', :alt => 'youtube'), youtube_path, target: '_blank'
+
+        div class="col-md-5 text-right hidden-md"
+          h3 class='text-right'= 'Siga-nos no Facebook'
+          iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasteringpnl&width=400&height=220&colorscheme=dark&show_faces=true&header=true&stream=false&show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:400px; height:220px;" allowTransparency="true"
+
+      div style="padding: 8px 0px;"
+        div class="container"
+          div class="col-md-12"
+            small class="pull-left"= "© Copyright #{Time.now.year} - Todos direitos reservados"
+
+    div class="modal fade" id="newsletter_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      div class="modal-dialog" role="document"
+        div class="modal-content white-font-color blue-background"
+          div class="modal-body"
+            button type="button" class="close" data-dismiss="modal" aria-label="Close"
+              span aria-hidden="true" = "&times;"
+            h3= 'Email cadastrado com sucesso!'
+            br
+            p class='text-right'
+              button type="button" class="btn btn-claro" data-dismiss="modal"= 'Obrigado!'
+
+    div class="modal fade" id="newsletter_error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      div class="modal-dialog" role="document"
+        div class="modal-content white-font-color blue-background"
+          div class="modal-body"
+            button type="button" class="close" data-dismiss="modal" aria-label="Close"
+              span aria-hidden="true" = "&times;"
+            h3= 'Houve um erro no cadastro, tente novamente mais tarde!'
+            br
+            p class='text-right'
+              button type="button" class="btn btn-claro" data-dismiss="modal"= 'Ok!'
