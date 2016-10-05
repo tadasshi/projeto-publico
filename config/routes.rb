@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   namespace :user, as: :user, :path => 'usuario' do
     # Instituições
     resources :institutions, :path => 'instituicao'
+
+    get 'institution_payment/new/:id', to: 'institution_payment#new', as: :institution_payment_new
+    match 'institution_payment/create',to: 'institution_payment#create', via: [:post]
   end
 
   # Instituições

@@ -121,6 +121,8 @@ html class="no-js" lang="pt-br"
 
                   ul class='dropdown-menu'
                     li
+                      = link_to 'Instituições', user_institutions_path
+                    li
                       = link_to 'Sair', destroy_user_session_path, method: :delete
               -else
                 li

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004205141) do
+ActiveRecord::Schema.define(version: 20161005141927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,14 @@ ActiveRecord::Schema.define(version: 20161004205141) do
     t.string   "facebook_image"
   end
 
+  create_table "institution_payments", force: :cascade do |t|
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "institution_payments", ["institution_id"], name: "index_institution_payments_on_institution_id", using: :btree
+
   create_table "institutions", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -129,8 +137,16 @@ ActiveRecord::Schema.define(version: 20161004205141) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.string   "image"
+    t.integer  "state_id"
+    t.integer  "city_id"
+    t.string   "address"
+    t.string   "number"
+    t.string   "cep"
+    t.string   "facebook"
   end
 
+  add_index "institutions", ["city_id"], name: "index_institutions_on_city_id", using: :btree
+  add_index "institutions", ["state_id"], name: "index_institutions_on_state_id", using: :btree
   add_index "institutions", ["user_id"], name: "index_institutions_on_user_id", using: :btree
 
   create_table "metaphors", force: :cascade do |t|
@@ -193,6 +209,9 @@ ActiveRecord::Schema.define(version: 20161004205141) do
 
   add_foreign_key "banner_images", "banners"
   add_foreign_key "cities", "states"
+  add_foreign_key "institution_payments", "institutions"
+  add_foreign_key "institutions", "cities"
+  add_foreign_key "institutions", "states"
   add_foreign_key "institutions", "users"
   add_foreign_key "states", "regions"
 end

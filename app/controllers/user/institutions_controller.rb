@@ -35,7 +35,7 @@ class User::InstitutionsController < ApplicationController
 
     respond_to do |format|
       if @institution.save
-        format.html { redirect_to user_institution_path @institution, notice: 'Institution was successfully created.' }
+        format.html { redirect_to user_institution_payment_new_path @institution, notice: 'Institution was successfully created.' }
         format.json { render :show, status: :created, location: @institution }
       else
         format.html { render :new }
