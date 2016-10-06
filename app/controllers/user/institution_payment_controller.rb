@@ -36,8 +36,8 @@ class User::InstitutionPaymentController < ApplicationController
     @institution_payment = InstitutionPayment.create(institution_payment_params)
 
     if @institution_payment.save
-      @api                       = PayPal::SDK::ButtonManager::API.new
-      @bm_create_button          = @api.build_bm_create_button(
+      @api              = PayPal::SDK::ButtonManager::API.new
+      @bm_create_button = @api.build_bm_create_button(
           {
               :ButtonType    => "SUBSCRIBE",
               :ButtonCode    => "CLEARTEXT",
@@ -66,8 +66,6 @@ class User::InstitutionPaymentController < ApplicationController
                   }
               ]})
 
-      # redirect_to edit_user_institution_path @institution
-
       @bm_create_button_response = @api.bm_create_button(@bm_create_button)
 
       if @bm_create_button_response.success?
@@ -81,9 +79,10 @@ class User::InstitutionPaymentController < ApplicationController
         render :text => "Erro(2)"
         @bm_create_button_response.Errors
       end
+    else
+      render :text => "Erro(1)"
     end
 
-    render :text => "Erro(1)"
   end
 
   private
