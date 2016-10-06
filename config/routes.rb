@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'charge/index'
-  get 'charge/detail'
-
   # Redireciona www para non-www
   if Rails.env.production?
     constraints(host: /^www\./i) do
@@ -20,6 +17,7 @@ Rails.application.routes.draw do
     # Instituições
     resources :institutions, :path => 'instituicao'
 
+    get 'institution_payment/ipn_notify', to: 'institution_payment#ipn_notify'
     get 'institution_payment/new/:id', to: 'institution_payment#new', as: :institution_payment_new
     match 'institution_payment/create',to: 'institution_payment#create', via: [:post]
   end

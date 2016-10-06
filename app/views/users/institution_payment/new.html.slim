@@ -1,17 +1,22 @@
-h1 Pagamento
-p execute seu pagamento
-p paypal
+.container
+  h1 Pagamento
+  p execute seu pagamento
+  p paypal
 
-.div
-  p= 'Plano 3 meses'
-  p= '44.70'
+  = form_for @institution_payment, url: {action: 'create',controller: 'user/institution_payment'} do |f|
+    = f.hidden_field :institution_id
+    .div
+      p= 'Plano 3 meses'
+      p= '44.70'
 
-.div
-  p= 'Plano 6 meses'
-  p= '89.40'
+    .div
+      p= 'Plano 6 meses'
+      p= '89.40'
 
-.div
-  p= 'Plano 12 meses'
-  p= '178.80'
+    .div
+      p= 'Plano 12 meses'
+      p= '178.80'
 
-= link_to 'Pagar depois', user_institutions_path
+    = f.button 'Pagar', class: 'btn'
+
+  = link_to 'Pagar depois', user_institutions_path
