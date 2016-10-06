@@ -80,9 +80,9 @@ class User::InstitutionPaymentController < ApplicationController
       else
         @bm_create_button_response.Errors
       end
-    else
-      format.html { render :new }
     end
+
+    render :nothing => true
   end
 
   private
