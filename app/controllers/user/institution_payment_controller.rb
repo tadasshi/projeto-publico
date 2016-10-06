@@ -78,11 +78,12 @@ class User::InstitutionPaymentController < ApplicationController
 
         redirect_to @bm_create_button_response.Email
       else
+        render :text => "Erro(2)"
         @bm_create_button_response.Errors
       end
     end
 
-    render :nothing => true
+    render :text => "Erro(1)"
   end
 
   private
