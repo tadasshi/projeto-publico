@@ -1,10 +1,9 @@
 class User::InstitutionPaymentController < ApplicationController
+
+  protect_from_forgery :except => [:ipn_notify]
+
   def self.controller_path
     'users/institution_payment'
-  end
-
-  def newone
-    @batata = Institution.fin
   end
 
   def ipn_notify
