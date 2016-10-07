@@ -1,6 +1,6 @@
 class User::InstitutionPaymentController < ApplicationController
 
-  skip_before_filter :verify_authenticity_token, only: [:ipn_notify]
+  protect_from_forgery :except => [:ipn_notify]
 
   def self.controller_path
     'users/institution_payment'
