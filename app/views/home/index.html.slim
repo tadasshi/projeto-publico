@@ -68,12 +68,6 @@ div class="site-index"
         h3 class="text-center"= 'Assine nossa newsletter'
         br
         = form_for(@newsletter, remote: true, :html => {:class => 'ui form', :'data-type' => :json}) do |f|
-          /- if @newsletter.errors.any?
-          /  div id="error_explanation"
-          /    h2= "#{pluralize(@newsletter.errors.count, 'error')} prohibited this newsletter from being saved:"
-          /    ul
-          /    - @newsletter.errors.full_messages.each do |message|
-          /      li= message
           div class="field"
             = f.label :name
             = f.text_field :name, placeholder: 'Seu nome', required: true
@@ -83,3 +77,25 @@ div class="site-index"
           div class="form-group text-center"
             = f.button 'Quero receber novidades', class: 'btn'
         br
+
+        div class="modal fade" id="newsletter_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          div class="modal-dialog" role="document"
+            div class="modal-content white-font-color blue-background"
+              div class="modal-body"
+                button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                  span aria-hidden="true" = "&times;"
+                h3= 'Email cadastrado com sucesso!'
+                br
+                p class='text-right'
+                  button type="button" class="btn btn-claro" data-dismiss="modal"= 'Obrigado!'
+
+        div class="modal fade" id="newsletter_error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          div class="modal-dialog" role="document"
+            div class="modal-content white-font-color blue-background"
+              div class="modal-body"
+                button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                  span aria-hidden="true" = "&times;"
+                h3= 'Houve um erro no cadastro, tente novamente mais tarde!'
+                br
+                p class='text-right'
+                  button type="button" class="btn btn-claro" data-dismiss="modal"= 'Ok!'

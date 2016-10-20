@@ -1,6 +1,5 @@
 class EbooksController < ApplicationController
-  before_action :set_ebook, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, :except => [:show, :index]
+  before_action :set_ebook, only: [:show]
   layout 'ebook_dedicated', only: [:show]
   #caches_page :index, :show
 
@@ -28,94 +27,38 @@ class EbooksController < ApplicationController
       image = @ebook.image_url
     end
 
-    prepare_meta_tags(title: @ebook.title + ' - Ebooks',
+    prepare_meta_tags(title:       @ebook.title + ' - Ebooks',
                       description: @ebook.summary,
-                      keywords: '',
-                      image: @ebook.facebook_image_url,
-                      og: {
-                          title: @ebook.title,
-                          description: @ebook.summary,
-                          image: @ebook.facebook_image_url,
-                          type: 'article',
+                      keywords:    '',
+                      image:       @ebook.facebook_image_url,
+                      og:          {
+                          title:        @ebook.title,
+                          description:  @ebook.summary,
+                          image:        @ebook.facebook_image_url,
+                          type:         'article',
                           'image:type': 'image/jpg',
                           updated_time: @ebook.updated_at.strftime('%FT%T')
                       },
-                      article: {
+                      article:     {
                           #tag: @article.tag_list,
-                          author: '947897365241721',
-                          section: 'Blog',
+                          author:         '947897365241721',
+                          section:        'Blog',
                           published_time: @ebook.created_at.strftime('%FT%T'),
-                          modified_time: @ebook.updated_at.strftime('%FT%T')
+                          modified_time:  @ebook.updated_at.strftime('%FT%T')
                       },
-                      twitter: {
-                          title: @ebook.title,
-                          card: '',
+                      twitter:     {
+                          title:       @ebook.title,
+                          card:        '',
                           description: @ebook.summary,
-                          image: @ebook.facebook_image_url
+                          image:       @ebook.facebook_image_url
                       })
 
     @banner = Banner.where(name: 'ebook').take
   end
-
-  # GET /ebooks/new
-  # def new
-  #   @ebook = Ebook.new
-  #   prepare_meta_tags noindex: true
-  # end
-
-  # GET /ebooks/1/edit
-  # def edit
-  #   prepare_meta_tags noindex: true
-  # end
-
-  # POST /ebooks
-  # POST /ebooks.json
-  # def create
-  #   @ebook = Ebook.new(ebook_params)
-  #
-  #   respond_to do |format|
-  #     if @ebook.save
-  #       format.html { redirect_to @ebook, notice: 'Ebook was successfully created.' }
-  #       format.json { render :show, status: :created, location: @ebook }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @ebook.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # PATCH/PUT /ebooks/1
-  # PATCH/PUT /ebooks/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @ebook.update(ebook_params)
-  #       format.html { redirect_to @ebook, notice: 'Ebook was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @ebook }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @ebook.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # DELETE /ebooks/1
-  # DELETE /ebooks/1.json
-  # def destroy
-  #   @ebook.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to ebooks_url, notice: 'Ebook was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
 
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_ebook
     @ebook = Ebook.find(params[:id])
   end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  # def ebook_params
-  #   params.require(:ebook).permit(:title, :description, :image, :value, :url)
-  # end
 end

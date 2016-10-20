@@ -20,7 +20,7 @@ div class="container"
         i class="fa fa-clock-o" aria-hidden="true"
         = " Ultima Atualização: #{@biography.created_at.strftime("%B %d, %Y")}"
 
-      div itemprop="description"= @biography.description.html_safe
+      div itemprop="description"= simple_format @biography.description.html_safe
 
     br
     br

@@ -188,28 +188,6 @@ html class="no-js" lang="pt-br"
           div class="col-md-12"
             small class="pull-left"= "© Copyright #{Time.now.year} - Todos direitos reservados"
 
-    div class="modal fade" id="newsletter_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-      div class="modal-dialog" role="document"
-        div class="modal-content white-font-color blue-background"
-          div class="modal-body"
-            button type="button" class="close" data-dismiss="modal" aria-label="Close"
-              span aria-hidden="true" = "&times;"
-            h3= 'Email cadastrado com sucesso!'
-            br
-            p class='text-right'
-              button type="button" class="btn btn-claro" data-dismiss="modal"= 'Obrigado!'
-
-    div class="modal fade" id="newsletter_error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-      div class="modal-dialog" role="document"
-        div class="modal-content white-font-color blue-background"
-          div class="modal-body"
-            button type="button" class="close" data-dismiss="modal" aria-label="Close"
-              span aria-hidden="true" = "&times;"
-            h3= 'Houve um erro no cadastro, tente novamente mais tarde!'
-            br
-            p class='text-right'
-              button type="button" class="btn btn-claro" data-dismiss="modal"= 'Ok!'
-
     script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" integrity="sha256-6Sr0HqNgUf/p88g6vsl87CrAnNqiOWhjlY6LS8jeWHA=" crossorigin="anonymous"
     = javascript_include_tag 'application'
 

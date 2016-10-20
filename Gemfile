@@ -53,7 +53,7 @@ gem 'meta-tags'
 gem 'gretel'
 
 gem 'rails_admin_rollincode', '~> 1.0'
-gem 'rails_admin', '0.8.1'
+gem 'rails_admin', '~> 0.8.1'
 gem 'ckeditor_rails'
 
 # http://puma.io/
@@ -101,5 +101,5 @@ group :development do
 
   gem 'quiet_assets'
 
-  gem 'better_errors'
+  gem 'faker'
 end

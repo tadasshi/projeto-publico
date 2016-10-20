@@ -18,7 +18,7 @@ div class="container"
         i class="fa fa-clock-o" aria-hidden="true"
         = " Ultima Atualização: #{@metaphor.created_at.strftime("%B %d, %Y")}"
 
-      div itemprop="description"= @metaphor.description.html_safe
+      div itemprop="description"= simple_format @metaphor.description.html_safe
 
     br
     br
